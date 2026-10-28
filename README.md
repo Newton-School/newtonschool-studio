@@ -1,4 +1,4 @@
-# NST Studio
+# NewtonSchool Studio
 
 Single-page marketing website for NST Studio, a mentor-led software engineering studio based in Bengaluru, India.
 
