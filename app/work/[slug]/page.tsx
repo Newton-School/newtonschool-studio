@@ -1,8 +1,10 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { CaseStudyThemeToggle } from "@/components/case-study-theme-toggle";
 import { MarkdownContent } from "@/components/markdown-content";
+import { ScrollToTop } from "@/components/scroll-to-top";
 import { getCaseStudy, getCaseStudySlugs } from "@/lib/case-studies";
 
 type Props = { params: Promise<{ slug: string }> };
@@ -27,7 +29,8 @@ export default async function CaseStudyPage({ params }: Props) {
   if (!study) notFound();
 
   return <>
-    <header className="case-nav"><div className="container"><Link className="logo" href="/" aria-label="NST Studio home"><span className="logo-mark">N</span><span>NST <b>Studio</b></span></Link><div><Link className="case-back" href="/#work">← All work</Link><CaseStudyThemeToggle/><Link className="button primary case-book" href="/#booking">Book a scoping call</Link></div></div></header>
+    <ScrollToTop />
+    <header className="case-nav"><div className="container"><Link className="logo" href="/" aria-label="NST Studio home"><span className="logo-image-wrap"><Image className="logo-image" src="/nst-logo.png" width={32} height={32} alt="" priority/></span><span>NST <b>Studio</b></span></Link><div><Link className="case-back" href="/#work">← All work</Link><CaseStudyThemeToggle/><Link className="button primary case-book" href="/#booking">Book a scoping call</Link></div></div></header>
     <main className="case-page">
       <section className="case-hero"><div className="container"><span className="eyebrow">CASE STUDY · {study.industry}</span><h1>{study.name}</h1><p>{study.problem}</p><div className="case-hero-tags">{study.tags.map((tag) => <span key={tag}>{tag}</span>)}</div></div></section>
       <section className="case-summary"><div className="container"><div><span>WHAT WE BUILT</span><p>{study.build}</p></div><div><span>KEY RESULT</span><p>{study.result}</p></div></div></section>

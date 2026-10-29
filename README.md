@@ -10,7 +10,7 @@ The site presents NST Studio's delivery model, capabilities, production work, pa
 - Light and dark themes with saved browser preference
 - Newton School's Grauity brand colors and semantic surface tokens
 - Sticky desktop navigation and mobile booking bar
-- Reusable cards for services, case studies, mentors, packages, metrics, and FAQs
+- Reusable cards for services, case studies, mentors, packages, and FAQs
 - Accessible headings, controls, focus states, and image descriptions
 - Reduced-motion support
 - Line-based architecture illustration and labelled screenshot placeholders
@@ -92,7 +92,6 @@ scripts/
 
 Most general marketing copy and structured content lives in [`content/site.ts`](content/site.ts). Update this file to change:
 
-- Proof metrics
 - Services
 - Delivery steps
 - Mentor profiles
@@ -177,7 +176,7 @@ The following items require confirmed production information before launch:
 - Case-study destination pages
 - Code and IP ownership policy
 - Support and warranty terms
-- Client approval for names, project details, and proof metrics
+- Client approval for names, project details, and published metrics
 - Final NST Studio logo asset
 
 Placeholders are labelled in the interface so they cannot be mistaken for confirmed content.

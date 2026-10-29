@@ -1,15 +1,16 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import type { CaseStudySummary } from "@/content/case-study-types";
-import { faqs, mentors, metrics, packages, process, services, stack } from "@/content/site";
+import { faqs, mentors, packages, process, services, stack } from "@/content/site";
 
 const Arrow = () => <svg aria-hidden="true" viewBox="0 0 20 20"><path d="M4 10h11M11 6l4 4-4 4" /></svg>;
 const CalendarIcon = () => <svg aria-hidden="true" viewBox="0 0 20 20"><rect x="3" y="4.5" width="14" height="12" rx="2"/><path d="M6.5 2.5v4M13.5 2.5v4M3 8h14"/></svg>;
 
 function Logo() {
-  return <a className="logo" href="#top" aria-label="NST Studio home"><span className="logo-mark">N</span><span>NST <b>Studio</b></span></a>;
+  return <a className="logo" href="#top" aria-label="NST Studio home"><span className="logo-image-wrap"><Image className="logo-image" src="/nst-logo.png" width={32} height={32} alt="" priority/></span><span>NST <b>Studio</b></span></a>;
 }
 
 function Icon({ name }: { name: string }) {
@@ -17,6 +18,8 @@ function Icon({ name }: { name: string }) {
   if (name === "window") return <svg {...common} aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 8h18M7 6h.01"/></svg>;
   if (name === "workflow") return <svg {...common} aria-hidden="true"><rect x="3" y="4" width="7" height="6" rx="1"/><rect x="14" y="14" width="7" height="6" rx="1"/><path d="M10 7h3a4 4 0 0 1 4 4v3"/></svg>;
   if (name === "spark") return <svg {...common} aria-hidden="true"><path d="m12 3 1.7 5.3L19 10l-5.3 1.7L12 17l-1.7-5.3L5 10l5.3-1.7L12 3Z"/><path d="m18 3 .5 1.5L20 5l-1.5.5L18 7l-.5-1.5L16 5l1.5-.5L18 3Z"/></svg>;
+  if (name === "research") return <svg {...common} aria-hidden="true"><path d="M9 3h6M10 3v5l-5 9a2 2 0 0 0 1.8 3h10.4a2 2 0 0 0 1.8-3l-5-9V3"/><path d="M7.5 14h9M9.5 11.5h5"/></svg>;
+  if (name === "problem") return <svg {...common} aria-hidden="true"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/><path d="M12 4V2M20 12h2M12 20v2M4 12H2"/></svg>;
   return <svg {...common} aria-hidden="true"><path d="M7 18h11a4 4 0 0 0 .5-8A6.5 6.5 0 0 0 6 8.5 4.8 4.8 0 0 0 7 18Z"/><path d="M9 14h6M12 11v6"/></svg>;
 }
 
@@ -46,25 +49,52 @@ function Navigation() {
   </nav></header>;
 }
 
-function ArchitectureDiagram() {
-  return <div className="architecture" role="img" aria-label="Architecture diagram connecting a client application through an API layer to a database and cloud services">
-    <div className="diagram-bar"><span>REFERENCE ARCHITECTURE</span><span>PRODUCTION</span></div>
-    <div className="diagram-stage">
-      <div className="diagram-node client"><span className="node-id">01</span><strong>Client app</strong><small>Web · Mobile</small></div>
-      <span className="connector c1"><i/></span>
-      <div className="diagram-node api"><span className="node-id">02</span><strong>API layer</strong><small>Auth · Services</small></div>
-      <span className="connector c2"><i/></span>
-      <div className="diagram-node db"><span className="node-id">03</span><strong>Database</strong><small>PostgreSQL</small></div>
-      <span className="connector vertical"><i/></span>
-      <div className="diagram-node cloud"><span className="node-id">04</span><strong>Cloud</strong><small>CI/CD · Observability</small></div>
-    </div>
-    <div className="diagram-footer"><span><i className="status-dot"/>HEALTHY</span><span>MENTOR REVIEWED</span></div>
-  </div>;
+function DeliverySystemDiagram() {
+  return <div className="delivery-map-frame"><svg className="delivery-map" viewBox="0 0 420 760" role="img" aria-labelledby="delivery-map-title delivery-map-description">
+    <title id="delivery-map-title">NST Studio delivery system</title>
+    <desc id="delivery-map-description">Product requirements and existing systems move through architecture, application development, services, data, artificial intelligence, quality assurance and cloud delivery into production software.</desc>
+    <defs><marker id="map-arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 8 4 0 8Z"/></marker></defs>
+
+    <rect className="map-region map-region-inputs" x="10" y="10" width="400" height="96" rx="3"/>
+    <text className="map-region-label" x="24" y="31">PROJECT INPUTS</text>
+    <g className="map-node map-node-input"><rect x="28" y="44" width="170" height="44" rx="2"/><text x="42" y="63">Product requirements</text><text className="map-node-detail" x="42" y="78">users · workflows · outcomes</text></g>
+    <g className="map-node map-node-input"><rect x="222" y="44" width="170" height="44" rx="2"/><text x="236" y="63">Existing systems</text><text className="map-node-detail" x="236" y="78">data · stack · integrations</text></g>
+
+    <rect className="map-region" x="54" y="128" width="312" height="550" rx="3"/>
+    <text className="map-region-label" x="70" y="150">ENGINEERING SYSTEM</text>
+
+    <path className="map-link" d="M113 88V116H210V166"/>
+    <path className="map-link" d="M307 88V116H210"/>
+    <path className="map-link" d="M210 210V242" markerEnd="url(#map-arrow)"/>
+    <path className="map-link" d="M210 286V306H132V330" markerEnd="url(#map-arrow)"/>
+    <path className="map-link" d="M210 306H288V330" markerEnd="url(#map-arrow)"/>
+    <path className="map-link" d="M132 374V394H210V410"/>
+    <path className="map-link" d="M288 374V394H210"/>
+    <path className="map-link" d="M210 454V474H132V494" markerEnd="url(#map-arrow)"/>
+    <path className="map-link" d="M210 474H288V494" markerEnd="url(#map-arrow)"/>
+    <path className="map-link" d="M132 538V554H210V570"/>
+    <path className="map-link" d="M288 538V554H210"/>
+    <path className="map-link" d="M210 614V646" markerEnd="url(#map-arrow)"/>
+
+    <g className="map-node"><rect x="125" y="166" width="170" height="44" rx="2"/><text x="141" y="185">Architecture</text><text className="map-node-detail" x="141" y="200">scope · interfaces · data</text></g>
+    <g className="map-node map-node-primary"><rect x="125" y="242" width="170" height="44" rx="2"/><text x="141" y="261">Application layer</text><text className="map-node-detail" x="141" y="276">interfaces · workflows</text></g>
+    <g className="map-node"><rect x="70" y="330" width="124" height="44" rx="2"/><text x="84" y="349">API services</text><text className="map-node-detail" x="84" y="364">auth · logic</text></g>
+    <g className="map-node"><rect x="226" y="330" width="124" height="44" rx="2"/><text x="240" y="349">AI workflows</text><text className="map-node-detail" x="240" y="364">models · review</text></g>
+    <g className="map-node"><rect x="125" y="410" width="170" height="44" rx="2"/><text x="141" y="429">System integration</text><text className="map-node-detail" x="141" y="444">APIs · events · automation</text></g>
+    <g className="map-node"><rect x="70" y="494" width="124" height="44" rx="2"/><text x="84" y="513">Data layer</text><text className="map-node-detail" x="84" y="528">database · cache</text></g>
+    <g className="map-node"><rect x="226" y="494" width="124" height="44" rx="2"/><text x="240" y="513">Quality assurance</text><text className="map-node-detail" x="240" y="528">tests · security</text></g>
+    <g className="map-node map-node-deploy"><rect x="125" y="570" width="170" height="44" rx="2"/><text x="141" y="589">Cloud delivery</text><text className="map-node-detail" x="141" y="604">CI/CD · infrastructure</text></g>
+    <g className="map-node"><rect x="125" y="646" width="170" height="44" rx="2"/><text x="141" y="665">Operations</text><text className="map-node-detail" x="141" y="680">observability · handover</text></g>
+
+    <rect className="map-region map-region-output" x="10" y="712" width="400" height="38" rx="3"/>
+    <path className="map-link" d="M210 690V704H78V722M210 704V722M210 704H342V722"/>
+    <g className="map-output"><rect x="28" y="722" width="100" height="25" rx="2"/><text x="78" y="738">WEB PRODUCT</text></g>
+    <g className="map-output"><rect x="160" y="722" width="100" height="25" rx="2"/><text x="210" y="738">INTERNAL TOOL</text></g>
+    <g className="map-output"><rect x="292" y="722" width="100" height="25" rx="2"/><text x="342" y="738">AI FEATURE</text></g>
+  </svg></div>;
 }
 
 export function Card({ children, className = "" }: { children: React.ReactNode; className?: string }) { return <article className={`card ${className}`}>{children}</article>; }
-export function MetricStat({ value, label }: { value: string; label: string }) { return <div className="metric"><strong>{value}</strong><span>{label}</span></div>; }
-
 function SectionHeading({ eyebrow, title, text }: { eyebrow: string; title: string; text?: string }) {
   return <div className="section-heading"><span className="eyebrow">{eyebrow}</span><h2>{title}</h2>{text && <p>{text}</p>}</div>;
 }
@@ -76,7 +106,7 @@ function ProductFrame({ label }: { label: string }) {
 }
 
 export function CaseStudyCard({ item }: { item: CaseStudySummary }) {
-  return <Link className="case-card-link" href={`/work/${item.slug}`} aria-label={`View ${item.name} case study`}><Card className="case-card"><ProductFrame label={item.screen}/><div className="case-content"><div className="case-head"><h3>{item.name}</h3><span>{item.industry}</span></div><p className="problem">{item.problem}</p><p>{item.build}</p><div className="tags">{item.tags.map(tag => <span key={tag}>{tag}</span>)}</div><div className="result"><span>KEY RESULT</span><strong>{item.result}</strong></div><span className="case-link">View case study <Arrow/></span></div></Card></Link>;
+  return <Link className="case-card-link" href={`/work/${item.slug}`} scroll={false} aria-label={`View ${item.name} case study`}><Card className="case-card"><ProductFrame label={item.screen}/><div className="case-content"><div className="case-head"><h3>{item.name}</h3><span>{item.industry}</span></div><p className="problem">{item.problem}</p><p>{item.build}</p><div className="tags">{item.tags.map(tag => <span key={tag}>{tag}</span>)}</div><div className="result"><span>KEY RESULT</span><strong>{item.result}</strong></div><span className="case-link">View case study <Arrow/></span></div></Card></Link>;
 }
 
 export function MentorCard({ item, index }: { item: typeof mentors[number]; index: number }) {
@@ -101,11 +131,9 @@ export function StudioPage({ caseStudies }: { caseStudies: CaseStudySummary[] })
   return <>
     <Navigation />
     <main id="top">
-      <section className="hero"><div className="hero-grid"/><div className="container hero-layout"><div className="hero-copy" data-reveal><span className="eyebrow"><i/>Mentor-led software engineering</span><h1>We build MVPs, internal tools and AI features that <em>ship to production.</em></h1><p>Senior engineers lead the architecture and review every line. Our engineering pod builds it. You get production-grade software with a clean handover, on a fixed scope and timeline.</p><div className="hero-actions"><a className="button primary large" href="#booking"><CalendarIcon/>Book a 20-min scoping call</a><a className="text-link" href="/nst-studio-one-pager.pdf" download>Download the one-pager <Arrow/></a></div><div className="hero-proof"><span>FIXED SCOPE</span><span>MENTOR REVIEWED</span><span>YOU OWN THE CODE</span></div></div><div data-reveal><ArchitectureDiagram/></div></div></section>
+      <section className="hero"><div className="hero-grid"/><div className="container hero-layout"><div className="hero-copy" data-reveal><span className="eyebrow"><i/>Mentor-led software engineering</span><h1>We build MVPs, internal tools and AI features that <em>ship to production.</em></h1><p>Senior engineers lead the architecture and review every line. Our engineering pod builds it. You get production-grade software with a clean handover, on a fixed scope and timeline.</p><div className="hero-actions"><a className="button primary large" href="#booking"><CalendarIcon/>Book a 20-min scoping call</a><a className="text-link" href="/nst-studio-one-pager.pdf" download>Download the one-pager <Arrow/></a></div></div><div data-reveal><DeliverySystemDiagram/></div></div></section>
 
-      <section className="proof-strip" aria-labelledby="proof-label"><div className="container"><div className="proof-label" id="proof-label"><span>PROOF IN PRODUCTION</span><small>PLACEHOLDER METRICS · PENDING CLIENT CONFIRMATION</small></div><div className="metric-grid">{metrics.map(item => <MetricStat key={item.value} {...item}/>)}</div></div></section>
-
-      <section className="section" id="services"><div className="container" data-reveal><SectionHeading eyebrow="01 · CAPABILITIES" title="What we build" text="Focused software for teams with a real operational problem and a deadline."/><div className="service-grid">{services.map((item, index) => <Card className="service-card" key={item.title}><div className="service-icon"><Icon name={item.icon}/></div><span className="card-number">0{index + 1}</span><h3>{item.title}</h3><p>{item.body}</p></Card>)}</div></div></section>
+      <section className="section" id="services"><div className="container" data-reveal><SectionHeading eyebrow="01 · CAPABILITIES" title="Problems we take on" text="From early technical questions to production systems for complex operations."/><div className="service-grid">{services.map((item, index) => <Card className="service-card" key={item.title}><div className="service-icon"><Icon name={item.icon}/></div><span className="card-number">0{index + 1}</span><h3>{item.title}</h3><p>{item.body}</p></Card>)}</div></div></section>
 
       <section className="section alt" id="work"><div className="container" data-reveal><SectionHeading eyebrow="02 · SELECTED WORK" title="Work in production" text="Systems built for daily use, not demo day."/><div className="case-grid">{caseStudies.map(item => <CaseStudyCard item={item} key={item.name}/>)}</div><p className="confirmation-note"><span/>Client names, metrics and project details shown here are pending final publication approval.</p></div></section>
 
@@ -115,11 +143,11 @@ export function StudioPage({ caseStudies }: { caseStudies: CaseStudySummary[] })
 
       <section className="section" id="packages"><div className="container" data-reveal><SectionHeading eyebrow="05 · ENGAGEMENTS" title="Fixed scope. Clear outcomes." text="Start with a defined result, timeline and price."/><div className="package-grid">{packages.map(item => <PackageCard item={item} key={item.title}/>)}</div><div className="pricing-note"><p>Pricing is fixed against scope. If your budget is tighter, we reduce scope or phase delivery.</p><div className="addons"><span>ADD-ONS</span>{["UX/UI design", "Security and compliance", "Data and analytics", "Migration and modernization"].map(item => <i key={item}>{item}</i>)}</div></div></div></section>
 
-      <section className="section stack-section"><div className="container" data-reveal><SectionHeading eyebrow="06 · TOOLKIT" title="Our default stack" text="We also work inside your existing one."/><div className="stack-grid">{Object.entries(stack).map(([group, items]) => <div className="stack-group" key={group}><h3>{group}</h3><div>{items.map(item => <span key={item}><i>{item.slice(0,2).toUpperCase()}</i>{item}</span>)}</div></div>)}</div></div></section>
+      <section className="section stack-section" id="stack"><div className="container" data-reveal><SectionHeading eyebrow="06 · ENGINEERING APPROACH" title="The problem comes first." text="We select the architecture, languages and platforms that best fit the outcome, constraints and systems already in place. Our teams work across modern product, cloud, data and AI ecosystems."/><div className="stack-grid"><div className="stack-list-head"><span>TECHNOLOGY COVERAGE</span><span>PRODUCT · PLATFORM · DATA · AI</span></div>{Object.entries(stack).map(([group, items]) => <div className="stack-group" key={group}><h3>{group}</h3><div>{items.map(item => <span key={item}><i>{item.slice(0,2).toUpperCase()}</i>{item}</span>)}</div></div>)}</div></div></section>
 
       <section className="section alt" id="faq"><div className="container faq-layout" data-reveal><SectionHeading eyebrow="07 · FAQ" title="Questions we expect" text="Straight answers before you spend time on a call."/><div className="faq-list">{faqs.map((item, index) => <FAQItem key={item.q} item={item} open={faqOpen === index} onClick={() => setFaqOpen(faqOpen === index ? -1 : index)}/>)}</div></div></section>
 
-      <section className="section booking" id="booking"><div className="container booking-panel" data-reveal><div className="booking-copy"><span className="eyebrow">08 · START HERE</span><h2>Tell us what you’re building.</h2><p>A 20-minute call to scope your project. You’ll leave with a clear recommendation, even if we’re not the right fit.</p><div className="call-points"><div><span>01</span><p>Describe the problem, users and deadline.</p></div><div><span>02</span><p>We identify the smallest useful scope.</p></div><div><span>03</span><p>You get a recommended next step.</p></div></div></div><div className="booking-widget" role="img" aria-label="Placeholder for Cal.com or Calendly booking widget"><div className="widget-top"><div className="widget-logo">N</div><div><strong>NST Studio</strong><span>20-minute scoping call</span></div></div><div className="widget-body"><span>OCTOBER 2026</span><div className="calendar-row">{["M","T","W","T","F"].map((d,i)=><b key={i}>{d}</b>)}</div><div className="calendar-row dates">{[5,6,7,8,9].map(d=><i key={d}>{d}</i>)}</div><div className="slot-placeholder"><span/><span/><span/></div><em>CAL.COM OR CALENDLY EMBED PLACEHOLDER</em></div></div></div></section>
+      <section className="section booking" id="booking"><div className="container booking-panel" data-reveal><div className="booking-copy"><span className="eyebrow">08 · START HERE</span><h2>Tell us what you’re building.</h2><p>A 20-minute call to scope your project. You’ll leave with a clear recommendation, even if we’re not the right fit.</p><div className="call-points"><div><span>01</span><p>Describe the problem, users and deadline.</p></div><div><span>02</span><p>We identify the smallest useful scope.</p></div><div><span>03</span><p>You get a recommended next step.</p></div></div></div><div className="booking-widget" role="img" aria-label="Placeholder for Cal.com or Calendly booking widget"><div className="widget-top"><div className="widget-logo"><Image src="/nst-logo.png" width={32} height={32} alt=""/></div><div><strong>NST Studio</strong><span>20-minute scoping call</span></div></div><div className="widget-body"><span>OCTOBER 2026</span><div className="calendar-row">{["M","T","W","T","F"].map((d,i)=><b key={i}>{d}</b>)}</div><div className="calendar-row dates">{[5,6,7,8,9].map(d=><i key={d}>{d}</i>)}</div><div className="slot-placeholder"><span/><span/><span/></div><em>CAL.COM OR CALENDLY EMBED PLACEHOLDER</em></div></div></div></section>
     </main>
     <footer><div className="container footer-grid"><div><Logo/><p>Mentor-led software engineering for teams with a real problem and a deadline.</p></div><div><span>CONTACT</span><span className="placeholder-link">Email · PLACEHOLDER</span><span className="placeholder-link">LinkedIn · PLACEHOLDER</span></div><div><span>INITIATIVE</span><p>A Newton School of Technology initiative</p><small>© 2026 NST Studio</small></div></div></footer>
     <div className="mobile-book"><a className="button primary" href="#booking"><CalendarIcon/>Book a 20-min scoping call</a></div>
