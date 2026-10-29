@@ -1,10 +1,10 @@
-# NST Studio in the age of AI
+# NewtonSchool Studio in the age of AI
 
 ## Research brief on demand, differentiation, operating model and positioning
 
 **Prepared:** 6 October 2026
 **Purpose:** Internal strategy, pitch development and website direction
-**Status:** Research-backed recommendation. Proposed claims must be validated with NST Studio delivery data before they are published as facts.
+**Status:** Research-backed recommendation. Proposed claims must be validated with NewtonSchool Studio delivery data before they are published as facts.
 
 ---
 
@@ -23,9 +23,9 @@ The work that remains difficult is the work between an idea and a dependable pro
 - coordinating many streams of work against a deadline;
 - owning defects, adoption, handover and long-term maintainability.
 
-This is the opening for NST Studio.
+This is the opening for NewtonSchool Studio.
 
-NST Studio should not sell access to student developers, mentor review, or a longer list of technologies. None of those is a durable moat on its own. It should sell a **repeatable problem-to-production system** that combines:
+NewtonSchool Studio should not sell access to student developers, mentor review, or a longer list of technologies. None of those is a durable moat on its own. It should sell a **repeatable problem-to-production system** that combines:
 
 1. a focused engineering pod with the time and energy to explore and execute in parallel;
 2. experienced technical and product judgment at the decisions that determine the outcome;
@@ -35,13 +35,13 @@ NST Studio should not sell access to student developers, mentor review, or a lon
 
 The most defensible articulation is:
 
-> **NST Studio turns difficult, ambiguous operating problems into dependable software.**
+> **NewtonSchool Studio turns difficult, ambiguous operating problems into dependable software.**
 
 A sharper campaign line could be:
 
 > **From a hard problem to software in production.**
 
-The deeper moat is not that NST has people plus AI. Every agency can say that. The moat must become the system NST builds around them: selection, problem framing, context capture, parallel execution, verification, reusable knowledge, production evidence and a talent flywheel that improves with every project.
+The deeper moat is not that NewtonSchool Studio has people plus AI. Every agency can say that. The moat must become the system NewtonSchool Studio builds around them: selection, problem framing, context capture, parallel execution, verification, reusable knowledge, production evidence and a talent flywheel that improves with every project.
 
 ---
 
@@ -55,7 +55,7 @@ The evidence does not support either extreme claim that AI is merely autocomplet
 - A study of 5,179 customer-support agents found a **14% average productivity increase** and a **34% increase for novice and lower-skilled workers**. The researchers found evidence that AI helped distribute the practices of stronger workers. This was not software engineering, but it is relevant to the design of a student-plus-expert operating model. [NBER, Generative AI at Work](https://www.nber.org/papers/w31161)
 - In early 2026, METR reported that frontier coding agents could complete some software reimplementation tasks estimated to take humans days or weeks. It also found significantly weaker judgment and reliability than human experts on strategic and adversarial tasks. [METR Frontier Risk Report](https://metr.org/blog/2026-05-19-frontier-risk-report/)
 
-**Implication for NST:** AI is an important capacity multiplier. The studio should adopt it aggressively. It should not pretend that human-written code is the source of quality or value.
+**Implication for NewtonSchool Studio:** AI is an important capacity multiplier. The studio should adopt it aggressively. It should not pretend that human-written code is the source of quality or value.
 
 ### 1.2 AI performance is uneven and easy to misjudge
 
@@ -63,7 +63,7 @@ The evidence does not support either extreme claim that AI is merely autocomplet
 - METR's early-2025 randomized study found experienced open-source developers took 19% longer when AI tools were allowed, even though they believed they were faster. METR later said early-2026 tools likely produced more speedup, but it could not estimate the size reliably because of selection effects and parallel-agent usage. [Early-2025 study](https://metr.org/blog/2025-07-10-early-2025-ai-experienced-os-dev-study/) and [2026 methodology update](https://metr.org/blog/2026-02-24-uplift-update/)
 - In the 2025 Stack Overflow survey, **46% of developers distrusted AI accuracy versus 33% who trusted it**. The most common frustration was output that was almost correct, cited by 66%, followed by time-consuming debugging of generated code, cited by 45%. [Stack Overflow Developer Survey 2025](https://survey.stackoverflow.co/2025/ai)
 
-**Implication for NST:** The valuable capability is knowing when to delegate, how to provide context, how to verify the result and when to stop using the agent. That capability can be taught, measured and turned into delivery IP.
+**Implication for NewtonSchool Studio:** The valuable capability is knowing when to delegate, how to provide context, how to verify the result and when to stop using the agent. That capability can be taught, measured and turned into delivery IP.
 
 ### 1.3 Coding is only a fraction of software engineering
 
@@ -71,7 +71,7 @@ Microsoft's current engineering-productivity framework notes that developers acr
 
 Google research found that code quality, technical debt, infrastructure support, team communication, clear goals and organizational process all have causal links to developer productivity. [Google Research](https://research.google/pubs/what-improves-developer-productivity-at-google-code-quality/)
 
-**Implication for NST:** A founder with an agent has gained a powerful implementation tool, not an automatically functioning software organization.
+**Implication for NewtonSchool Studio:** A founder with an agent has gained a powerful implementation tool, not an automatically functioning software organization.
 
 ### 1.4 AI amplifies the delivery system around it
 
@@ -79,13 +79,13 @@ The 2025 DORA report is based on survey responses from nearly 5,000 technology p
 
 The earlier DORA research associated a 25% increase in AI adoption with a 1.5% decline in delivery throughput and a 7.2% decline in delivery stability where the surrounding delivery practices did not keep pace. [DORA report on generative AI](https://dora.dev/ai/gen-ai-report/report/)
 
-**Implication for NST:** The product is the delivery system. Agents are one layer inside it.
+**Implication for NewtonSchool Studio:** The product is the delivery system. Agents are one layer inside it.
 
 ### 1.5 AI can weaken the skills required to supervise it
 
 An Anthropic randomized study found participants using AI scored 17% lower on a test of concepts they had just used. Participants who used AI to ask conceptual questions and develop understanding retained more mastery than those who primarily delegated code generation. [Anthropic research](https://www.anthropic.com/research/AI-assistance-coding-skills)
 
-**Implication for NST:** Student engineers cannot become passive prompt operators. A studio built on student talent must explicitly train system understanding, explanation, debugging and judgment. Otherwise its review burden will grow faster than its output.
+**Implication for NewtonSchool Studio:** Student engineers cannot become passive prompt operators. A studio built on student talent must explicitly train system understanding, explanation, debugging and judgment. Otherwise its review burden will grow faster than its output.
 
 ### Research synthesis
 
@@ -99,7 +99,7 @@ AI changes the economics of implementation, but it also raises the value of:
 - production ownership;
 - institutional learning.
 
-These are realistic sources of demand for NST Studio.
+These are realistic sources of demand for NewtonSchool Studio.
 
 ---
 
@@ -164,7 +164,7 @@ Prompt histories and generated code are not organisational memory. A maintainabl
 
 ### Practical demand triggers
 
-NST Studio is most valuable when at least three of the following are true:
+NewtonSchool Studio is most valuable when at least three of the following are true:
 
 - the problem is important but the solution is not fully specified;
 - several systems, roles or data sources are involved;
@@ -181,7 +181,7 @@ This is a stronger qualification model than targeting everyone who needs softwar
 
 ---
 
-## 3. What can be distinctive about the NST model
+## 3. What can be distinctive about the NewtonSchool Studio model
 
 The phrase “students with senior mentors” describes staffing. It does not yet explain why the system wins.
 
@@ -189,7 +189,7 @@ The more compelling model is **high-agency engineering pods amplified by AI and 
 
 ### 3.1 What students can add beyond capacity
 
-These are hypotheses NST should validate with project data rather than publish immediately as claims.
+These are hypotheses NewtonSchool Studio should validate with project data rather than publish immediately as claims.
 
 #### Breadth of exploration
 
@@ -236,24 +236,24 @@ The client is not buying a senior person plus several students. The client is bu
 
 ---
 
-## 4. The moat NST Studio should build
+## 4. The moat NewtonSchool Studio should build
 
 No single item below is sufficient. The moat is the way the parts reinforce one another.
 
-| Moat layer                          | Why it matters in the AI age                                                   | What NST must build                                                                                                                    | Defensibility                                        |
-| ----------------------------------- | ------------------------------------------------------------------------------ | -------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------- |
-| AI-native delivery system           | Models are widely available; reliable orchestration is not                     | Context standards, agent task patterns, review rules, test harnesses, evals, release controls                                          | Medium, then high as evidence and workflows compound |
-| Talent selection and development    | AI increases the output of capable people but can hide weak understanding      | Selective entry, systems curriculum, project certification, code explanation, debugging assessments                                    | High if outcomes and alumni compound                 |
-| Reusable engineering knowledge      | Every project should make the next one faster and safer                        | Architecture patterns, integration adapters, deployment baselines, checklists, estimation history, sanitized reference implementations | High if maintained and used                          |
-| Production proof                    | Prospects distrust generic AI and agency claims                                | Detailed case studies, before-and-after measures, technical decisions, reliability evidence, named references where permitted          | High and cumulative                                  |
-| Domain and workflow understanding   | Clients pay for software that fits their operation                             | Initial concentration in repeatable problem families and industries, reusable discovery maps, data models and compliance knowledge     | High after repetition                                |
-| Research and institution network    | NST can access talent, mentors and emerging ideas earlier than a normal agency | Research collaborations, problem exchanges, technical guilds, public demonstrations, faculty and industry participation                | Potentially high                                     |
-| Client trust and continuity         | A tool cannot own a difficult outcome                                          | Transparent team, named accountable lead, weekly evidence, clear IP terms, documentation, support and incident process                 | Medium, strengthened by repetition                   |
-| Owned tools and public contribution | Verifiable work is stronger than claims                                        | Open-source utilities, benchmarks, evaluation suites, technical reports, internal tools selectively released                           | High if genuinely adopted                            |
+| Moat layer                          | Why it matters in the AI age                                                                   | What NewtonSchool Studio must build                                                                                                    | Defensibility                                        |
+| ----------------------------------- | ---------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------- |
+| AI-native delivery system           | Models are widely available; reliable orchestration is not                                     | Context standards, agent task patterns, review rules, test harnesses, evals, release controls                                          | Medium, then high as evidence and workflows compound |
+| Talent selection and development    | AI increases the output of capable people but can hide weak understanding                      | Selective entry, systems curriculum, project certification, code explanation, debugging assessments                                    | High if outcomes and alumni compound                 |
+| Reusable engineering knowledge      | Every project should make the next one faster and safer                                        | Architecture patterns, integration adapters, deployment baselines, checklists, estimation history, sanitized reference implementations | High if maintained and used                          |
+| Production proof                    | Prospects distrust generic AI and agency claims                                                | Detailed case studies, before-and-after measures, technical decisions, reliability evidence, named references where permitted          | High and cumulative                                  |
+| Domain and workflow understanding   | Clients pay for software that fits their operation                                             | Initial concentration in repeatable problem families and industries, reusable discovery maps, data models and compliance knowledge     | High after repetition                                |
+| Research and institution network    | NewtonSchool Studio can access talent, mentors and emerging ideas earlier than a normal agency | Research collaborations, problem exchanges, technical guilds, public demonstrations, faculty and industry participation                | Potentially high                                     |
+| Client trust and continuity         | A tool cannot own a difficult outcome                                                          | Transparent team, named accountable lead, weekly evidence, clear IP terms, documentation, support and incident process                 | Medium, strengthened by repetition                   |
+| Owned tools and public contribution | Verifiable work is stronger than claims                                                        | Open-source utilities, benchmarks, evaluation suites, technical reports, internal tools selectively released                           | High if genuinely adopted                            |
 
 ### The central moat statement
 
-> **NST Studio is building a compounding system for turning ambitious, unclear problems into production software. Each project improves the people, playbooks, tools and evidence used on the next one.**
+> **NewtonSchool Studio is building a compounding system for turning ambitious, unclear problems into production software. Each project improves the people, playbooks, tools and evidence used on the next one.**
 
 ### What is not a moat
 
@@ -269,13 +269,13 @@ No single item below is sufficient. The moat is the way the parts reinforce one 
 
 ### Broad capability versus clear positioning
 
-NST may be able to solve a wide range of engineering problems. It should not market itself as a generic answer to every technical need.
+NewtonSchool Studio may be able to solve a wide range of engineering problems. It should not market itself as a generic answer to every technical need.
 
 The useful principle is:
 
 > **Be broad in capability and specific at the point of entry.**
 
-Callstack can solve many engineering problems, but earns attention through deep React Native and open-source authority. Code Nation can provide broad digital work, but earns attention through progressive campaigning and NationBuilder. NST needs an initial wedge that matches its strongest evidence.
+Callstack can solve many engineering problems, but earns attention through deep React Native and open-source authority. Code Nation can provide broad digital work, but earns attention through progressive campaigning and NationBuilder. NewtonSchool Studio needs an initial wedge that matches its strongest evidence.
 
 A plausible wedge from the current portfolio is:
 
@@ -305,7 +305,7 @@ SuperUROP makes the structure more intensive:
 
 [MIT SuperUROP](https://superurop.mit.edu/start-here/)
 
-**Lessons for NST:**
+**Lessons for NewtonSchool Studio:**
 
 - use selective, approved projects rather than putting every lead directly into delivery;
 - require a written problem statement and project plan;
@@ -334,7 +334,7 @@ G-Lab provides a particularly useful operating pattern:
 
 MIT reports that hosts return because teams provide extra capacity, quantitative analysis and fresh approaches. Some hosts use consecutive projects to build on earlier work. [MIT host spotlight](https://mitsloan.mit.edu/action-learning/host-spotlight-why-action-learning-hosts-return-year-after-year)
 
-**Lessons for NST:**
+**Lessons for NewtonSchool Studio:**
 
 - standardise the pod size instead of staffing every project ad hoc;
 - establish a project acceptance committee;
@@ -349,7 +349,7 @@ MIT reports that hosts return because teams provide extra capacity, quantitative
 
 NEET is organised around multi-year, cross-disciplinary project threads tied to modern industry. Industry sponsors can help define needs, design projects and evaluate seminars. Students combine faculty mentoring, peer learning, self-study and explicit training in creative, critical and systems thinking. [MIT NEET](https://neet.mit.edu/sponsor)
 
-**Lessons for NST:**
+**Lessons for NewtonSchool Studio:**
 
 - organise internal capability around problem domains, not only programming languages;
 - teach systems thinking and communication alongside tools;
@@ -359,7 +359,7 @@ NEET is organised around multi-year, cross-disciplinary project threads tied to 
 
 ### The important difference
 
-MIT's primary product is learning and research. NST Studio's commercial product must be a client outcome. The educational benefit is a powerful talent engine, but it cannot excuse missed scope, weak quality or incomplete support.
+MIT's primary product is learning and research. NewtonSchool Studio's commercial product must be a client outcome. The educational benefit is a powerful talent engine, but it cannot excuse missed scope, weak quality or incomplete support.
 
 ---
 
@@ -403,11 +403,11 @@ Prospects can start with a consultation, codebase review, architecture review, d
 - Use credible third-party markers only after they exist, such as foundation membership, security certification and independently visible adoption.
 - Show that AI expands expert capacity while the firm remains accountable for the delivery system.
 
-### 6.3 What NST should not copy
+### 6.3 What NewtonSchool Studio should not copy
 
-Callstack's authority is the result of approximately a decade of focused work. NST cannot reproduce it by adopting similar language. It should choose its own contribution surface and publish evidence over time.
+Callstack's authority is the result of approximately a decade of focused work. NewtonSchool Studio cannot reproduce it by adopting similar language. It should choose its own contribution surface and publish evidence over time.
 
-The useful question is: **What should exist in the engineering ecosystem because NST Studio exists?**
+The useful question is: **What should exist in the engineering ecosystem because NewtonSchool Studio exists?**
 
 Possible answers include:
 
@@ -472,7 +472,7 @@ The model reached nearly 10,000 students, more than 100 schools, 150-plus techno
 
 #### Business-model warning
 
-Educational impact and partner enthusiasm do not automatically create a durable revenue model. NST Studio should not depend on volunteer availability, sponsorship fashion or the idea that clients will subsidise learning.
+Educational impact and partner enthusiasm do not automatically create a durable revenue model. NewtonSchool Studio should not depend on volunteer availability, sponsorship fashion or the idea that clients will subsidise learning.
 
 The commercial studio should have:
 
@@ -485,7 +485,7 @@ The commercial studio should have:
 
 ---
 
-## 8. Recommended NST Studio operating model
+## 8. Recommended NewtonSchool Studio operating model
 
 ### 8.1 The unit of delivery
 
@@ -683,7 +683,7 @@ Use a three-level portfolio:
 2. **Repeatable strengths:** internal tools, integrations, AI features, platforms and modernisation;
 3. **Research frontier:** high-ambition projects accepted selectively when the studio has the right problem owner and technical lead.
 
-This allows NST to pursue ambitious engineering without telling the market it is equally expert in every domain.
+This allows NewtonSchool Studio to pursue ambitious engineering without telling the market it is equally expert in every domain.
 
 ---
 
@@ -691,17 +691,17 @@ This allows NST to pursue ambitious engineering without telling the market it is
 
 ### One-line version
 
-> **NST Studio turns difficult operating and product problems into dependable software.**
+> **NewtonSchool Studio turns difficult operating and product problems into dependable software.**
 
 ### 30-second version
 
-> AI has made code faster to produce. The hard part is still turning an unclear problem into a system that works with real users, real data and real constraints. NST Studio brings together a focused engineering pod, experienced technical leadership and an AI-native delivery system. We investigate broadly, execute in parallel and own the path from problem framing to production. At handover, the client receives the code, documentation and operating context. Code and IP ownership language should be added only after the commercial policy is confirmed.
+> AI has made code faster to produce. The hard part is still turning an unclear problem into a system that works with real users, real data and real constraints. NewtonSchool Studio brings together a focused engineering pod, experienced technical leadership and an AI-native delivery system. We investigate broadly, execute in parallel and own the path from problem framing to production. At handover, the client receives the code, documentation and operating context. Code and IP ownership language should be added only after the commercial policy is confirmed.
 
 ### Pitch-deck structure
 
 1. **The shift:** software output is abundant; dependable delivery is still scarce.
 2. **The client problem:** founders and operators get from idea to prototype, then hit context, integration, quality and launch walls.
-3. **The NST answer:** a focused problem-solving unit, not staff augmentation.
+3. **The NewtonSchool Studio answer:** a focused problem-solving unit, not staff augmentation.
 4. **How it works:** problem owner, technical lead, engineering pod and agents operating through explicit gates.
 5. **Why this team shape works:** fresh capacity and parallel exploration combined with experienced judgment and delivery ownership.
 6. **Proof:** production case studies with constraints, decisions, artefacts and measured outcomes.
@@ -714,19 +714,19 @@ This allows NST to pursue ambitious engineering without telling the market it is
 
 #### “Why do I need a team if I can build with AI?”
 
-AI is a strong implementation and research tool. A production product also needs problem discovery, system decisions, integration, validation, launch and ownership. NST gives the founder parallel capacity and an accountable delivery system so the founder can remain focused on customers and the business.
+AI is a strong implementation and research tool. A production product also needs problem discovery, system decisions, integration, validation, launch and ownership. NewtonSchool Studio gives the founder parallel capacity and an accountable delivery system so the founder can remain focused on customers and the business.
 
 #### “Why should student engineers work on important software?”
 
-The client is not assigning work to individual students. NST assigns a pod with a named problem owner, technical lead, delivery controls and acceptance criteria. Engineers earn responsibility through demonstrated capability. The studio remains accountable for the result.
+The client is not assigning work to individual students. NewtonSchool Studio assigns a pod with a named problem owner, technical lead, delivery controls and acceptance criteria. Engineers earn responsibility through demonstrated capability. The studio remains accountable for the result.
 
 #### “Why not hire freelancers?”
 
-Freelancers can be useful for bounded tasks. NST is designed for connected problems that require shared context across product, architecture, data, quality and deployment, with one owner and a complete handover.
+Freelancers can be useful for bounded tasks. NewtonSchool Studio is designed for connected problems that require shared context across product, architecture, data, quality and deployment, with one owner and a complete handover.
 
 #### “Why not hire a traditional agency?”
 
-NST should answer with proof, not a category claim: the speed and breadth of an AI-native pod, transparent technical ownership, fixed outcome-based engagements, reusable delivery systems and a pipeline of deeply trained engineering talent.
+NewtonSchool Studio should answer with proof, not a category claim: the speed and breadth of an AI-native pod, transparent technical ownership, fixed outcome-based engagements, reusable delivery systems and a pipeline of deeply trained engineering talent.
 
 #### “Can you solve any engineering problem?”
 
@@ -792,7 +792,7 @@ Every case study should answer:
 
 1. What was stuck or at risk?
 2. What constraints made it difficult?
-3. What did NST decide and why?
+3. What did NewtonSchool Studio decide and why?
 4. What system was built?
 5. How was it validated?
 6. What went into production?
@@ -861,7 +861,7 @@ Callstack demonstrates how public technical contribution can be both proof and d
 
 ### 11.9 Use the rocket carefully
 
-A professional launch image can signal ambition and momentum, but it does not explain why NST wins. If used, it should support the positioning rather than replace evidence. The visual should feel like a real engineering programme, while the nearby copy and product artefacts communicate the delivery system.
+A professional launch image can signal ambition and momentum, but it does not explain why NewtonSchool Studio wins. If used, it should support the positioning rather than replace evidence. The visual should feel like a real engineering programme, while the nearby copy and product artefacts communicate the delivery system.
 
 The more ownable long-term visual language is likely to be **mission control, system maps, test evidence and production telemetry** rather than a generic rocket alone.
 
@@ -878,14 +878,14 @@ The more ownable long-term visual language is likely to be **mission control, sy
 
 ---
 
-## 12. Proof NST should start collecting now
+## 12. Proof NewtonSchool Studio should start collecting now
 
 ### Sales evidence
 
 - reason the client sought outside help;
 - alternatives considered, including founder plus AI;
 - time between first conversation and scoped decision;
-- objections and why the client chose NST;
+- objections and why the client chose NewtonSchool Studio;
 - follow-on and referral rate.
 
 ### Delivery evidence
@@ -928,18 +928,18 @@ These measures will reveal whether the proposed moat is real.
 
 ## 13. Main risks and mitigations
 
-| Risk                                       | Why it could break the model                             | Mitigation                                                                                                      |
-| ------------------------------------------ | -------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
-| Technical leads become a bottleneck        | More AI and student output creates more review work      | Cap concurrent pods, use small batches, automate checks, train engineers in system ownership, measure lead time |
-| Client sees “student” as execution risk    | Transparency without operating proof can lower trust     | Lead with accountable system and named owners; show acceptance gates and case evidence                          |
-| AI hides weak understanding                | Code may pass superficial checks but be hard to operate  | Require explanation, debugging and independent modification; use adversarial tests and incident drills          |
-| Broad positioning dilutes credibility      | “We solve anything” gives buyers no reason to choose NST | Use a narrow entry wedge and broad delivery capability behind it                                                |
-| Fixed scope creates margin loss            | Ambiguity and dependencies are discovered too late       | Make the diagnostic sprint mandatory for uncertain work; state client dependencies and change rules             |
-| Student turnover destroys context          | Project knowledge leaves with a cohort                   | Stable pod overlap, ADRs, runbooks, recorded walkthroughs and shared ownership                                  |
-| Education goals conflict with client goals | A project becomes a training exercise                    | Client outcome takes precedence; sandbox training before production responsibility                              |
-| No public proof compounds slowly           | Every sale begins from zero trust                        | Secure publication rights early, create technical case studies and release useful public work                   |
-| Tool and model advantage commoditises      | Competitors gain the same capabilities                   | Invest in workflow, data, evals, domain knowledge, talent and reputation rather than model access               |
-| IP or data handling is unclear             | Enterprise and institutional clients will not proceed    | Publish contract terms, approved AI-tool policy, data retention rules and ownership model                       |
+| Risk                                       | Why it could break the model                                             | Mitigation                                                                                                      |
+| ------------------------------------------ | ------------------------------------------------------------------------ | --------------------------------------------------------------------------------------------------------------- |
+| Technical leads become a bottleneck        | More AI and student output creates more review work                      | Cap concurrent pods, use small batches, automate checks, train engineers in system ownership, measure lead time |
+| Client sees “student” as execution risk    | Transparency without operating proof can lower trust                     | Lead with accountable system and named owners; show acceptance gates and case evidence                          |
+| AI hides weak understanding                | Code may pass superficial checks but be hard to operate                  | Require explanation, debugging and independent modification; use adversarial tests and incident drills          |
+| Broad positioning dilutes credibility      | “We solve anything” gives buyers no reason to choose NewtonSchool Studio | Use a narrow entry wedge and broad delivery capability behind it                                                |
+| Fixed scope creates margin loss            | Ambiguity and dependencies are discovered too late                       | Make the diagnostic sprint mandatory for uncertain work; state client dependencies and change rules             |
+| Student turnover destroys context          | Project knowledge leaves with a cohort                                   | Stable pod overlap, ADRs, runbooks, recorded walkthroughs and shared ownership                                  |
+| Education goals conflict with client goals | A project becomes a training exercise                                    | Client outcome takes precedence; sandbox training before production responsibility                              |
+| No public proof compounds slowly           | Every sale begins from zero trust                                        | Secure publication rights early, create technical case studies and release useful public work                   |
+| Tool and model advantage commoditises      | Competitors gain the same capabilities                                   | Invest in workflow, data, evals, domain knowledge, talent and reputation rather than model access               |
+| IP or data handling is unclear             | Enterprise and institutional clients will not proceed                    | Publish contract terms, approved AI-tool policy, data retention rules and ownership model                       |
 
 ---
 
@@ -978,11 +978,11 @@ These measures will reveal whether the proposed moat is real.
 
 ## 15. Final strategic recommendation
 
-The age of AI does not remove NST Studio's reason to exist. It raises the standard for it.
+The age of AI does not remove NewtonSchool Studio's reason to exist. It raises the standard for it.
 
-If NST presents itself as an affordable source of people who write code under supervision, AI will continue to weaken that proposition.
+If NewtonSchool Studio presents itself as an affordable source of people who write code under supervision, AI will continue to weaken that proposition.
 
-If NST becomes a disciplined system that combines ambitious young engineers, experienced judgment, agentic execution, real-world immersion and production accountability, AI strengthens the proposition.
+If NewtonSchool Studio becomes a disciplined system that combines ambitious young engineers, experienced judgment, agentic execution, real-world immersion and production accountability, AI strengthens the proposition.
 
 The strategic move is:
 
@@ -1046,4 +1046,4 @@ That is more difficult to copy than a team structure, a model subscription or a 
 - Public websites reveal positioning, offers and visible proof, but not full margins, staffing, sales process or client contracts.
 - Callstack and Code Nation business-model conclusions are inferences from their public materials.
 - AI capability and productivity evidence is changing quickly. The report intentionally includes both positive and negative findings and should be reviewed at least every six months.
-- Recommendations about NST's advantage are hypotheses until supported by its own delivery, talent and client data.
+- Recommendations about NewtonSchool Studio's advantage are hypotheses until supported by its own delivery, talent and client data.

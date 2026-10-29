@@ -19,7 +19,7 @@ Public welfare schemes are created to reach people who need support. But discove
 
 Information may be distributed across many public sources, described in different ways and updated independently. A person looking for help has to know where to search before they can even begin to understand what might apply to them.
 
-In collaboration with IITR, NST Studio worked on a simpler idea: bring that fragmented information into one place and make it searchable.
+In collaboration with IITR, NewtonSchool Studio worked on a simpler idea: bring that fragmented information into one place and make it searchable.
 
 ## Building a path from source material to search
 

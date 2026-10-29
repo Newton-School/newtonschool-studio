@@ -1,4 +1,4 @@
-# NST Studio Sales Agent Pipeline: Phase 0 Plan
+# NewtonSchool Studio Sales Agent Pipeline: Phase 0 Plan
 
 Status: proposed implementation plan
 Scope: foundation only; no production lead research or prospect-facing drafts
@@ -27,7 +27,7 @@ Build the pipeline as a private TypeScript service, separate from the public Nex
 Recommended deployment boundary:
 
 ```text
-nst-sales-agents/
+newtonschool-studio-sales-agents/
   src/
   tests/
   migrations/
@@ -247,7 +247,7 @@ Its concrete demo is:
 
 | Decision | Recommendation | Needed by | Status |
 |---|---|---|---|
-| Code location | New private `nst-sales-agents` repository | P0-01 | Owner decision required |
+| Code location | New private `newtonschool-studio-sales-agents` repository | P0-01 | Owner decision required |
 | Runtime | Node.js 22 + TypeScript ESM | P0-01 | Proposed |
 | Package manager | npm with committed lockfile | P0-01 | Proposed |
 | Test runner | Vitest | P0-01 | Proposed |

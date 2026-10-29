@@ -23,7 +23,7 @@ Maverick / FieldVue set out to make that process faster and more consistent with
 
 ## AI proposes; the contractor decides
 
-NST Studio built a mobile estimation workflow supported by computer vision.
+NewtonSchool Studio built a mobile estimation workflow supported by computer vision.
 
 A contractor captures site information in the field. The vision service processes that input, and the quote engine turns the result into a draft estimate. The contractor can then inspect the output, correct it when site conditions demand an override and save the final decision.
 

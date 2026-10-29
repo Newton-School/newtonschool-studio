@@ -10,7 +10,7 @@ const Arrow = () => <svg aria-hidden="true" viewBox="0 0 20 20"><path d="M4 10h1
 const CalendarIcon = () => <svg aria-hidden="true" viewBox="0 0 20 20"><rect x="3" y="4.5" width="14" height="12" rx="2"/><path d="M6.5 2.5v4M13.5 2.5v4M3 8h14"/></svg>;
 
 function Logo() {
-  return <a className="logo" href="#top" aria-label="NST Studio home"><span className="logo-image-wrap"><Image className="logo-image" src="/nst-logo.png" width={32} height={32} alt="" priority/></span><span>NST <b>Studio</b></span></a>;
+  return <a className="logo" href="#top" aria-label="NewtonSchool Studio home"><span className="logo-image-wrap"><Image className="logo-image" src="/newtonschool-studio-logo.png" width={32} height={32} alt="" priority/></span><span>NewtonSchool <b>Studio</b></span></a>;
 }
 
 function Icon({ name }: { name: string }) {
@@ -26,12 +26,12 @@ function Icon({ name }: { name: string }) {
 function ThemeControls({ compact = false }: { compact?: boolean }) {
   const [theme, setTheme] = useState<"light" | "dark">("light");
   useEffect(() => {
-    const savedTheme = localStorage.getItem("nst-theme") as "light" | "dark" | null;
+    const savedTheme = localStorage.getItem("newtonschool-studio-theme") as "light" | "dark" | null;
     const nextTheme = savedTheme || (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
     setTheme(nextTheme);
     document.documentElement.dataset.theme = nextTheme;
   }, []);
-  const changeTheme = () => { const value = theme === "light" ? "dark" : "light"; setTheme(value); document.documentElement.dataset.theme = value; localStorage.setItem("nst-theme", value); };
+  const changeTheme = () => { const value = theme === "light" ? "dark" : "light"; setTheme(value); document.documentElement.dataset.theme = value; localStorage.setItem("newtonschool-studio-theme", value); };
   return <div className={`theme-controls ${compact ? "compact" : ""}`} aria-label="Appearance controls">
     <button className="theme-toggle" onClick={changeTheme} aria-label={`Switch to ${theme === "light" ? "dark" : "light"} mode`}>
       <svg aria-hidden="true" viewBox="0 0 20 20"><path d={theme === "light" ? "M10 2v2M10 16v2M2 10h2M16 10h2M4.3 4.3l1.4 1.4M14.3 14.3l1.4 1.4M15.7 4.3l-1.4 1.4M5.7 14.3l-1.4 1.4M14 10a4 4 0 1 1-8 0 4 4 0 0 1 8 0Z" : "M17 12.5A7 7 0 0 1 7.5 3 7 7 0 1 0 17 12.5Z"}/></svg>
@@ -51,7 +51,7 @@ function Navigation() {
 
 function DeliverySystemDiagram() {
   return <div className="delivery-map-frame"><svg className="delivery-map" viewBox="0 0 420 760" role="img" aria-labelledby="delivery-map-title delivery-map-description">
-    <title id="delivery-map-title">NST Studio delivery system</title>
+    <title id="delivery-map-title">NewtonSchool Studio delivery system</title>
     <desc id="delivery-map-description">Product requirements and existing systems move through architecture, application development, services, data, artificial intelligence, quality assurance and cloud delivery into production software.</desc>
     <defs><marker id="map-arrow" viewBox="0 0 8 8" refX="7" refY="4" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 8 4 0 8Z"/></marker></defs>
 
@@ -131,7 +131,7 @@ export function StudioPage({ caseStudies }: { caseStudies: CaseStudySummary[] })
   return <>
     <Navigation />
     <main id="top">
-      <section className="hero"><div className="hero-grid"/><div className="container hero-layout"><div className="hero-copy" data-reveal><span className="eyebrow"><i/>Mentor-led software engineering</span><h1>We build MVPs, internal tools and AI features that <em>ship to production.</em></h1><p>Senior engineers lead the architecture and review every line. Our engineering pod builds it. You get production-grade software with a clean handover, on a fixed scope and timeline.</p><div className="hero-actions"><a className="button primary large" href="#booking"><CalendarIcon/>Book a 20-min scoping call</a><a className="text-link" href="/nst-studio-one-pager.pdf" download>Download the one-pager <Arrow/></a></div></div><div data-reveal><DeliverySystemDiagram/></div></div></section>
+      <section className="hero"><div className="hero-grid"/><div className="container hero-layout"><div className="hero-copy" data-reveal><span className="eyebrow"><i/>Mentor-led software engineering</span><h1>We build MVPs, internal tools and AI features that <em>ship to production.</em></h1><p>Senior engineers lead the architecture and review every line. Our engineering pod builds it. You get production-grade software with a clean handover, on a fixed scope and timeline.</p><div className="hero-actions"><a className="button primary large" href="#booking"><CalendarIcon/>Book a 20-min scoping call</a><a className="text-link" href="/newtonschool-studio-one-pager.pdf" download>Download the one-pager <Arrow/></a></div></div><div data-reveal><DeliverySystemDiagram/></div></div></section>
 
       <section className="section" id="services"><div className="container" data-reveal><SectionHeading eyebrow="01 · CAPABILITIES" title="Problems we take on" text="From early technical questions to production systems for complex operations."/><div className="service-grid">{services.map((item, index) => <Card className="service-card" key={item.title}><div className="service-icon"><Icon name={item.icon}/></div><span className="card-number">0{index + 1}</span><h3>{item.title}</h3><p>{item.body}</p></Card>)}</div></div></section>
 
@@ -147,9 +147,9 @@ export function StudioPage({ caseStudies }: { caseStudies: CaseStudySummary[] })
 
       <section className="section alt" id="faq"><div className="container faq-layout" data-reveal><SectionHeading eyebrow="07 · FAQ" title="Questions we expect" text="Straight answers before you spend time on a call."/><div className="faq-list">{faqs.map((item, index) => <FAQItem key={item.q} item={item} open={faqOpen === index} onClick={() => setFaqOpen(faqOpen === index ? -1 : index)}/>)}</div></div></section>
 
-      <section className="section booking" id="booking"><div className="container booking-panel" data-reveal><div className="booking-copy"><span className="eyebrow">08 · START HERE</span><h2>Tell us what you’re building.</h2><p>A 20-minute call to scope your project. You’ll leave with a clear recommendation, even if we’re not the right fit.</p><div className="call-points"><div><span>01</span><p>Describe the problem, users and deadline.</p></div><div><span>02</span><p>We identify the smallest useful scope.</p></div><div><span>03</span><p>You get a recommended next step.</p></div></div></div><div className="booking-widget" role="img" aria-label="Placeholder for Cal.com or Calendly booking widget"><div className="widget-top"><div className="widget-logo"><Image src="/nst-logo.png" width={32} height={32} alt=""/></div><div><strong>NST Studio</strong><span>20-minute scoping call</span></div></div><div className="widget-body"><span>OCTOBER 2026</span><div className="calendar-row">{["M","T","W","T","F"].map((d,i)=><b key={i}>{d}</b>)}</div><div className="calendar-row dates">{[5,6,7,8,9].map(d=><i key={d}>{d}</i>)}</div><div className="slot-placeholder"><span/><span/><span/></div><em>CAL.COM OR CALENDLY EMBED PLACEHOLDER</em></div></div></div></section>
+      <section className="section booking" id="booking"><div className="container booking-panel" data-reveal><div className="booking-copy"><span className="eyebrow">08 · START HERE</span><h2>Tell us what you’re building.</h2><p>A 20-minute call to scope your project. You’ll leave with a clear recommendation, even if we’re not the right fit.</p><div className="call-points"><div><span>01</span><p>Describe the problem, users and deadline.</p></div><div><span>02</span><p>We identify the smallest useful scope.</p></div><div><span>03</span><p>You get a recommended next step.</p></div></div></div><div className="booking-widget" role="img" aria-label="Placeholder for Cal.com or Calendly booking widget"><div className="widget-top"><div className="widget-logo"><Image src="/newtonschool-studio-logo.png" width={32} height={32} alt=""/></div><div><strong>NewtonSchool Studio</strong><span>20-minute scoping call</span></div></div><div className="widget-body"><span>OCTOBER 2026</span><div className="calendar-row">{["M","T","W","T","F"].map((d,i)=><b key={i}>{d}</b>)}</div><div className="calendar-row dates">{[5,6,7,8,9].map(d=><i key={d}>{d}</i>)}</div><div className="slot-placeholder"><span/><span/><span/></div><em>CAL.COM OR CALENDLY EMBED PLACEHOLDER</em></div></div></div></section>
     </main>
-    <footer><div className="container footer-grid"><div><Logo/><p>Mentor-led software engineering for teams with a real problem and a deadline.</p></div><div><span>CONTACT</span><span className="placeholder-link">Email · PLACEHOLDER</span><span className="placeholder-link">LinkedIn · PLACEHOLDER</span></div><div><span>INITIATIVE</span><p>A Newton School of Technology initiative</p><small>© 2026 NST Studio</small></div></div></footer>
+    <footer><div className="container footer-grid"><div><Logo/><p>Mentor-led software engineering for teams with a real problem and a deadline.</p></div><div><span>CONTACT</span><span className="placeholder-link">Email · PLACEHOLDER</span><span className="placeholder-link">LinkedIn · PLACEHOLDER</span></div><div><span>INITIATIVE</span><p>A Newton School of Technology initiative</p><small>© 2026 NewtonSchool Studio</small></div></div></footer>
     <div className="mobile-book"><a className="button primary" href="#booking"><CalendarIcon/>Book a 20-min scoping call</a></div>
   </>;
 }

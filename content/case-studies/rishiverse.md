@@ -23,7 +23,7 @@ The challenge was not simply to digitise a collection of forms. It was to create
 
 ## From scattered processes to one platform
 
-NST Studio built a production ERP that brought core university workflows behind a common application and API layer.
+NewtonSchool Studio built a production ERP that brought core university workflows behind a common application and API layer.
 
 The platform included more than 100 REST APIs, a PostgreSQL data layer and integrations for Aadhaar KYC. It also supported face-recognition workflows for campus security.
 

@@ -8,7 +8,7 @@ from reportlab.pdfbase.pdfmetrics import stringWidth
 from reportlab.platypus import Paragraph
 from reportlab.pdfgen.canvas import Canvas
 
-OUT = Path(__file__).resolve().parents[1] / "public" / "nst-studio-one-pager.pdf"
+OUT = Path(__file__).resolve().parents[1] / "public" / "newtonschool-studio-one-pager.pdf"
 OUT.parent.mkdir(parents=True, exist_ok=True)
 
 BLUE = HexColor("#0673F9")
@@ -20,8 +20,8 @@ WHITE = HexColor("#FFFFFF")
 
 W, H = A4
 c = Canvas(str(OUT), pagesize=A4)
-c.setTitle("NST Studio - One-page overview")
-c.setAuthor("NST Studio")
+c.setTitle("NewtonSchool Studio - One-page overview")
+c.setAuthor("NewtonSchool Studio")
 
 margin = 17 * mm
 usable = W - 2 * margin
@@ -60,7 +60,7 @@ c.rect(0, H - 4 * mm, W, 4 * mm, fill=1, stroke=0)
 c.setFillColor(BLUE)
 c.roundRect(margin, H - 23 * mm, 9 * mm, 9 * mm, 2 * mm, fill=1, stroke=0)
 text(margin + 4.5 * mm, H - 20.1 * mm, "N", 9, WHITE, "Helvetica-Bold")
-text(margin + 12 * mm, H - 19.8 * mm, "NST Studio", 13, INK, "Helvetica-Bold")
+text(margin + 12 * mm, H - 19.8 * mm, "NewtonSchool Studio", 13, INK, "Helvetica-Bold")
 text(W - margin, H - 19.4 * mm, "MENTOR-LED SOFTWARE ENGINEERING", 6.6, BLUE, "Courier-Bold", "right")
 
 # Hero

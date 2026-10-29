@@ -1,4 +1,4 @@
-# NST Studio: Services Business Economics Playbook
+# NewtonSchool Studio: Services Business Economics Playbook
 
 **Internal business-planning document — not website copy**
 **Purpose:** Explain how a software-services business makes, loses, prices, and manages money.
@@ -99,7 +99,7 @@ Office costs, central leadership, finance, recruitment, legal, brand marketing, 
 
 The 2025 Professional Services Maturity Benchmark reported project margins around 38.8% for software professional services and 35.6% for agencies. These are useful warning lines, not necessarily ideal targets. [SPI benchmark](https://get.kantata.com/rs/677-LEJ-696/images/2025-ps-maturity-benchmark.pdf)
 
-For NST, a sensible initial target is:
+For NewtonSchool Studio, a sensible initial target is:
 
 - Fixed-scope project gross margin: **45–50% planned**, never below 40% without a strategic reason.
 - Pod/retainer gross margin: **40–50%**.
@@ -281,7 +281,7 @@ A project can have a high senior rate but a reasonable blended rate because seni
 
 ## 8. The mentor-led delivery model
 
-NST’s economic advantage is leverage: a smaller quantity of expensive mentor time improves a larger quantity of lower-cost engineering time.
+NewtonSchool Studio’s economic advantage is leverage: a smaller quantity of expensive mentor time improves a larger quantity of lower-cost engineering time.
 
 ### Mentor leverage ratio
 
@@ -333,7 +333,7 @@ Low-cost junior hours are not cheap if they create enough rework to consume scar
 
 ## 9. Fixed-price project economics
 
-Fixed-price does not mean the cost is fixed. The customer’s price is fixed; NST’s cost continues changing until delivery ends.
+Fixed-price does not mean the cost is fixed. The customer’s price is fixed; NewtonSchool Studio’s cost continues changing until delivery ends.
 
 ### Bottom-up project cost
 
@@ -430,7 +430,7 @@ SPI = EV / PV
 
 ## 10. Time-and-materials economics
 
-The client pays for actual time, but NST still needs rate and utilization discipline.
+The client pays for actual time, but NewtonSchool Studio still needs rate and utilization discipline.
 
 ```text
 T&M_revenue = sum(billable_hours_by_role × contracted_role_rate)
@@ -656,7 +656,7 @@ Only comparable scope, quality level, geography, and engagement type belong in t
 market_target_price = peer_median_price × positioning_factor
 ```
 
-For NST:
+For NewtonSchool Studio:
 
 ```text
 positioning_factor = 45% to 60%
@@ -675,7 +675,7 @@ value_ceiling
   = customer_expected_economic_benefit × acceptable_value_share
 ```
 
-For example, if the customer can reasonably expect ₹50L of measurable benefit and is willing to share 10% of that value, the value ceiling is ₹5L. If NST’s economic floor is ₹7L, the engagement does not work at the current scope even if the market reference says it should.
+For example, if the customer can reasonably expect ₹50L of measurable benefit and is willing to share 10% of that value, the value ceiling is ₹5L. If NewtonSchool Studio’s economic floor is ₹7L, the engagement does not work at the current scope even if the market reference says it should.
 
 ### Final pricing rule
 
@@ -727,7 +727,7 @@ expected_value
   - implementation_and_operating_cost
 ```
 
-These formulas help price outcomes, but do not use pure outcome pricing when NST cannot control sales adoption, data quality, internal process changes, or other drivers of the result.
+These formulas help price outcomes, but do not use pure outcome pricing when NewtonSchool Studio cannot control sales adoption, data quality, internal process changes, or other drivers of the result.
 
 ## 17. Break-even economics
 
@@ -979,7 +979,7 @@ deferred_revenue
   = cash_invoiced_or_collected_before_work_is_earned
 ```
 
-Advance payment helps cash but is not immediately profit; NST still owes the delivery.
+Advance payment helps cash but is not immediately profit; NewtonSchool Studio still owes the delivery.
 
 ### Project cash exposure
 
@@ -989,7 +989,7 @@ cash_exposure_at_time_t
   - cumulative_customer_cash_received
 ```
 
-The maximum positive value is the working capital NST must fund.
+The maximum positive value is the working capital NewtonSchool Studio must fund.
 
 ### Cash runway
 
@@ -1153,7 +1153,7 @@ In the example:
 ₹5L / ₹4L = 1.25
 ```
 
-NST must sell 25% more identical work merely to preserve total gross profit.
+NewtonSchool Studio must sell 25% more identical work merely to preserve total gross profit.
 
 Discount only in exchange for lower commercial risk: advance payment, longer commitment, reusable scope, reliable forecast, or lower sales cost.
 
@@ -1284,7 +1284,7 @@ If you remember only ten questions, use these:
 9. Are discounts buying lower risk or merely reducing profit?
 10. Does the next hire have enough contracted or probability-weighted demand to pay back?
 
-## 30. Final economic principles for NST
+## 30. Final economic principles for NewtonSchool Studio
 
 1. **Scope is inventory.** Giving away scope is economically similar to giving away products.
 2. **Time is perishable.** An unused delivery hour cannot be stored and sold next month.

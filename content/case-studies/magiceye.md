@@ -20,7 +20,7 @@ When the analysis changes from one race to another, it becomes hard to compare p
 
 ## Turning race inputs into a prediction workflow
 
-NST Studio built an AI-assisted prediction model for horse racing.
+NewtonSchool Studio built an AI-assisted prediction model for horse racing.
 
 The workflow prepares structured race inputs, passes them through the model and presents the resulting prediction in a form that can be reviewed. This creates a consistent path through the analysis rather than treating every race as a separate manual exercise.
 

@@ -21,7 +21,7 @@ But the difficult questions begin after the diagram is drawn. What happens when 
 
 Answering those questions usually requires infrastructure, traffic generation and observability tooling. That makes experimentation expensive at the point when a design is still easiest to change.
 
-NST Studio built the System Design Simulator to make those questions testable earlier.
+NewtonSchool Studio built the System Design Simulator to make those questions testable earlier.
 
 ## From a static topology to a running experiment
 

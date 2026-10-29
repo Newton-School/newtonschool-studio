@@ -1,8 +1,8 @@
 # NewtonSchool Studio
 
-Single-page marketing website for NST Studio, a mentor-led software engineering studio based in Bengaluru, India.
+Single-page marketing website for NewtonSchool Studio, a mentor-led software engineering studio based in Bengaluru, India.
 
-The site presents NST Studio's delivery model, capabilities, production work, packages, technical stack, mentors, FAQs, and booking flow. Its primary conversion goal is a 20-minute scoping call. The secondary action is downloading the one-page PDF.
+The site presents NewtonSchool Studio's delivery model, capabilities, production work, packages, technical stack, mentors, FAQs, and booking flow. Its primary conversion goal is a 20-minute scoping call. The secondary action is downloading the one-page PDF.
 
 ## Features
 
@@ -14,7 +14,7 @@ The site presents NST Studio's delivery model, capabilities, production work, pa
 - Accessible headings, controls, focus states, and image descriptions
 - Reduced-motion support
 - Line-based architecture illustration and labelled screenshot placeholders
-- Downloadable NST Studio one-page PDF
+- Downloadable NewtonSchool Studio one-page PDF
 - Markdown-powered case studies with automatic preview routes
 - Mermaid diagrams, syntax-highlighted code, media, embeds, callouts, and toggles
 - Centralized content for copy updates
@@ -83,7 +83,7 @@ content/
   case-studies/       Markdown source files for case studies
   site.ts              Editable site copy and structured content
 public/
-  nst-studio-one-pager.pdf
+  newtonschool-studio-one-pager.pdf
 scripts/
   build_one_pager.py   PDF source and generation script
 ```
@@ -163,7 +163,7 @@ python3 scripts/build_one_pager.py
 The generated file is written to:
 
 ```text
-public/nst-studio-one-pager.pdf
+public/newtonschool-studio-one-pager.pdf
 ```
 
 ## Current placeholders
@@ -177,7 +177,7 @@ The following items require confirmed production information before launch:
 - Code and IP ownership policy
 - Support and warranty terms
 - Client approval for names, project details, and published metrics
-- Final NST Studio logo asset
+- Final NewtonSchool Studio logo asset
 
 Placeholders are labelled in the interface so they cannot be mistaken for confirmed content.
 

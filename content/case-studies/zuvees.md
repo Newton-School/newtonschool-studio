@@ -23,7 +23,7 @@ Zuvees needed a reliable centre for that moving network.
 
 ## Building the operational layer between every channel
 
-NST Studio built a custom order management system that connects the storefront, marketplaces, warehouse tooling and fulfilment hubs.
+NewtonSchool Studio built a custom order management system that connects the storefront, marketplaces, warehouse tooling and fulfilment hubs.
 
 Instead of asking the operations team to reconcile each channel manually, the platform gives orders and inventory a shared path through the business.
 

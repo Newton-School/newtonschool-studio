@@ -1,4 +1,4 @@
-# NST Studio: Service Pricing Market Research
+# NewtonSchool Studio: Service Pricing Market Research
 
 **Internal business-planning document — not website copy**
 **Research date:** 26 October 2026
@@ -6,7 +6,7 @@
 
 ## Executive decision
 
-NST Studio should not advertise itself simply as “50% cheaper than the market.” That framing makes price the product, attracts high-scope/low-budget buyers, and can imply half-quality. The stronger commercial position is:
+NewtonSchool Studio should not advertise itself simply as “50% cheaper than the market.” That framing makes price the product, attracts high-scope/low-budget buyers, and can imply half-quality. The stronger commercial position is:
 
 > **Senior-governed product delivery at roughly 45–60% of the price of an established agency, achieved through a mentor-led delivery model—not through weaker engineering standards.**
 
@@ -40,7 +40,7 @@ This is close to 50% of the relevant market on discovery, common MVP work, and s
 
 ## Scope and methodology
 
-“All service-based companies” is too broad to be a useful market. This research covers companies that overlap NST Studio’s actual offering: custom software, startup MVPs, internal tools/ERP workflows, AI features and prototypes, backend/cloud work, applied technical research, and dedicated product teams.
+“All service-based companies” is too broad to be a useful market. This research covers companies that overlap NewtonSchool Studio’s actual offering: custom software, startup MVPs, internal tools/ERP workflows, AI features and prototypes, backend/cloud work, applied technical research, and dedicated product teams.
 
 The evidence combines:
 
@@ -105,7 +105,7 @@ Published prices are uncommon, but the following examples make the structure of 
 
 Sources: [360 Fahrenheit](https://360fahrenheit.com/pricing.html), [Hasher](https://hasher.sh/pricing), [FlowPilot](https://flowpilot.co.in/pricing), [CountryDevs](https://www.countrydevs.com/offers), and [Eazyware AI proof pricing](https://www.theeazyware.com/blog/ai-proof-of-concept-development-in-india-costs-delivery-models-and-data-rules/).
 
-## Market bands by NST service
+## Market bands by NewtonSchool Studio service
 
 ### 1. Discovery, architecture, and feasibility
 
@@ -113,7 +113,7 @@ Sources: [360 Fahrenheit](https://360fahrenheit.com/pricing.html), [Hasher](http
 
 **50% reference band:** roughly ₹0.75–2.0L when the comparison set is an India/global boutique mix.
 
-**NST recommendation:**
+**NewtonSchool Studio recommendation:**
 
 - Discovery & Architecture Sprint: **₹1.2L** for one product, one primary workflow, and no live technical experiment.
 - Complex Discovery: **₹2.0L** for multiple stakeholder groups, legacy integration, regulated data, or clickable prototype work.
@@ -127,7 +127,7 @@ India-focused published estimates commonly place launchable MVPs around **₹4�
 
 **50% reference band:** approximately ₹2–10L, but the bottom of that range is a prototype or very narrow single-flow product—not a broadly “production-ready MVP.”
 
-**NST recommendation:**
+**NewtonSchool Studio recommendation:**
 
 | Tier | Price | Scope boundary | Typical team / duration |
 |---|---:|---|---|
@@ -141,7 +141,7 @@ The website’s current “from ₹4L” can only remain if it is explicitly a n
 
 The market often labels this work “custom software,” “ERP consulting,” or “business-process automation.” Clutch places ERP consulting at $25–49/hour and most broader IT-services projects at $10k–49,999. [Clutch IT-services pricing](https://clutch.co/it-services/msp/pricing)
 
-**NST recommendation:**
+**NewtonSchool Studio recommendation:**
 
 | Offer | Price | Boundary |
 |---|---:|---|
@@ -155,7 +155,7 @@ Do not price a custom ERP as one fixed project before discovery. Sell discovery,
 
 Clutch reports a typical reviewed AI project band of $10k–49,999, an average reviewed project of $120,595, and a common provider rate of $25–49/hour. [Clutch AI pricing guide](https://clutch.co/developers/artificial-intelligence/pricing) India-specific public programmes show ₹2L for discovery, ₹4–6.8L for a proof, and ₹17.6L as the starting point for a six-week AI MVP.
 
-**NST recommendation:**
+**NewtonSchool Studio recommendation:**
 
 | Stage | Price | Deliverable |
 |---|---:|---|
@@ -170,7 +170,7 @@ Always charge model/API usage, vector storage, labelling, and special hardware s
 
 Clutch’s cloud category shows typical reviewed projects at $10k–49,999. It lists India at $25–49/hour and an overall cloud-consulting average of $100–149/hour. [Clutch cloud pricing guide](https://clutch.co/it-services/cloud/pricing)
 
-**NST recommendation:**
+**NewtonSchool Studio recommendation:**
 
 | Offer | Price | Typical content |
 |---|---:|---|
@@ -204,7 +204,7 @@ At exactly half of these market bands:
 
 That makes the current ₹5L/month pod credible, provided it is a starter pod and its capacity is explicit.
 
-| NST pod | Monthly price | Suggested composition | Commitment |
+| NewtonSchool Studio pod | Monthly price | Suggested composition | Commitment |
 |---|---:|---|---|
 | Starter | ₹5.0–6.0L | 2 engineers, fractional senior mentor, shared QA/delivery | 3 months |
 | Core | ₹7.5–9.0L | 3 engineers, fractional senior mentor, 0.5 QA, product/delivery oversight | 3 months |
@@ -212,11 +212,11 @@ That makes the current ₹5L/month pod credible, provided it is a starter pod an
 
 Sell a pod as **reserved capacity with a stable team**, not unlimited feature delivery. State holiday treatment, replacement policy, meeting load, time-zone overlap, support hours, and what happens to unused capacity.
 
-## How companies charge—and when NST should use each model
+## How companies charge—and when NewtonSchool Studio should use each model
 
 Professional-services research still finds time-and-materials the most common billing method: a 2025 Harvest survey reported **57% T&M, 27% fixed fee, and 9% retainer**. [Harvest professional-services report](https://www.getharvest.com/hubfs/downloads/harvest-the-state-of-professional-services-2025.pdf)
 
-| Model | How the buyer pays | Best use at NST | Main control |
+| Model | How the buyer pays | Best use at NewtonSchool Studio | Main control |
 |---|---|---|---|
 | Fixed scope / fixed fee | One price for named deliverables | Discovery, narrow MVP, audit, proof | Written assumptions, exclusions, acceptance criteria, change orders |
 | Fixed milestones | Predetermined amount at each accepted stage | Larger MVP, internal tool, migration | Each milestone must have its own exit criteria |
@@ -237,9 +237,9 @@ For every offer, record at least five comparable prices and calculate the median
 - Freelancer-only quotes with no delivery governance.
 - Enterprise consultancies whose price mainly reflects procurement and brand overhead.
 - “Starting at” offers that do not include a comparable scope.
-- No-code prototypes when NST is offering production code.
+- No-code prototypes when NewtonSchool Studio is offering production code.
 
-Set NST’s target list price at **50–60% of the adjusted peer median**, then apply the cost floor below. If the cost floor is higher, the price must rise or the scope must shrink.
+Set NewtonSchool Studio’s target list price at **50–60% of the adjusted peer median**, then apply the cost floor below. If the cost floor is higher, the price must rise or the scope must shrink.
 
 ### Never let the discount break delivery economics
 
@@ -275,7 +275,7 @@ Even when clients see fixed prices, track planned and actual effort against inte
 | Senior mentor / architect / specialist | ₹4,000–6,000/hour |
 | Blended project planning rate | ₹2,000–2,750/hour |
 
-These are planning assumptions, not a public rate card. Replace them with NST’s actual fully loaded costs once compensation, utilization, and mentor availability are known.
+These are planning assumptions, not a public rate card. Replace them with NewtonSchool Studio’s actual fully loaded costs once compensation, utilization, and mentor availability are known.
 
 ## Domestic and international pricing should differ
 
@@ -329,7 +329,7 @@ Do not negotiate the day rate downward. Trade price only for something valuable:
 
 ## Risks in leading with half-market pricing
 
-1. **Wrong anchor:** prospects may compare NST with freelancers, making a fair price look expensive.
+1. **Wrong anchor:** prospects may compare NewtonSchool Studio with freelancers, making a fair price look expensive.
 2. **Quality inference:** a numerical 50% claim can imply half the capability.
 3. **Scope pressure:** low entry pricing encourages clients to treat exceptions as included.
 4. **Mentor bottleneck:** the business model fails if senior review time is not costed and scheduled.
@@ -361,7 +361,7 @@ Track quoted price, won price, peer anchor, estimated hours, actual hours, gross
 
 ## Bottom line
 
-NST can credibly enter at about half of an established agency’s price, but only by comparing like with like and enforcing scope discipline. The strongest launch portfolio is:
+NewtonSchool Studio can credibly enter at about half of an established agency’s price, but only by comparing like with like and enforcing scope discipline. The strongest launch portfolio is:
 
 1. **₹1.2L Discovery** as the low-risk entry.
 2. **₹4.5L Essential MVP** with a deliberately narrow definition.
