@@ -1,72 +1,74 @@
 ---
 name: RishiVerse
 industry: Education · ERP
-problem: A university of 5,000+ students ran 25+ departments on paper.
-build: A production ERP with 100+ REST APIs, Aadhaar KYC and face-recognition campus security.
+problem: A university serving 5,000+ students coordinated work across 25+ departments using paper records and manual processes.
+build: A production ERP with 100+ REST APIs, Aadhaar KYC and face-recognition support for campus security.
 tags:
   - Node.js
   - PostgreSQL
   - AWS
   - REST
-result: 99.8% uptime · 80% less manual admin work
+result: One connected operating system for university administration
 screen: University ERP · operations dashboard
 order: 1
 ---
 
-## The problem
+## A university cannot run as 25 separate offices
 
-A university serving more than 5,000 students operated workflows across more than 25 departments using paper records and manual coordination.
+For a student, university life should feel like one connected experience. Behind the scenes, however, every admission, identity check and administrative request can cross several departments.
 
-> Metrics and project details on this page are placeholders pending final client publication approval.
+At RishiVerse, a university serving more than 5,000 students, many of those workflows still depended on paper records and manual coordination. More than 25 departments had to keep information moving, even when the underlying process was fragmented.
 
-## What we built
+The challenge was not simply to digitise a collection of forms. It was to create a shared operational system that could support the university as a whole.
 
-NST Studio built a production ERP with more than 100 REST APIs, Aadhaar KYC, and face-recognition support for campus security.
+## From scattered processes to one platform
 
-| Area | Delivery |
-| --- | --- |
-| Operations | Shared workflows across departments |
-| Identity | Aadhaar KYC integration |
-| Campus security | Face-recognition workflow |
-| Platform | REST APIs backed by PostgreSQL and AWS |
+NewtonSchool Studio built a production ERP that brought core university workflows behind a common application and API layer.
 
-## System view
+The platform included more than 100 REST APIs, a PostgreSQL data layer and integrations for Aadhaar KYC. It also supported face-recognition workflows for campus security.
 
 ```mermaid
 flowchart LR
-  Users[Students and staff] --> App[ERP client]
-  App --> API[Node.js REST API]
+  Students[Students] --> ERP[University ERP]
+  Staff[Staff and departments] --> ERP
+  ERP --> API[Node.js REST APIs]
   API --> DB[(PostgreSQL)]
   API --> KYC[Aadhaar KYC]
   API --> Security[Campus security]
   API --> Cloud[AWS services]
 ```
 
-## Delivery controls
+This structure gave individual departments the workflows they needed without turning each department into another disconnected system.
 
-- [x] Mentor architecture review before implementation
-- [x] Pull-request review before merge
-- [x] Deployment documentation
-- [ ] Final client approval for public metrics
+## Identity had to work across the system
+
+Identity is not a feature that sits in one corner of a university ERP. It affects onboarding, access and day-to-day administration.
+
+By connecting Aadhaar KYC and campus-security workflows to the same platform, the system could carry identity through the wider student journey. The objective was a more consistent process, with less reliance on repeated paper checks and disconnected records.
+
+## The backend was designed as a foundation
+
+With more than 100 REST APIs, the application layer had to support many workflows without becoming a collection of one-off integrations.
+
+Node.js provided the service layer, PostgreSQL held the operational data and AWS supported deployment. Together, these components formed a foundation that could serve multiple university functions while keeping the interfaces between them explicit.
+
+| Area | What the platform provided |
+| --- | --- |
+| University operations | Shared workflows across more than 25 departments |
+| Identity | Aadhaar KYC integration |
+| Campus security | Face-recognition-supported workflows |
+| Application layer | More than 100 REST APIs |
+| Infrastructure | PostgreSQL-backed services deployed on AWS |
+
+## What changed
+
+RishiVerse moved from paper-led coordination towards a connected operating system for university administration. Students and staff could interact with shared digital workflows, while departments worked through a common platform rather than isolated records.
+
+The result was not just a digital version of the old process. It was an extensible foundation for operating a university at scale.
 
 <aside class="callout">
-  <strong>Result</strong>
-  <p>99.8% uptime and 80% less manual administration. These figures remain marked as placeholders until client confirmation.</p>
+  <strong>The outcome</strong>
+  <p>One production platform connected administrative, identity and campus-security workflows across a university serving more than 5,000 students.</p>
 </aside>
 
-<details>
-  <summary>Illustrative API response</summary>
-
-  The snippet below demonstrates how code is rendered. It is not production client code.
-
-  ```ts
-  type ServiceHealth = {
-    status: "healthy" | "degraded";
-    checkedAt: string;
-  };
-
-  export function health(): ServiceHealth {
-    return { status: "healthy", checkedAt: new Date().toISOString() };
-  }
-  ```
-</details>
+<!-- Editorial follow-up: confirm uptime, reduction in manual administration, delivery timeline and approved screenshots before adding quantitative claims. -->

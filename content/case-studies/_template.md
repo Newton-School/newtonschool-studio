@@ -2,7 +2,7 @@
 name: Case study title
 industry: Industry · Project type
 problem: One sentence describing the problem.
-build: One sentence describing what NST Studio built.
+build: One sentence describing what NewtonSchool Studio built.
 tags:
   - TypeScript
   - PostgreSQL

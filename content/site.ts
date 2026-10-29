@@ -1,15 +1,10 @@
-export const metrics = [
-  { value: "99.8%", label: "uptime on a university ERP" },
-  { value: "<200ms", label: "p95 API response time" },
-  { value: "80%", label: "less manual admin work" },
-  { value: "100+", label: "production APIs shipped" },
-];
-
 export const services = [
   { icon: "window", title: "MVPs for startups", body: "Production-ready first versions with real backends and cloud deployment." },
   { icon: "workflow", title: "Internal tools and ERPs", body: "Dashboards, admin panels and workflow systems that replace spreadsheets." },
   { icon: "spark", title: "AI features", body: "Computer vision, LLM workflows and search, with human review built in." },
   { icon: "cloud", title: "Backend and cloud", body: "APIs, integrations, CI/CD and infrastructure that scale." },
+  { icon: "research", title: "Applied technology research", body: "Feasibility studies, technical experiments and working prototypes for complex technical questions." },
+  { icon: "problem", title: "Real-world problem solving", body: "We map the people, process and constraints, then build the technology needed to make the system work." },
 ] as const;
 
 export const process = [
@@ -34,11 +29,14 @@ export const packages = [
 ];
 
 export const stack = {
-  Frontend: ["TypeScript", "React", "Next.js", "Tailwind"],
-  Backend: ["Node.js", "NestJS", "Python", "FastAPI", "Django"],
-  Data: ["PostgreSQL", "MongoDB", "Redis"],
-  "Cloud and DevOps": ["AWS", "GCP", "Docker", "Terraform", "GitHub Actions"],
-  AI: ["Vertex AI"],
+  "Web and mobile": ["TypeScript", "React", "Next.js", "Vue", "Nuxt", "Angular", "React Native", "Flutter", "Swift", "Kotlin"],
+  "Backend and APIs": ["Node.js", "NestJS", "Python", "FastAPI", "Django", "Java", "Spring Boot", "Go", ".NET", "Ruby on Rails", "PHP", "Laravel"],
+  "Data, search and analytics": ["PostgreSQL", "MySQL", "MongoDB", "Redis", "DynamoDB", "OpenSearch", "Elasticsearch", "ClickHouse", "BigQuery", "Snowflake"],
+  "Cloud and edge": ["AWS", "GCP", "Azure", "Cloudflare", "Vercel", "Firebase", "Supabase"],
+  "Platform and observability": ["Docker", "Kubernetes", "Terraform", "Helm", "GitHub Actions", "GitLab CI", "Argo CD", "Prometheus", "Grafana", "Datadog", "Sentry"],
+  "AI and machine learning": ["OpenAI", "Anthropic", "Gemini", "Vertex AI", "Amazon Bedrock", "Azure AI", "Hugging Face", "PyTorch", "TensorFlow", "LangChain", "LlamaIndex", "pgvector", "Pinecone", "Weaviate"],
+  "Messaging and workflows": ["REST", "GraphQL", "gRPC", "WebSockets", "Kafka", "RabbitMQ", "SQS", "Pub/Sub", "Temporal"],
+  "Quality, security and identity": ["Playwright", "Cypress", "Vitest", "Jest", "Pytest", "k6", "SonarQube", "Snyk", "Auth0", "Keycloak"],
 };
 
 export const faqs = [
