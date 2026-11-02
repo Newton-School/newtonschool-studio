@@ -1,3 +1,25 @@
 {
+  "cache": {
+    "rules": [
+      { "match": "/_next/static/**", "browser": "immutable", "edgeTtl": 31536000 },
+      { "match": "/**index.txt", "browser": "revalidate" },
+      { "match": "/**__next.*.txt", "browser": "revalidate" },
+      { "match": "/**.png", "browser": 300 },
+      { "match": "/**.jpg", "browser": 300 },
+      { "match": "/**.jpeg", "browser": 300 },
+      { "match": "/**.gif", "browser": 300 },
+      { "match": "/**.webp", "browser": 300 },
+      { "match": "/**.avif", "browser": 300 },
+      { "match": "/**.svg", "browser": 300 },
+      { "match": "/**.ico", "browser": 300 },
+      { "match": "/**.mp4", "browser": 300 },
+      { "match": "/**.webm", "browser": 300 },
+      { "match": "/**.pdf", "browser": 300 },
+      { "match": "/**.zip", "browser": 300 },
+      { "match": "/**.txt", "browser": 300 },
+      { "match": "/**.csv", "browser": 300 },
+      { "match": "/**.md", "browser": 300 }
+    ]
+  },
   "robots": { "crawl": "allow", "index": false, "follow": true, "archive": true }
 }
