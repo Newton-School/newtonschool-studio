@@ -12,13 +12,44 @@ screen: Product area · screenshot label
 order: 99
 ---
 
-## The problem
+## What was stuck
 
-Write the client context and the operational problem here.
+Describe the client context, the current state and why the problem had not moved forward.
 
-## What we built
+## Constraints
 
-Describe the product, important workflows, and technical boundaries.
+List the user, operating, technical, data, regulatory and timeline constraints that shaped the work.
+
+## What we decided
+
+Explain the important product and technical decisions. Include the alternatives considered when they help a technical reader understand the trade-off.
+
+## The system
+
+Describe the product, important workflows, architecture and technical boundaries. Use screenshots, diagrams and code where they provide evidence.
+
+## How we validated it
+
+Document the acceptance criteria, tests, evaluations, user checks and production observations used to decide that the system was ready.
+
+## What went into production
+
+State what was actually deployed or handed over. Separate shipped work from experiments and planned work.
+
+## What changed
+
+Report approved outcomes. Label any figures that still require client confirmation.
+
+## Handover and limitations
+
+Explain what the client received, what remains outside the system and any known operational limitations.
+
+<aside class="callout">
+  <strong>Publication note</strong>
+  <p>Add validation evidence, delivery dates, operational metrics and handover details only after client approval.</p>
+</aside>
+
+## Authoring reference
 
 ### Supported Markdown
 

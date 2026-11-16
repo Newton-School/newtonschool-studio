@@ -13,7 +13,7 @@ screen: Welfare portal · search results
 order: 4
 ---
 
-## Information only helps when people can find it
+## What was stuck
 
 Public welfare schemes are created to reach people who need support. But discovering the right scheme can itself become a difficult task.
 
@@ -21,7 +21,15 @@ Information may be distributed across many public sources, described in differen
 
 In collaboration with IITR, NewtonSchool Studio worked on a simpler idea: bring that fragmented information into one place and make it searchable.
 
-## Building a path from source material to search
+## Constraints
+
+Source material came from independent public sites, used inconsistent structures and could change without notice. Collected information also needed a review boundary before it became visible to people seeking support.
+
+## What we decided
+
+Collection and publication would be separate stages. Automated collectors could expand coverage, while a validation workflow controlled what entered the searchable public experience.
+
+## The system
 
 The result was a central portal supported by an automated collection workflow.
 
@@ -38,7 +46,7 @@ flowchart TD
 
 The pipeline matters as much as the interface. A search experience can only be useful when the information behind it is collected consistently and prepared for discovery.
 
-## Automation with a review boundary
+### Automation with a review boundary
 
 Automated collection reduces the effort required to monitor multiple sources, but public information should not flow into a user-facing product without control.
 
@@ -46,7 +54,7 @@ The validation stage creates that boundary. It separates gathering information f
 
 This pattern also makes the system easier to evolve: new sources can be added to the collection layer without changing the basic experience for the person using the portal.
 
-## A practical platform for public information
+### A practical platform for public information
 
 Django provided the application layer, while Puppeteer handled browser-based collection workflows. The system was packaged with Docker and deployed using AWS infrastructure.
 
@@ -58,11 +66,23 @@ Django provided the application layer, while Puppeteer handled browser-based col
 | Portal | Give users one place to explore available schemes |
 | Operations | Package with Docker and run on AWS |
 
+## How we validated it
+
+The system boundary makes validation an explicit stage between collection and search. The detailed review protocol, source count, update frequency and user-reach evidence are awaiting partner approval for publication.
+
+## What went into production
+
+The published system includes Puppeteer-based collection, a validation workflow, a search index, a Django portal, Docker packaging and AWS deployment.
+
 ## What changed
 
 Instead of requiring people to navigate a collection of disconnected sources, the portal created one searchable entry point for welfare-scheme information.
 
 The wider value lies in reducing the distance between a public programme and the person it was designed to support.
+
+## Handover and limitations
+
+Automated collection does not establish that source material is complete or current. The validation workflow remains necessary. Operating ownership and partner-approved limitations will be added when confirmed.
 
 <aside class="callout">
   <strong>The outcome</strong>

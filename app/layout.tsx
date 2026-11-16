@@ -2,8 +2,8 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "NewtonSchool Studio | Mentor-led software engineering",
-  description: "MVPs, internal tools, ERPs and AI features built by focused engineering pods under senior technical mentors.",
+  title: "NewtonSchool Studio | Problem-to-production engineering",
+  description: "A problem-to-production engineering studio that turns important product and operational problems into dependable software in production.",
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

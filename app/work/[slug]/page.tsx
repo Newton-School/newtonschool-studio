@@ -35,7 +35,7 @@ export default async function CaseStudyPage({ params }: Props) {
       <section className="case-hero"><div className="container"><span className="eyebrow">CASE STUDY · {study.industry}</span><h1>{study.name}</h1><p>{study.problem}</p><div className="case-hero-tags">{study.tags.map((tag) => <span key={tag}>{tag}</span>)}</div></div></section>
       <section className="case-summary"><div className="container"><div><span>WHAT WE BUILT</span><p>{study.build}</p></div><div><span>KEY RESULT</span><p>{study.result}</p></div></div></section>
       <article className="case-article container"><MarkdownContent content={study.content}/></article>
-      <section className="case-cta"><div className="container"><span className="eyebrow">HAVE A SIMILAR PROBLEM?</span><h2>Tell us what you’re building.</h2><p>Use a 20-minute scoping call to identify the smallest useful first release.</p><Link className="button primary large" href="/#booking">Book a 20-min scoping call</Link></div></section>
+      <section className="case-cta"><div className="container"><span className="eyebrow">HAVE A SIMILAR PROBLEM?</span><h2>Tell us what you’re building.</h2><p>Use a 20-minute scoping call to identify the smallest useful first release.</p><Link className="button primary large" href="/#booking">Book a 20-minute scoping call</Link></div></section>
     </main>
     <footer className="case-footer"><div className="container"><span>NewtonSchool Studio</span><span>A Newton School of Technology initiative</span></div></footer>
   </>;
