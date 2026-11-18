@@ -179,7 +179,6 @@ export function StudioPage({ caseStudies }: { caseStudies: CaseStudySummary[] })
       <section className="section proof-section" id="work"><div className="container" data-reveal>
         <SectionHeading eyebrow="04 · DELIVERY EVIDENCE" title="Work you can inspect" text="Each case study opens the problem, constraints, system decisions and available delivery evidence."/>
         <div className="case-grid">{caseStudies.map(item => <CaseStudyCard item={item} key={item.name}/>)}</div>
-        <p className="confirmation-note"><span/>Publication details and claims are included only after client approval. Pending evidence is labelled inside each case study.</p>
       </div></section>
 
       <section className="section alt" id="how"><div className="container" data-reveal>

@@ -166,9 +166,6 @@ svg { display: block; }
 .case-link { display: inline-flex; align-items: center; gap: 7px; margin-top: 20px; font-size: 13px; font-weight: 650; color: var(--muted); }
 .case-link small { color: var(--faint); font: 500 8px/1 "JetBrains Mono", monospace; }
 .case-card-link:hover .case-link { color: var(--accent); }
-.confirmation-note { margin: 22px 0 0; color: var(--faint); font: 500 10px/1.4 "JetBrains Mono", monospace; letter-spacing: .04em; }
-.confirmation-note span { display: inline-block; width: 6px; height: 6px; background: #e9a000; border-radius: 50%; margin-right: 8px; }
-
 /* AI comparison and delivery system */
 .ai-section .section-heading { max-width: 780px; }
 .comparison-grid { border-top: 1px solid var(--border-strong); }

@@ -154,7 +154,7 @@ export const faqs = [
   { q: "How do you control quality?", a: "Each engagement moves through five evidence gates: problem contract, system contract, executable acceptance, production evidence and ownership transfer." },
   { q: "Do you bill hourly?", a: "No. We agree on a defined outcome, scope and timeline. When uncertainty is high, we begin with a problem and architecture sprint." },
   { q: "Can you reduce the price?", a: "We reduce scope or phase delivery. The price stays tied to the outcome and evidence expected from the engagement." },
-  { q: "Who owns the code and IP?", a: "The final ownership policy is being confirmed. Contract terms are agreed before an engagement begins and will be published here once approved." },
-  { q: "What happens after handover?", a: "Support and warranty terms are agreed in the engagement scope. The Managed Product System is available when continuous delivery and retained context are needed." },
+  { q: "Who owns the code and IP?", a: "You do. IP ownership, warranty and support terms are set in the statement of work before the engagement starts." },
+  { q: "What happens after handover?", a: "Code, documentation, runbooks and access move to your team, and our access is removed. Support and warranty terms are set in the statement of work. The Managed Product System is available if you want continued delivery." },
   { q: "Can you work with our existing stack?", a: "Yes. We first assess its reliability, supportability and fit for the outcome, then work inside it or recommend a focused change." },
 ] as const;
