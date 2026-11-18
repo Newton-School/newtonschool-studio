@@ -1,14 +1,15 @@
 ---
-name: Maverick / FieldVue
-industry: AI · Field services
-problem: Painting contractors measured surfaces by hand, making quotes slow to prepare and difficult to reproduce consistently.
-build: A computer-vision estimation platform with contractor overrides and a replayable audit trail for every quote.
+name: FieldVue
+industry: AI for field services · North America
+problem: Painting contractors lost hours measuring sites and pricing quotes by hand, while estimates varied from one person to another.
+build: An event-driven mobile estimation pipeline with confidence scores, contractor overrides and a version-locked quote lifecycle.
 tags:
-  - Vertex AI
+  - Expo
   - EventBridge
-  - Microservices
-  - Mobile
-result: Repeatable estimates that keep contractors in control
+  - Step Functions
+  - DynamoDB
+  - Vertex AI Gemini
+result: 10 site photos analysed in 6–7 seconds, every sent quote version-locked
 image: /work/maverick-fieldvue/cover-phone.jpg
 imageAlt: FieldVue contractor app scoping a painting job room by room
 imageFit: contain
@@ -24,86 +25,49 @@ metrics:
 order: 3
 ---
 
-## What was stuck
+## The challenge
 
-For a painting contractor, estimating begins long before a price reaches the customer. Someone has to inspect the site, measure the relevant surfaces and translate those observations into a quote.
+Painting contractors lost hours measuring sites and pricing quotes by hand. Different estimators could price the same work differently. A sent quote is a commercial commitment, so AI-assisted estimates had to remain exact and under the contractor's control.
 
-When that work is done manually, the process can be slow and the result can vary from one estimator to another. Important context may live in photographs, handwritten notes or the estimator's memory. If a number is questioned later, reproducing how the team arrived at it is difficult.
+## What we built
 
-Maverick / FieldVue set out to make that process faster and more consistent without removing professional judgment from the field.
+NewtonSchool Studio built FieldVue as one Expo app for iOS and Android. Contractors capture site photos, review room-by-room estimates and control the final price.
 
-## Constraints
-
-Field images are imperfect, site conditions vary and a contractor must remain able to correct the system. Any estimate also needed a traceable history so a later reviewer could understand the machine output and the human decision.
-
-## What we decided
-
-The product would treat AI as a proposal inside a controlled workflow. A contractor would remain the final decision-maker, and the system would retain the original estimate, any override and the final quote.
-
-## The system
-
-NewtonSchool Studio built a mobile estimation workflow supported by computer vision.
+Every AI result includes a confidence score and supports a contractor override. Quotes move through a defined lifecycle: draft, priced, ready to send, sent, viewed, accepted or declined. Sending a quote locks that version. Any later change creates a new version.
 
 ![FieldVue room-by-room estimate and new-estimate screens](/work/maverick-fieldvue/detail-app-design.jpg)
 
-A contractor captures site information in the field. The vision service processes that input, and the quote engine turns the result into a draft estimate. The contractor can then inspect the output, correct it when site conditions demand an override and save the final decision.
+## How it works
+
+The event-driven pipeline resizes photos from the mobile app and stores them in S3. Vertex AI Gemini and Roboflow run inference. Pricing rules aggregate the detected work into a quote.
 
 ```mermaid
-sequenceDiagram
-  participant C as Contractor
-  participant M as Mobile app
-  participant V as Vision service
-  participant Q as Quote engine
-  C->>M: Capture site data
-  M->>V: Submit measurement request
-  V->>Q: Return estimate
-  Q-->>M: Prepare draft quote
-  C->>M: Review or override
-  M->>Q: Save final decision and history
+flowchart LR
+  A[Expo mobile app] --> B[Resize images]
+  B --> C[S3]
+  C --> D[EventBridge]
+  D --> E[SQS]
+  E --> F[Step Functions]
+  F --> G[Vertex AI Gemini]
+  F --> H[Roboflow]
+  G --> I[Confidence scores and overrides]
+  H --> I
+  I --> J[Pricing rules]
+  J --> K[Version-locked quote]
 ```
 
-The important design choice was to treat AI as part of a controlled workflow, not as an unquestionable answer.
+EventBridge, SQS and Step Functions coordinate the stages. DynamoDB stores workflow state. Image sizes are tuned to control model cost.
 
-### Why human review is part of the product
+## What made it hard
 
-Real sites are messy. Surfaces can be obstructed, photographs can be imperfect and local conditions can change what the job requires.
+- Ten site photos had to move through analysis quickly enough for field work.
+- Site images vary in angle, lighting and clarity.
+- AI output needed visible confidence and an override path.
+- Pricing rules had to aggregate room-level results consistently.
+- A sent quote had to remain immutable as a commercial record.
 
-The contractor therefore remains the final decision-maker. An estimate can be accepted or overridden, and that decision remains attached to the quote.
+## Results
 
-This gives the product four useful properties:
+FieldVue analyses 10 site photos in 6 to 7 seconds. Every sent quote is locked, and any change is saved as a new version. One Expo app serves both iOS and Android.
 
-1. The AI creates a consistent starting point.
-2. The contractor can apply field knowledge.
-3. The original estimate and subsequent override remain visible.
-4. The quote can be replayed when it needs to be reviewed.
-
-### An event-driven system behind the mobile workflow
-
-The experience appears as a simple sequence on the contractor's device, but several services have to cooperate behind it.
-
-Vertex AI supports the computer-vision step. Microservices separate the main areas of responsibility, while EventBridge coordinates events as work moves through the estimation and quotation flow.
-
-That separation matters because AI processing, user review and quote generation do not all happen in the same way or at the same speed. The architecture allows those stages to evolve while preserving a traceable end-to-end workflow.
-
-## How we validated it
-
-The product makes each estimate reviewable through contractor approval, override history and replayable quote records. The model evaluation method, baseline comparison, accuracy figures and field-test results have not yet been approved for publication.
-
-## What went into production
-
-The delivered workflow covers mobile capture, computer-vision processing, draft quote generation, contractor review, overrides and an auditable decision history. Vertex AI, EventBridge and separated services support the workflow behind the interface.
-
-## What changed
-
-The platform turns a manual measuring process into a repeatable digital workflow. Contractors receive AI-assisted estimates without losing control over the final number, and the business retains the history needed to understand how a quote was produced.
-
-## Handover and limitations
-
-AI output remains subject to site conditions and contractor review. Current model monitoring, support ownership and handover details are awaiting publication approval.
-
-<aside class="callout">
-  <strong>The outcome</strong>
-  <p>Field estimates became reviewable and reproducible: AI provides the first result, a contractor provides the final judgment, and the system preserves both.</p>
-</aside>
-
-<!-- Editorial follow-up: confirm estimation-time reduction, model evaluation method, accuracy figures, quote volume and approved screenshots. -->
+**Stack:** Expo and React Native, AWS EventBridge, SQS, Step Functions, DynamoDB and S3, Vertex AI Gemini and Roboflow.

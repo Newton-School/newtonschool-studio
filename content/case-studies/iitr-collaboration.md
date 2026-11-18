@@ -1,14 +1,15 @@
 ---
-name: IITR collaboration
-industry: Public sector · Information access
-problem: Welfare-scheme information was scattered across sources, making relevant support difficult to discover.
-build: A central searchable portal with automated data collection for underserved communities.
+name: IIT Roorkee
+industry: Public sector · IIT Roorkee × Social Studies Foundation
+problem: Welfare schemes were spread across government sites, PDFs and circulars, leaving citizens without a clear way to identify the support they could use.
+build: A six-stage data pipeline and eligibility-aware portal, with AI-assisted structuring, manual review and source tracking for every record.
 tags:
-  - Django
   - Puppeteer
-  - AWS
-  - Docker
-result: One searchable source for welfare-scheme information
+  - Django REST
+  - Next.js
+  - PostgreSQL
+  - Celery
+result: Scheme data from 13 states, handed over to IIT Roorkee
 image: /work/iitr-collaboration/cover.jpg
 imageAlt: Scholarship results filtered by department and state with a scheme detail panel
 logo: /logos/iitr-empowerhub.png
@@ -24,82 +25,61 @@ partner: IIT Roorkee × Social Studies Foundation
 order: 4
 ---
 
-## What was stuck
+## The challenge
 
-Public welfare schemes are created to reach people who need support. But discovering the right scheme can itself become a difficult task.
+Welfare schemes are spread across hundreds of government sites, PDFs and circulars. Every state publishes information in its own structure. The same scheme can appear on several sites, while eligibility and document requirements are usually written as prose.
 
-Information may be distributed across many public sources, described in different ways and updated independently. A person looking for help has to know where to search before they can even begin to understand what might apply to them.
+Citizens could not easily tell which schemes matched their circumstances. Records also needed to stay useful as schemes changed, closed and reopened, with every claim pointing back to its source.
 
-In collaboration with IITR, NewtonSchool Studio worked on a simpler idea: bring that fragmented information into one place and make it searchable.
+The work brought together IIT Roorkee and the Social Studies Foundation, an ICSSR-recognised non-profit that supports underserved communities.
 
-## Constraints
+## What we built
 
-Source material came from independent public sites, used inconsistent structures and could change without notice. Collected information also needed a review boundary before it became visible to people seeking support.
+NewtonSchool Studio built a six-stage data pipeline:
 
-## What we decided
+1. Extract source material.
+2. Clean and standardise records.
+3. Deduplicate repeated schemes.
+4. Classify eligibility.
+5. Map required documents.
+6. Track source and freshness.
 
-Collection and publication would be separate stages. Automated collectors could expand coverage, while a validation workflow controlled what entered the searchable public experience.
+AI assists with structuring the source material. Records with uncertain classifications move to manual review.
 
-## The system
-
-The result was a central portal supported by an automated collection workflow.
+The citizen portal collects an eligibility profile with state, category, education, BPL status and occupation. Citizens can then filter schemes by state, department and beneficiary group.
 
 ![Citizen eligibility profile with name, email and age blurred](/work/iitr-collaboration/detail-eligibility-profile.jpg)
 
-Puppeteer-based collectors gathered information from public sources. A validation step sat between collection and publication, and approved information moved into a search index used by the portal.
+## How it works
 
 ```mermaid
-flowchart TD
-  Sources[Public information sources] --> Collector[Automated collection]
-  Collector --> Review[Validation workflow]
-  Review --> Index[(Search index)]
-  Index --> Portal[Searchable portal]
-  Portal --> Communities[People seeking support]
+flowchart LR
+  A[Government sites, PDFs and circulars] --> B[Extract]
+  B --> C[Clean and standardise]
+  C --> D[Deduplicate]
+  D --> E[Classify eligibility]
+  E --> F[Map documents]
+  F --> G[Track source and freshness]
+  E --> H{Uncertain record?}
+  H -->|Yes| I[Manual review]
+  H -->|No| J[Citizen portal]
+  I --> J
+  G --> J
 ```
 
-The pipeline matters as much as the interface. A search experience can only be useful when the information behind it is collected consistently and prepared for discovery.
+Puppeteer and BeautifulSoup collect source material. Celery and Redis coordinate background work. Django REST serves the structured records to the Next.js portal, backed by PostgreSQL.
 
-### Automation with a review boundary
+## What made it hard
 
-Automated collection reduces the effort required to monitor multiple sources, but public information should not flow into a user-facing product without control.
+- Every state used a different publishing structure.
+- Duplicate schemes appeared across multiple sites.
+- Eligibility rules were embedded in prose.
+- Document requirements varied between schemes.
+- Schemes changed status over time.
+- Every record needed a reliable source and freshness trail.
 
-The validation stage creates that boundary. It separates gathering information from presenting it, allowing collected material to be reviewed before it becomes searchable.
+## Results
 
-This pattern also makes the system easier to evolve: new sources can be added to the collection layer without changing the basic experience for the person using the portal.
+The system collected and standardised scheme data from 13 states through six defined processing stages. It was handed over to IIT Roorkee, runs on IIT Roorkee servers and transferred code ownership to the institution.
 
-### A practical platform for public information
-
-Django provided the application layer, while Puppeteer handled browser-based collection workflows. The system was packaged with Docker and deployed using AWS infrastructure.
-
-| Layer | Responsibility |
-| --- | --- |
-| Collection | Gather scheme information from distributed public sources |
-| Validation | Review information before publication |
-| Search | Organise approved information for discovery |
-| Portal | Give users one place to explore available schemes |
-| Operations | Package with Docker and run on AWS |
-
-## How we validated it
-
-The system boundary makes validation an explicit stage between collection and search. The detailed review protocol, source count, update frequency and user-reach evidence are awaiting partner approval for publication.
-
-## What went into production
-
-The published system includes Puppeteer-based collection, a validation workflow, a search index, a Django portal, Docker packaging and AWS deployment.
-
-## What changed
-
-Instead of requiring people to navigate a collection of disconnected sources, the portal created one searchable entry point for welfare-scheme information.
-
-The wider value lies in reducing the distance between a public programme and the person it was designed to support.
-
-## Handover and limitations
-
-Automated collection does not establish that source material is complete or current. The validation workflow remains necessary. Operating ownership and partner-approved limitations will be added when confirmed.
-
-<aside class="callout">
-  <strong>The outcome</strong>
-  <p>A fragmented information journey became a central, searchable experience supported by an automated collection pipeline.</p>
-</aside>
-
-<!-- Editorial follow-up: confirm partner naming, number of schemes and sources, update frequency, user reach, validation process and approved screenshots. -->
+**Stack:** Puppeteer, BeautifulSoup, Django REST, Next.js, PostgreSQL, Celery, Redis, Docker, AWS EC2, RDS, ALB and ECR, plus Nginx.

@@ -1,14 +1,15 @@
 ---
 name: Zuvees
 industry: Quick commerce · Dubai
-problem: A 60-minute gifting service needed inventory and orders to stay aligned across hubs, marketplaces and its online store.
-build: A custom order management system connecting Shopify, a WMS, Talabat and Instashop, with an AI gift advisor for product discovery.
+problem: Orders arrived from five channels while made-to-order bouquets drew from shared loose stock. Zuvees needed to prevent overselling and support a 60-minute delivery promise.
+build: One order and inventory layer across every channel, plus a Shopify storefront, rider app, video approval and reliable marketplace reconciliation.
 tags:
   - Shopify
   - Node.js
-  - AI
-  - Integrations
-result: One operational view across inventory, orders and fulfilment
+  - React Native
+  - Docker
+  - AWS
+result: A 60-minute promise kept across 5 sales channels from one inventory
 image: /work/zuvees/cover.jpg
 imageAlt: Zuvees birthday collection with same-day delivery cut-off times
 logo: /logos/zuvees-chip.png
@@ -23,85 +24,62 @@ metrics:
 order: 2
 ---
 
-## What was stuck
+## The challenge
 
-Zuvees delivers gifts in Dubai with a promise measured in minutes, not days. Fulfilling that promise depends on much more than a fast courier.
+Zuvees sells made-to-order bouquets in Dubai through its website, Talabat, Instashop, phone and WhatsApp. Every bouquet consumes loose stock across several raw materials. Orders from all five channels can arrive at the same time, while the customer expects delivery within 60 minutes.
 
-An order may begin on Shopify, Talabat or Instashop. Inventory may be distributed across fulfilment hubs and managed through a warehouse system. If those systems disagree about what is available or where an order should go, a customer-facing promise can quickly become an operational problem.
+Slow inventory sync caused stock mismatches and overselling. Marketplace events could arrive late, appear more than once or arrive out of order. Product identifiers also differed across channels.
 
-Zuvees needed a reliable centre for that moving network.
+## What we built
 
-## Constraints
+NewtonSchool Studio built one order and inventory layer across all five channels. The system reserves stock centrally before confirming an order and tracks raw materials from individual components to finished bouquets.
 
-Orders could begin in several channels, inventory lived across hubs and warehouse tooling, and the customer promise left little time for manual reconciliation. Each connected platform also had its own interface and operating behaviour.
+The wider product includes:
 
-## What we decided
+- video approval before dispatch
+- a React Native rider app with live tracking and WhatsApp rider links
+- slot-based pricing and NPS
+- a Shopify storefront with an emirate-based catalogue and delivery slots
+- custom Shopify apps for bundles and add-ons
+- SEO pages and an AI Gift Advisor
+- reliable reconciliation for marketplace order events
+- audit logs, staging and test environments, and CI/CD on AWS
 
-The order management system would become the shared operational layer. Sales channels could remain independent, while orders, inventory and fulfilment moved through one coordinated workflow.
-
-## The system
-
-NewtonSchool Studio built a custom order management system that connects the storefront, marketplaces, warehouse tooling and fulfilment hubs.
+Pyrops WMS stays in sync with the shared operational layer. A pod of three engineers, a technical lead and two project leads delivered the work.
 
 ![Zuvees product page showing earliest delivery, video approval and add-ons](/work/zuvees/detail-product-page.jpg)
 
-Instead of asking the operations team to reconcile each channel manually, the platform gives orders and inventory a shared path through the business.
+## How it works
+
+Every channel's products are normalised into one internal SKU model. An order reaches the central layer, which reserves the required finished product and raw materials before confirmation. That reservation prevents two concurrent orders from consuming the same final item.
 
 ```mermaid
 flowchart LR
-  Shopify[Shopify] --> OMS[Order management system]
-  Talabat[Talabat] --> OMS
-  Instashop[Instashop] --> OMS
-  OMS <--> WMS[Warehouse management system]
-  Advisor[AI gift advisor] --> OMS
-  OMS --> Hubs[Fulfilment hubs]
+  A[Web] --> F[Order and inventory layer]
+  B[Talabat] --> F
+  C[Instashop] --> F
+  D[Phone] --> F
+  E[WhatsApp] --> F
+  F --> G[Central stock reservation]
+  G --> H[Raw materials and bouquets]
+  F <--> I[Pyrops WMS]
+  F --> J[Video approval]
+  J --> K[Rider app and live tracking]
 ```
 
-Each integration has a different role, but the order management system holds the workflow together.
+Marketplace events pass through reconciliation that handles delayed, duplicated and out-of-order messages. Audit logs make each processing decision traceable.
 
-| Connected system | Role in the experience |
-| --- | --- |
-| Shopify | Direct storefront orders |
-| Talabat | Marketplace orders |
-| Instashop | Marketplace orders |
-| Warehouse management system | Inventory and warehouse operations |
-| Fulfilment hubs | Local order preparation and dispatch |
+## What made it hard
 
-### One order, wherever it begins
+- Two channels could try to sell the last unit at the same moment.
+- Slow sync could expose stock that was already committed.
+- The same product used different SKUs across channels.
+- Each bouquet consumed several raw-material components.
+- Marketplace webhooks were unreliable.
+- Stock, preparation, approval and dispatch had to fit inside 60 minutes.
 
-Customers do not think in terms of sales channels. They expect the same availability and delivery experience wherever they place an order.
+## Results
 
-The custom OMS creates that continuity. It receives orders from different sources, coordinates with warehouse operations and routes the work towards fulfilment. The operational team gets one system around which the fulfilment process can be organised.
+The platform supports a 60-minute delivery promise across five sales channels using one shared inventory. The storefront went live in April 2025, followed by order management, the rider app and DevOps.
 
-### Product discovery was part of the same journey
-
-Choosing a gift is a different problem from delivering one. Customers may know the occasion and the recipient, but not the right product.
-
-The platform therefore also includes an AI gift advisor. It helps turn a broad intent into product discovery, while the connected commerce system handles the operational path that follows.
-
-This keeps the customer journey, from deciding what to buy to getting it delivered, inside one product experience.
-
-## How we validated it
-
-The connected-system boundaries and operational workflow are documented here. Order-volume tests, synchronisation checks, delivery performance and operator feedback are still pending client approval for publication.
-
-## What went into production
-
-The published delivery scope includes the custom order management system, Shopify integration, warehouse-system integration, Talabat and Instashop connections, fulfilment-hub workflows and the AI gift advisor.
-
-## What changed
-
-Zuvees gained a common operational layer across its storefront, marketplaces, warehouse tooling and fulfilment network.
-
-The main result is alignment: orders can enter through different channels without requiring an entirely separate operational process for each one, while inventory and fulfilment remain connected to the same system.
-
-## Handover and limitations
-
-Current support ownership, runbooks and operational service levels are not yet published. Performance and time-saved claims will be added only after approval.
-
-<aside class="callout">
-  <strong>The outcome</strong>
-  <p>One order-management workflow now connects product discovery, inventory, marketplace orders and fulfilment across multiple hubs.</p>
-</aside>
-
-<!-- Editorial follow-up: confirm order volume, sync frequency, delivery performance, operational time saved and approved product screenshots. -->
+**Stack:** Shopify, Liquid, Remix, GraphQL, Node.js, Express, Prisma, Next.js, React Native, Docker, AWS EC2, Nginx and GitHub Actions.
