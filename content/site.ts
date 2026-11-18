@@ -1,3 +1,5 @@
+export const bookingUrl = "https://cal.com/newton-school-studio/scoping-call";
+
 export const problemStates = [
   { icon: "window", title: "A product that needs to reach the market", body: "Turn a validated idea or stalled prototype into a product people can use, operate and pay for." },
   { icon: "workflow", title: "A workflow trapped in manual operations", body: "Replace spreadsheets, paper and repeated coordination with software built around the real process." },

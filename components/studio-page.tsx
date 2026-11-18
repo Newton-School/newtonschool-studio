@@ -1,11 +1,13 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import dynamic from "next/dynamic";
 import Image from "next/image";
 import Link from "next/link";
 import type { CaseStudySummary } from "@/content/case-study-types";
 import {
   aiComparison,
+  bookingUrl,
   deliveryForces,
   deliveryGates,
   faqs,
@@ -15,6 +17,13 @@ import {
   stack,
   stackHighlights,
 } from "@/content/site";
+
+const Cal = dynamic(() => import("@calcom/embed-react"), {
+  ssr: false,
+  loading: () => <div className="booking-embed-loading">Loading available times…</div>,
+});
+
+const bookingEmailUrl = "mailto:newtonschool-studio@newtonschool.co?subject=Scoping%20call%20request";
 
 const Arrow = () => <svg aria-hidden="true" viewBox="0 0 20 20"><path d="M4 10h11M11 6l4 4-4 4" /></svg>;
 const CalendarIcon = () => <svg aria-hidden="true" viewBox="0 0 20 20"><rect x="3" y="4.5" width="14" height="12" rx="2"/><path d="M6.5 2.5v4M13.5 2.5v4M3 8h14"/></svg>;
@@ -48,6 +57,38 @@ function ThemeControls({ compact = false }: { compact?: boolean }) {
     <button className="theme-toggle" onClick={changeTheme} aria-label={`Switch to ${theme === "light" ? "dark" : "light"} mode`}>
       <svg aria-hidden="true" viewBox="0 0 20 20"><path d={theme === "light" ? "M10 2v2M10 16v2M2 10h2M16 10h2M4.3 4.3l1.4 1.4M14.3 14.3l1.4 1.4M15.7 4.3l-1.4 1.4M5.7 14.3l-1.4 1.4M14 10a4 4 0 1 1-8 0 4 4 0 0 1 8 0Z" : "M17 12.5A7 7 0 0 1 7.5 3 7 7 0 1 0 17 12.5Z"}/></svg>
     </button>
+  </div>;
+}
+
+function BookingScheduler() {
+  const [theme, setTheme] = useState<"light" | "dark">("light");
+
+  useEffect(() => {
+    const syncTheme = () => setTheme(document.documentElement.dataset.theme === "dark" ? "dark" : "light");
+    const observer = new MutationObserver(syncTheme);
+    syncTheme();
+    observer.observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
+    return () => observer.disconnect();
+  }, []);
+
+  if (!bookingUrl) {
+    return <div className="booking-fallback">
+      <span>BOOK A SCOPING CALL</span>
+      <h3>Tell us what is getting in the way.</h3>
+      <p>We reply within one working day with times for a 20-minute call.</p>
+      <a className="button primary" href={bookingEmailUrl}>Email us to book a call <Arrow/></a>
+    </div>;
+  }
+
+  const calLink = bookingUrl.replace(/^https?:\/\/(?:www\.)?cal\.com\//, "").replace(/\/$/, "");
+
+  return <div className="booking-embed" aria-label="Book a 20-minute scoping call">
+    <Cal
+      key={theme}
+      calLink={calLink}
+      config={{ layout: "month_view", theme }}
+      style={{ width: "100%", height: "100%", overflow: "auto" }}
+    />
   </div>;
 }
 
@@ -208,7 +249,7 @@ export function StudioPage({ caseStudies }: { caseStudies: CaseStudySummary[] })
 
       <section className="section booking" id="booking"><div className="container booking-panel" data-reveal>
         <div className="booking-copy"><span className="eyebrow">09 · START HERE</span><h2>Bring us the problem that is not getting over the line.</h2><p>A 20-minute call to identify the obstacle, the next useful proof point and whether we are the right team to own it.</p><div className="call-points"><div><span>01</span><p>Describe the outcome, users and current obstacle.</p></div><div><span>02</span><p>We separate the knowns, risks and decisions.</p></div><div><span>03</span><p>You leave with a recommended next step.</p></div></div></div>
-        <div className="booking-widget" role="img" aria-label="Placeholder for Cal.com or Calendly booking widget"><div className="widget-top"><div className="widget-logo"><Image src="/newtonschool-studio-logo.png" width={32} height={32} alt=""/></div><div><strong>NewtonSchool Studio</strong><span>20-minute scoping call</span></div></div><div className="widget-body"><span>BOOKING WIDGET</span><div className="calendar-row">{["M","T","W","T","F"].map((d,i)=><b key={i}>{d}</b>)}</div><div className="calendar-row dates">{[5,6,7,8,9].map(d=><i key={d}>{d}</i>)}</div><div className="slot-placeholder"><span/><span/><span/></div><em>CAL.COM OR CALENDLY EMBED PLACEHOLDER</em></div></div>
+        <BookingScheduler />
       </div></section>
     </main>
     <footer><div className="container footer-grid"><div><Logo/><p>From a hard problem to software in production.</p></div><div><span>START</span><a href="#booking">Book a scoping call</a><a href="/newtonschool-studio-one-pager.pdf" download>Download the one-pager</a></div><div><span>INITIATIVE</span><p>A Newton School of Technology initiative</p><small>© 2026 NewtonSchool Studio</small></div></div></footer>
