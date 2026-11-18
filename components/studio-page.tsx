@@ -1,21 +1,30 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import dynamic from "next/dynamic";
 import Image from "next/image";
 import Link from "next/link";
 import type { CaseStudySummary } from "@/content/case-study-types";
 import {
   aiComparison,
+  bookingUrl,
   deliveryForces,
   deliveryGates,
   faqs,
   idealCustomers,
-  labWork,
+  linkedInUrl,
   packages,
   problemStates,
-  stack,
   stackHighlights,
+  trustItems,
 } from "@/content/site";
+
+const Cal = dynamic(() => import("@calcom/embed-react"), {
+  ssr: false,
+  loading: () => <div className="booking-embed-loading">Loading available times…</div>,
+});
+
+const bookingEmailUrl = "mailto:newtonschool-studio@newtonschool.co?subject=Scoping%20call%20request";
 
 const Arrow = () => <svg aria-hidden="true" viewBox="0 0 20 20"><path d="M4 10h11M11 6l4 4-4 4" /></svg>;
 const CalendarIcon = () => <svg aria-hidden="true" viewBox="0 0 20 20"><rect x="3" y="4.5" width="14" height="12" rx="2"/><path d="M6.5 2.5v4M13.5 2.5v4M3 8h14"/></svg>;
@@ -49,6 +58,38 @@ function ThemeControls({ compact = false }: { compact?: boolean }) {
     <button className="theme-toggle" onClick={changeTheme} aria-label={`Switch to ${theme === "light" ? "dark" : "light"} mode`}>
       <svg aria-hidden="true" viewBox="0 0 20 20"><path d={theme === "light" ? "M10 2v2M10 16v2M2 10h2M16 10h2M4.3 4.3l1.4 1.4M14.3 14.3l1.4 1.4M15.7 4.3l-1.4 1.4M5.7 14.3l-1.4 1.4M14 10a4 4 0 1 1-8 0 4 4 0 0 1 8 0Z" : "M17 12.5A7 7 0 0 1 7.5 3 7 7 0 1 0 17 12.5Z"}/></svg>
     </button>
+  </div>;
+}
+
+function BookingScheduler() {
+  const [theme, setTheme] = useState<"light" | "dark">("light");
+
+  useEffect(() => {
+    const syncTheme = () => setTheme(document.documentElement.dataset.theme === "dark" ? "dark" : "light");
+    const observer = new MutationObserver(syncTheme);
+    syncTheme();
+    observer.observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
+    return () => observer.disconnect();
+  }, []);
+
+  if (!bookingUrl) {
+    return <div className="booking-fallback">
+      <span>BOOK A SCOPING CALL</span>
+      <h3>Tell us what is getting in the way.</h3>
+      <p>We reply within one working day with times for a 20-minute call.</p>
+      <a className="button primary" href={bookingEmailUrl}>Email us to book a call <Arrow/></a>
+    </div>;
+  }
+
+  const calLink = bookingUrl.replace(/^https?:\/\/(?:www\.)?cal\.com\//, "").replace(/\/$/, "");
+
+  return <div className="booking-embed" aria-label="Book a 20-minute scoping call">
+    <Cal
+      key={theme}
+      calLink={calLink}
+      config={{ layout: "month_view", theme }}
+      style={{ width: "100%", height: "100%", overflow: "auto" }}
+    />
   </div>;
 }
 
@@ -112,14 +153,8 @@ function SectionHeading({ eyebrow, title, text }: { eyebrow: string; title: stri
   return <div className="section-heading"><span className="eyebrow">{eyebrow}</span><h2>{title}</h2>{text && <p>{text}</p>}</div>;
 }
 
-function ProductFrame({ label }: { label: string }) {
-  return <div className="product-frame" role="img" aria-label={`Placeholder for real product screenshot: ${label}`}>
-    <div className="frame-top"><span/><span/><span/><i/></div><div className="frame-body"><div className="frame-sidebar"><b/><b/><b/><b/></div><div className="frame-content"><div className="frame-title"/><div className="frame-stats"><i/><i/><i/></div><div className="frame-chart"><span/><span/><span/><span/><span/><span/><span/></div></div></div><em>SCREENSHOT PLACEHOLDER · {label}</em>
-  </div>;
-}
-
 export function CaseStudyCard({ item }: { item: CaseStudySummary }) {
-  return <Link className="case-card-link" href={`/work/${item.slug}`} aria-label={`View ${item.name} case study`}><Card className="case-card"><ProductFrame label={item.screen}/><div className="case-content"><div className="case-head"><h3>{item.name}</h3><span>{item.industry}</span></div><p className="problem">{item.problem}</p><p>{item.build}</p><div className="tags">{item.tags.map(tag => <span key={tag}>{tag}</span>)}</div><div className="result"><span>KEY RESULT</span><strong>{item.result}</strong></div><span className="case-link">View case study <Arrow/></span></div></Card></Link>;
+  return <Link className="case-card-link" href={`/work/${item.slug}`} aria-label={`View ${item.name} case study`}><Card className="case-card"><div className={`case-card-image ${item.imageFit === "contain" ? "contain" : ""}`}><Image src={item.image} alt={item.imageAlt} fill sizes="(max-width: 760px) calc(100vw - 32px), (max-width: 1200px) 50vw, 580px"/></div><div className="case-content"><div className="case-head"><span>{item.industry}</span><span className={`client-logo ${item.slug}`}><Image src={item.logo} alt={item.logoAlt} fill sizes="150px"/></span></div><h3>{item.name}</h3><p className="problem">{item.problem}</p><p className="build">{item.build}</p><div className="case-metrics">{item.metrics.map(metric => <div key={`${metric.value}-${metric.label}`}><strong>{metric.value}</strong><span>{metric.label}</span></div>)}</div><div className="tags">{item.tags.map(tag => <span key={tag}>{tag}</span>)}</div><div className="result"><span>KEY RESULT</span><strong>{item.result}</strong></div><span className="case-link">View case study <Arrow/></span></div></Card></Link>;
 }
 
 export function PackageCard({ item }: { item: typeof packages[number] }) {
@@ -130,7 +165,6 @@ export function PackageCard({ item }: { item: typeof packages[number] }) {
     <div className="package-field"><span>WHAT YOU GET</span><ul>{item.deliverables.map(deliverable => <li key={deliverable}>{deliverable}</li>)}</ul></div>
     <div className="package-field"><span>SUCCESS LOOKS LIKE</span><p>{item.success}</p></div>
     <div className="package-field compact"><span>WE NEED</span><p>{item.clientNeeds}</p></div>
-    <strong className="price">{item.price}</strong>
     <a className={`button ${"featured" in item && item.featured ? "primary" : "secondary"}`} href="#booking">Discuss this package <Arrow/></a>
   </Card>;
 }
@@ -186,13 +220,12 @@ export function StudioPage({ caseStudies }: { caseStudies: CaseStudySummary[] })
       <section className="section proof-section" id="work"><div className="container" data-reveal>
         <SectionHeading eyebrow="04 · DELIVERY EVIDENCE" title="Work you can inspect" text="Each case study opens the problem, constraints, system decisions and available delivery evidence."/>
         <div className="case-grid">{caseStudies.map(item => <CaseStudyCard item={item} key={item.name}/>)}</div>
-        <p className="confirmation-note"><span/>Publication details and claims are included only after client approval. Pending evidence is labelled inside each case study.</p>
       </div></section>
 
       <section className="section alt" id="how"><div className="container" data-reveal>
         <SectionHeading eyebrow="05 · DELIVERY SYSTEM" title="One team owns the path from ambiguity to operation." text="The pod combines judgment, parallel execution and AI-accelerated capacity. Five evidence gates keep speed connected to the outcome."/>
         <div className="force-grid">{deliveryForces.map((item, index) => <Card className="force-card" key={item.title}><span>0{index + 1}</span><h3>{item.title}</h3><p>{item.body}</p></Card>)}</div>
-        <div className="model-statement"><span>DELIVERY ACCOUNTABILITY</span><p>Student engineers from Newton School of Technology work full-time inside focused engineering pods. Every engagement has a named technical owner responsible for architecture, technical risk, the quality standard and release acceptance through handover.</p></div>
+        <div className="model-statement"><span>DELIVERY ACCOUNTABILITY</span><p>Every engagement has a named technical owner who is accountable for architecture, technical risk, quality and release acceptance through handover. The engineering pod includes full-time student engineers from Newton School of Technology, working under that owner, with every change reviewed before it ships.</p></div>
         <div className="gate-heading"><span>FIVE EVIDENCE GATES</span><p>Progress is marked by evidence, not task count.</p></div>
         <div className="process gate-process"><div className="process-line"/>{deliveryGates.map((gate, index) => <div className="process-step" key={gate.title}><span>{index + 1}</span><h3>{gate.title}</h3><p>{gate.body}</p></div>)}</div>
       </div></section>
@@ -200,31 +233,31 @@ export function StudioPage({ caseStudies }: { caseStudies: CaseStudySummary[] })
       <section className="section" id="packages"><div className="container" data-reveal>
         <SectionHeading eyebrow="06 · ENGAGEMENTS" title="Choose the next proof point." text="Each engagement is shaped around a decision or production outcome, with the evidence expected at the end made explicit."/>
         <div className="package-grid">{packages.map(item => <PackageCard item={item} key={item.title}/>)}</div>
-        <div className="pricing-note"><p>Pricing is fixed against scope and expected evidence. Technical leadership is concentrated on high-risk decisions while the pod moves research, implementation and verification in parallel. If your budget is tighter, we reduce scope or phase delivery.</p><div className="addons"><span>CAPABILITIES</span>{["UX/UI design", "Security and compliance", "Data and analytics", "Migration and modernisation"].map(item => <i key={item}>{item}</i>)}</div></div>
+        <div className="capabilities-note"><div className="addons"><span>CAPABILITIES</span>{["UX/UI design", "Security and compliance", "Data and analytics", "Migration and modernisation"].map(item => <i key={item}>{item}</i>)}</div></div>
       </div></section>
 
-      <section className="section stack-section alt" id="stack"><div className="container" data-reveal>
+      <section className="section alt trust-section" id="trust"><div className="container" data-reveal>
+        <SectionHeading eyebrow="TRUST" title="Your data, your environment, your code." text="The operating rules are agreed before delivery starts and carried through handover."/>
+        <div className="trust-grid">{trustItems.map((item, index) => <Card className="trust-card" key={item.title}><span>0{index + 1}</span><h3>{item.title}</h3><p>{item.body}</p></Card>)}</div>
+      </div></section>
+
+      <section className="section stack-section" id="stack"><div className="container" data-reveal>
         <SectionHeading eyebrow="07 · ENGINEERING APPROACH" title="We choose the system around the problem." text="Architecture follows the outcome, operational constraints and systems already in place. These are representative areas of work, connected to delivered examples."/>
         <div className="stack-highlights">{stackHighlights.map(item => <Card className="stack-highlight" key={item.group}><span>{item.group}</span><p>{item.body}</p><div className="tags">{item.items.map(technology => <i key={technology}>{technology}</i>)}</div><Link href={`/work/${item.proof.slug}`}>{item.proof.label} <Arrow/></Link></Card>)}</div>
-        <details className="stack-details"><summary>View full technology coverage <span>PRODUCT · PLATFORM · DATA · AI</span></summary><div className="stack-grid">{Object.entries(stack).map(([group, items]) => <div className="stack-group" key={group}><h3>{group}</h3><div>{items.map(item => <span key={item}><i>{item.slice(0,2).toUpperCase()}</i>{item}</span>)}</div></div>)}</div></details>
-      </div></section>
-
-      <section className="section lab-section"><div className="container" data-reveal>
-        <SectionHeading eyebrow="08 · STUDIO LAB" title="Engineering notes from the work" text="Technical systems worth examining beyond a project summary."/>
-        <div className="lab-grid">{labWork.map((item, index) => <Link href={`/work/${item.slug}`} className="lab-card" key={item.title}><span>{item.label}</span><i>0{index + 1}</i><h3>{item.title}</h3><p>{item.body}</p><strong>Open engineering note <Arrow/></strong></Link>)}</div>
+        <p className="stack-note">We work inside your existing stack when it fits the outcome, and recommend a focused change when it does not.</p>
       </div></section>
 
       <section className="section alt" id="faq"><div className="container faq-layout" data-reveal>
-        <SectionHeading eyebrow="09 · FAQ" title="Questions we expect" text="Straight answers before you spend time on a call."/>
+        <SectionHeading eyebrow="08 · FAQ" title="Questions we expect" text="Straight answers before you spend time on a call."/>
         <div className="faq-list">{faqs.map((item, index) => <FAQItem key={item.q} item={item} open={faqOpen === index} onClick={() => setFaqOpen(faqOpen === index ? -1 : index)}/>)}</div>
       </div></section>
 
       <section className="section booking" id="booking"><div className="container booking-panel" data-reveal>
-        <div className="booking-copy"><span className="eyebrow">10 · START HERE</span><h2>Bring us the problem that is not getting over the line.</h2><p>A 20-minute call to identify the obstacle, the next useful proof point and whether we are the right team to own it.</p><div className="call-points"><div><span>01</span><p>Describe the outcome, users and current obstacle.</p></div><div><span>02</span><p>We separate the knowns, risks and decisions.</p></div><div><span>03</span><p>You leave with a recommended next step.</p></div></div></div>
-        <div className="booking-widget" role="img" aria-label="Placeholder for Cal.com or Calendly booking widget"><div className="widget-top"><div className="widget-logo"><Image src="/newtonschool-studio-logo.png" width={32} height={32} alt=""/></div><div><strong>NewtonSchool Studio</strong><span>20-minute scoping call</span></div></div><div className="widget-body"><span>BOOKING WIDGET</span><div className="calendar-row">{["M","T","W","T","F"].map((d,i)=><b key={i}>{d}</b>)}</div><div className="calendar-row dates">{[5,6,7,8,9].map(d=><i key={d}>{d}</i>)}</div><div className="slot-placeholder"><span/><span/><span/></div><em>CAL.COM OR CALENDLY EMBED PLACEHOLDER</em></div></div>
+        <div className="booking-copy"><span className="eyebrow">09 · START HERE</span><h2>Bring us the problem that is not getting over the line.</h2><p>A 20-minute call to identify the obstacle, the next useful proof point and whether we are the right team to own it.</p><div className="call-points"><div><span>01</span><p>Describe the outcome, users and current obstacle.</p></div><div><span>02</span><p>We separate the knowns, risks and decisions.</p></div><div><span>03</span><p>You leave with a recommended next step.</p></div></div></div>
+        <BookingScheduler />
       </div></section>
     </main>
-    <footer><div className="container footer-grid"><div><Logo/><p>From a hard problem to software in production.</p></div><div><span>START</span><a href="#booking">Book a scoping call</a><a href="/newtonschool-studio-one-pager.pdf" download>Download the one-pager</a></div><div><span>INITIATIVE</span><p>A Newton School of Technology initiative</p><small>© 2026 NewtonSchool Studio</small></div></div></footer>
+    <footer><div className="container footer-grid"><div><Logo/><p>From a hard problem to software in production.</p></div><div><span>START</span><a href="#booking">Book a scoping call</a><a href="/newtonschool-studio-one-pager.pdf" download>Download the one-pager</a></div><div><span>CONTACT</span><a href="mailto:newtonschool-studio@newtonschool.co">newtonschool-studio@newtonschool.co</a>{linkedInUrl && <a href={linkedInUrl} target="_blank" rel="noreferrer">LinkedIn</a>}</div><div><span>INITIATIVE</span><p>A Newton School of Technology initiative</p><small>© 2026 NewtonSchool Studio</small></div></div></footer>
     <div className="mobile-book"><a className="button primary" href="#booking"><CalendarIcon/>Book a 20-minute scoping call</a></div>
   </>;
 }

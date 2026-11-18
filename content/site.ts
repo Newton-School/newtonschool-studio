@@ -1,3 +1,8 @@
+export const bookingUrl = "https://cal.com/newton-school-studio/scoping-call";
+
+// TODO(hritvik): add the approved NewtonSchool Studio LinkedIn URL.
+export const linkedInUrl = "";
+
 export const problemStates = [
   { icon: "window", title: "A product that needs to reach the market", body: "Turn a validated idea or stalled prototype into a product people can use, operate and pay for." },
   { icon: "workflow", title: "A workflow trapped in manual operations", body: "Replace spreadsheets, paper and repeated coordination with software built around the real process." },
@@ -60,7 +65,6 @@ export const packages = [
     deliverables: ["Problem contract", "Architecture and risk map", "Prioritised delivery plan"],
     success: "Your team can make a confident build decision with scope, evidence and trade-offs in view.",
     clientNeeds: "Access to decision-makers, users and relevant systems.",
-    price: "From INR 1.2L",
   },
   {
     title: "Production Pilot",
@@ -69,16 +73,15 @@ export const packages = [
     deliverables: ["Working product slice", "Production deployment", "Validation evidence and next-step plan"],
     success: "The riskiest part of the product works outside a demo environment.",
     clientNeeds: "A named owner, user access and timely domain decisions.",
-    price: "From INR 4L",
   },
   {
+    // TODO(hritvik): decide whether Product Build stays at 8 to 12 weeks or changes to the deck's 8 to 16 weeks.
     title: "Product Build",
     time: "8 to 12 weeks",
     useWhen: "The outcome is clear and a complete product or operational system needs to reach production.",
     deliverables: ["Core product workflows", "Quality and operational controls", "Deployment, documentation and handover"],
     success: "Users can complete the target workflow and your team can operate the system.",
     clientNeeds: "Product decisions, domain access and a launch owner.",
-    price: "From INR 9L",
   },
   {
     title: "System Rescue and Acceleration",
@@ -87,7 +90,6 @@ export const packages = [
     deliverables: ["Constraint and failure analysis", "Prioritised remediation", "Measured implementation changes"],
     success: "The limiting constraint is removed and the team has a safer path forward.",
     clientNeeds: "Repository, infrastructure and operational access.",
-    price: "Scope set after diagnosis",
   },
   {
     title: "Managed Product System",
@@ -96,7 +98,6 @@ export const packages = [
     deliverables: ["Planned feature delivery", "Operational and defect response", "Release evidence and decision records"],
     success: "The product improves on a predictable cadence without losing system ownership.",
     clientNeeds: "A shared roadmap, product owner and access to users and metrics.",
-    price: "From INR 5L per month",
   },
   {
     title: "Applied Technology Research Sprint",
@@ -105,52 +106,61 @@ export const packages = [
     deliverables: ["Research brief and falsifiable question", "Reproducible experiment or prototype", "Evidence, limitations and recommendation"],
     success: "Your team can make a go, change or stop decision with evidence.",
     clientNeeds: "A named domain expert, relevant data or environment access, and a decision the research must inform.",
-    price: "From INR 1.25L",
+  },
+] as const;
+
+export const trustItems = [
+  {
+    title: "NDA before access",
+    body: "Every pod member signs an NDA before they see your code or data.",
+  },
+  {
+    title: "Work in your environment",
+    body: "We work in your repositories, cloud accounts and tools.",
+  },
+  {
+    title: "No live customer data by default",
+    body: "We only use live customer data with your written approval.",
+  },
+  {
+    title: "Approved AI tools only",
+    body: "You agree which tools can touch your code, and a person reviews every change.",
+  },
+  {
+    title: "Access removed at handover",
+    body: "Every credential is revoked when the engagement closes.",
+  },
+  {
+    title: "You own what we build",
+    body: "IP, warranty and support terms are set in the statement of work.",
   },
 ] as const;
 
 export const stackHighlights = [
   {
     group: "Product interfaces",
-    body: "Web, mobile and operational interfaces built around real user workflows.",
-    items: ["TypeScript", "React", "Next.js", "React Native", "Flutter"],
-    proof: { label: "See RishiVerse", slug: "rishiverse" },
-  },
-  {
-    group: "Services and integration",
-    body: "APIs, event flows and system boundaries that keep operations connected.",
-    items: ["Node.js", "Python", "Java", "REST", "GraphQL", "Kafka"],
-    proof: { label: "See Zuvees", slug: "zuvees" },
-  },
-  {
-    group: "Data and intelligence",
-    body: "Transactional data, search, analytics and AI workflows with explicit review paths.",
-    items: ["PostgreSQL", "OpenSearch", "Vertex AI", "OpenAI", "PyTorch"],
+    body: "Web and mobile interfaces built around real workflows.",
+    items: ["TypeScript", "React", "Next.js", "Remix", "React Native", "Expo"],
     proof: { label: "See FieldVue", slug: "maverick-fieldvue" },
   },
   {
-    group: "Cloud and operations",
-    body: "Infrastructure, delivery pipelines and observability designed with the product.",
-    items: ["AWS", "GCP", "Azure", "Docker", "Terraform", "Kubernetes"],
-    proof: { label: "See IITR collaboration", slug: "iitr-collaboration" },
+    group: "Services and integration",
+    body: "APIs, events and integrations that keep operations in sync.",
+    items: ["Node.js", "Express", "Django REST", "GraphQL", "Shopify", "Celery"],
+    proof: { label: "See Zuvees", slug: "zuvees" },
   },
-] as const;
-
-export const stack = {
-  "Web and mobile": ["TypeScript", "React", "Next.js", "Vue", "Nuxt", "Angular", "React Native", "Flutter", "Swift", "Kotlin"],
-  "Backend and APIs": ["Node.js", "NestJS", "Python", "FastAPI", "Django", "Java", "Spring Boot", "Go", ".NET", "Ruby on Rails", "PHP", "Laravel"],
-  "Data, search and analytics": ["PostgreSQL", "MySQL", "MongoDB", "Redis", "DynamoDB", "OpenSearch", "Elasticsearch", "ClickHouse", "BigQuery", "Snowflake"],
-  "Cloud and edge": ["AWS", "GCP", "Azure", "Cloudflare", "Vercel", "Firebase", "Supabase"],
-  "Platform and observability": ["Docker", "Kubernetes", "Terraform", "Helm", "GitHub Actions", "GitLab CI", "Argo CD", "Prometheus", "Grafana", "Datadog", "Sentry"],
-  "AI and machine learning": ["OpenAI", "Anthropic", "Gemini", "Vertex AI", "Amazon Bedrock", "Azure AI", "Hugging Face", "PyTorch", "TensorFlow", "LangChain", "LlamaIndex", "pgvector", "Pinecone", "Weaviate"],
-  "Messaging and workflows": ["REST", "GraphQL", "gRPC", "WebSockets", "Kafka", "RabbitMQ", "SQS", "Pub/Sub", "Temporal"],
-  "Quality, security and identity": ["Playwright", "Cypress", "Vitest", "Jest", "Pytest", "k6", "SonarQube", "Snyk", "Auth0", "Keycloak"],
-} as const;
-
-export const labWork = [
-  { label: "DETERMINISTIC SIMULATION", title: "System Design Simulator", body: "A simulator that turns architecture topologies, workloads and failure events into repeatable system behaviour.", slug: "system-design-simulator" },
-  { label: "HUMAN-IN-THE-LOOP AI", title: "FieldVue estimation controls", body: "A computer-vision workflow where contractors can inspect, override and replay the decisions behind a quote.", slug: "maverick-fieldvue" },
-  { label: "VALIDATED DATA PIPELINE", title: "IITR public information system", body: "A collection and review pipeline that turns scattered source material into structured, searchable information.", slug: "iitr-collaboration" },
+  {
+    group: "Data and AI",
+    body: "Transactional data, scraping pipelines and AI with human review.",
+    items: ["PostgreSQL", "MongoDB", "DynamoDB", "Redis", "Vertex AI Gemini", "Roboflow"],
+    proof: { label: "See IIT Roorkee", slug: "iitr-collaboration" },
+  },
+  {
+    group: "Cloud and operations",
+    body: "Infrastructure and delivery pipelines built with the product.",
+    items: ["AWS", "Docker", "Nginx", "GitHub Actions", "EventBridge", "Step Functions"],
+    proof: { label: "See RishiVerse", slug: "rishiverse" },
+  },
 ] as const;
 
 export const faqs = [
@@ -160,7 +170,7 @@ export const faqs = [
   { q: "How do you control quality?", a: "Each engagement moves through five evidence gates: problem contract, system contract, executable acceptance, production evidence and ownership transfer." },
   { q: "Do you bill hourly?", a: "No. We agree on a defined outcome, scope and timeline. When uncertainty is high, we begin with a problem and architecture sprint." },
   { q: "Can you reduce the price?", a: "We reduce scope or phase delivery. The price stays tied to the outcome and evidence expected from the engagement." },
-  { q: "Who owns the code and IP?", a: "The final ownership policy is being confirmed. Contract terms are agreed before an engagement begins and will be published here once approved." },
-  { q: "What happens after handover?", a: "Support and warranty terms are agreed in the engagement scope. The Managed Product System is available when continuous delivery and retained context are needed." },
+  { q: "Who owns the code and IP?", a: "You do. IP ownership, warranty and support terms are set in the statement of work before the engagement starts." },
+  { q: "What happens after handover?", a: "Code, documentation, runbooks and access move to your team, and our access is removed. Support and warranty terms are set in the statement of work. The Managed Product System is available if you want continued delivery." },
   { q: "Can you work with our existing stack?", a: "Yes. We first assess its reliability, supportability and fit for the outcome, then work inside it or recommend a focused change." },
 ] as const;

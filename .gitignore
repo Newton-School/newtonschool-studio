@@ -14,3 +14,15 @@
 # environment files
 .env*
 !.env.example
+
+/_handoff
+/SOS-Analytics-Dashboard
+/Scraper_codes
+/backend-roorkee
+/community-empowerment-portal-docker
+/data-processing
+/forked-repo
+/frontend-roorkee
+/frontend-roorkee-new
+/frontend-roorkee-v1
+/frontend-roorkee-window
