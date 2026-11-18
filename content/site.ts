@@ -75,9 +75,8 @@ export const packages = [
     clientNeeds: "A named owner, user access and timely domain decisions.",
   },
   {
-    // TODO(hritvik): decide whether Product Build stays at 8 to 12 weeks or changes to the deck's 8 to 16 weeks.
     title: "Product Build",
-    time: "8 to 12 weeks",
+    time: "8 to 16 weeks",
     useWhen: "The outcome is clear and a complete product or operational system needs to reach production.",
     deliverables: ["Core product workflows", "Quality and operational controls", "Deployment, documentation and handover"],
     success: "Users can complete the target workflow and your team can operate the system.",
