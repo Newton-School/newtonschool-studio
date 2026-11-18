@@ -9,7 +9,18 @@ tags:
   - AWS
   - Docker
 result: One searchable source for welfare-scheme information
-screen: Welfare portal · search results
+image: /work/iitr-collaboration/cover.jpg
+imageAlt: Scholarship results filtered by department and state with a scheme detail panel
+logo: /logos/iitr-empowerhub.png
+logoAlt: IIT Roorkee and EmpowerHub
+metrics:
+  - value: 13 states
+    label: Scheme data standardised
+  - value: 6 stages
+    label: From source to eligible record
+  - value: Handed over
+    label: Running on IIT Roorkee servers
+partner: IIT Roorkee × Social Studies Foundation
 order: 4
 ---
 
@@ -32,6 +43,8 @@ Collection and publication would be separate stages. Automated collectors could 
 ## The system
 
 The result was a central portal supported by an automated collection workflow.
+
+![Citizen eligibility profile with name, email and age blurred](/work/iitr-collaboration/detail-eligibility-profile.jpg)
 
 Puppeteer-based collectors gathered information from public sources. A validation step sat between collection and publication, and approved information moved into a search index used by the portal.
 

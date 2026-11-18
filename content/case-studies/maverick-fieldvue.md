@@ -9,7 +9,18 @@ tags:
   - Microservices
   - Mobile
 result: Repeatable estimates that keep contractors in control
-screen: AI estimator · audit trail
+image: /work/maverick-fieldvue/cover-phone.jpg
+imageAlt: FieldVue contractor app scoping a painting job room by room
+imageFit: contain
+logo: /logos/fieldvue.png
+logoAlt: FieldVue
+metrics:
+  - value: 6–7 s
+    label: To analyse 10 site photos
+  - value: Locked
+    label: Every sent quote
+  - value: 1 app
+    label: For iOS and Android
 order: 3
 ---
 
@@ -32,6 +43,8 @@ The product would treat AI as a proposal inside a controlled workflow. A contrac
 ## The system
 
 NewtonSchool Studio built a mobile estimation workflow supported by computer vision.
+
+![FieldVue room-by-room estimate and new-estimate screens](/work/maverick-fieldvue/detail-app-design.jpg)
 
 A contractor captures site information in the field. The vision service processes that input, and the quote engine turns the result into a draft estimate. The contractor can then inspect the output, correct it when site conditions demand an override and save the final decision.
 

@@ -9,7 +9,19 @@ tags:
   - AWS
   - REST
 result: One connected operating system for university administration
-screen: University ERP · operations dashboard
+image: /work/rishiverse/cover.jpg
+imageAlt: RishiVerse student dashboard with student names blurred
+logo: /logos/rishihood.png
+logoAlt: Rishihood University
+metrics:
+  - value: 80%
+    label: Less manual admin work
+  - value: 99.8%
+    label: Uptime
+  - value: <200ms
+    label: API response time, p95
+  - value: 100+
+    label: REST API endpoints
 order: 1
 ---
 
@@ -32,6 +44,8 @@ The work was organised around one shared operational platform. Department workfl
 ## The system
 
 NewtonSchool Studio built a production ERP that brought core university workflows behind a common application and API layer.
+
+![RishiVerse gate pass history with the student name blurred](/work/rishiverse/detail-gatepass-history.jpg)
 
 The platform included more than 100 REST APIs, a PostgreSQL data layer and integrations for Aadhaar KYC. It also supported face-recognition workflows for campus security.
 

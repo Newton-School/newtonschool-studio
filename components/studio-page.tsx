@@ -111,14 +111,8 @@ function SectionHeading({ eyebrow, title, text }: { eyebrow: string; title: stri
   return <div className="section-heading"><span className="eyebrow">{eyebrow}</span><h2>{title}</h2>{text && <p>{text}</p>}</div>;
 }
 
-function ProductFrame({ label }: { label: string }) {
-  return <div className="product-frame" role="img" aria-label={`Placeholder for real product screenshot: ${label}`}>
-    <div className="frame-top"><span/><span/><span/><i/></div><div className="frame-body"><div className="frame-sidebar"><b/><b/><b/><b/></div><div className="frame-content"><div className="frame-title"/><div className="frame-stats"><i/><i/><i/></div><div className="frame-chart"><span/><span/><span/><span/><span/><span/><span/></div></div></div><em>SCREENSHOT PLACEHOLDER · {label}</em>
-  </div>;
-}
-
 export function CaseStudyCard({ item }: { item: CaseStudySummary }) {
-  return <Link className="case-card-link" href={`/work/${item.slug}`} aria-label={`View ${item.name} case study`}><Card className="case-card"><ProductFrame label={item.screen}/><div className="case-content"><div className="case-head"><h3>{item.name}</h3><span>{item.industry}</span></div><p className="problem">{item.problem}</p><p>{item.build}</p><div className="tags">{item.tags.map(tag => <span key={tag}>{tag}</span>)}</div><div className="result"><span>KEY RESULT</span><strong>{item.result}</strong></div><span className="case-link">View case study <Arrow/></span></div></Card></Link>;
+  return <Link className="case-card-link" href={`/work/${item.slug}`} aria-label={`View ${item.name} case study`}><Card className="case-card"><div className={`case-card-image ${item.imageFit === "contain" ? "contain" : ""}`}><Image src={item.image} alt={item.imageAlt} fill sizes="(max-width: 760px) calc(100vw - 32px), (max-width: 1200px) 50vw, 580px"/></div><div className="case-content"><div className="case-head"><span>{item.industry}</span><span className={`client-logo ${item.slug}`}><Image src={item.logo} alt={item.logoAlt} fill sizes="150px"/></span></div><h3>{item.name}</h3><p className="problem">{item.problem}</p><p>{item.build}</p><div className="case-metrics">{item.metrics.map(metric => <div key={`${metric.value}-${metric.label}`}><strong>{metric.value}</strong><span>{metric.label}</span></div>)}</div><div className="tags">{item.tags.map(tag => <span key={tag}>{tag}</span>)}</div><div className="result"><span>KEY RESULT</span><strong>{item.result}</strong></div><span className="case-link">View case study <Arrow/></span></div></Card></Link>;
 }
 
 export function PackageCard({ item }: { item: typeof packages[number] }) {

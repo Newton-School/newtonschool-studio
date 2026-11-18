@@ -6,7 +6,13 @@ export type CaseStudySummary = {
   build: string;
   tags: string[];
   result: string;
-  screen: string;
+  image: string;
+  imageAlt: string;
+  imageFit?: "cover" | "contain";
+  logo: string;
+  logoAlt: string;
+  metrics: { value: string; label: string }[];
+  partner?: string;
   order: number;
 };
 

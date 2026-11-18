@@ -9,7 +9,17 @@ tags:
   - AI
   - Integrations
 result: One operational view across inventory, orders and fulfilment
-screen: Order management · fulfilment view
+image: /work/zuvees/cover.jpg
+imageAlt: Zuvees birthday collection with same-day delivery cut-off times
+logo: /logos/zuvees-chip.png
+logoAlt: Zuvees
+metrics:
+  - value: 60 min
+    label: Delivery promise supported
+  - value: 5 channels
+    label: Selling from shared inventory
+  - value: Live 2025
+    label: Storefront and operations platform
 order: 2
 ---
 
@@ -32,6 +42,8 @@ The order management system would become the shared operational layer. Sales cha
 ## The system
 
 NewtonSchool Studio built a custom order management system that connects the storefront, marketplaces, warehouse tooling and fulfilment hubs.
+
+![Zuvees product page showing earliest delivery, video approval and add-ons](/work/zuvees/detail-product-page.jpg)
 
 Instead of asking the operations team to reconcile each channel manually, the platform gives orders and inventory a shared path through the business.
 
