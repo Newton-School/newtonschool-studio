@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>NewtonSchool Studio · One-pager</title>
+<style>
+@font-face { font-family: 'Mona Sans'; src: url('Mona-Sans.woff2') format('woff2'); font-weight: 200 900; font-stretch: 75% 125%; }
+@font-face { font-family: 'Fira Code'; src: url('fira-500.woff2') format('woff2'); font-weight: 500; }
+@page { size: A4; margin: 0; }
+:root { --ink:#16191D; --muted:#5B6271; --line:#E1E5EA; --soft:#F6F7F9; --soft2:#EDEFF3; --brand:#0673F9; --brand-d:#005ED1; --night:#0B0C0E; }
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html, body { width: 210mm; height: 297mm; }
+body { font-family: 'Mona Sans', Arial, sans-serif; color: var(--ink); font-size: 9.6pt; line-height: 1.38; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.page { position: relative; width: 210mm; height: 297mm; overflow: hidden; display: flex; flex-direction: column; }
+.topbar { flex-shrink: 0; height: 5px; background: var(--brand); }
+.wrap { padding: 0 15mm; }
+.mono { font-family: 'Fira Code', monospace; font-weight: 500; letter-spacing: .06em; text-transform: uppercase; font-size: 7pt; color: var(--brand-d); }
+header { display: flex; align-items: center; justify-content: space-between; padding-top: 6mm; }
+.brand { display: flex; align-items: center; gap: 8px; font-weight: 700; font-size: 13pt; letter-spacing: -.2px; }
+.brand img { height: 26px; }
+header .mono { color: var(--muted); }
+
+.hero { display: flex; gap: 9mm; padding-top: 4mm; align-items: flex-start; }
+.hero .left { flex: 1; }
+h1 { font-size: 22pt; line-height: 1.05; letter-spacing: -1px; font-weight: 700; }
+.lede { margin-top: 2.4mm; font-size: 9.4pt; color: var(--ink); line-height: 1.42; }
+.team { margin-top: 2mm; font-size: 8.4pt; color: var(--muted); }
+.cta { width: 54mm; background: var(--brand); color: #fff; border-radius: 10px; padding: 4.2mm; margin-top: 1mm; }
+.cta .mono { color: #CFE3FF; }
+.cta p.t { font-size: 12pt; font-weight: 700; line-height: 1.2; margin: 2mm 0 2.5mm; }
+.cta p.s { font-size: 8pt; line-height: 1.45; color: #E8F1FF; }
+
+section { margin-top: 3mm; }
+.sh { display: flex; align-items: baseline; justify-content: space-between; border-top: 1px solid var(--line); padding-top: 2.2mm; margin-bottom: 1.8mm; }
+.sh h2 { font-size: 7pt; }
+.sh .note { font-size: 8pt; color: var(--muted); }
+
+.grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.8mm 6mm; }
+.prob .n, .part .n { display: inline; margin-right: 1.6mm; }
+.prob b, .part b { display: inline !important; }
+.prob span:last-child, .part span:last-child { display: block; }
+.prob b { display: block; font-size: 9.4pt; font-weight: 650; }
+.prob span { font-size: 8pt; color: var(--muted); }
+.pf { font-style: normal; color: var(--brand-d); font-weight: 600; white-space: nowrap; }
+.n { font-family: 'Fira Code', monospace; font-weight: 500; font-size: 7pt; color: var(--brand); display: block; margin-bottom: .6mm; }
+
+.how { display: grid; grid-template-columns: 1fr 1fr; gap: 1.6mm 6mm; }
+.part b { font-size: 9.4pt; font-weight: 650; display: block; }
+.part span { font-size: 8pt; color: var(--muted); }
+.gates { display: flex; align-items: stretch; gap: 1.6mm; margin-top: 2.2mm; }
+.gate { flex: 1; background: var(--soft); border: 1px solid var(--line); border-radius: 8px; padding: 1.8mm 2.4mm; }
+.gate b { font-size: 8.2pt; font-weight: 650; display: block; line-height: 1.2; }
+.gate span { font-size: 7.2pt; color: var(--muted); display: block; margin-top: .6mm; line-height: 1.3; }
+.gates-cap { font-size: 8pt; color: var(--muted); margin-top: 2mm; }
+
+.work { display: grid; grid-template-columns: repeat(4, 1fr); gap: 3mm; }
+.case { border: 1px solid var(--line); border-radius: 10px; padding: 2.2mm 3mm; background: #fff; }
+.case .mono { font-size: 6.4pt; color: var(--muted); letter-spacing: .04em; }
+.case b { display: block; font-size: 10pt; font-weight: 700; margin: .6mm 0 .6mm; }
+.case span { font-size: 7.8pt; color: var(--muted); line-height: 1.36; display: block; }
+
+table { width: 100%; border-collapse: collapse; }
+td { font-size: 8pt; padding: .55mm 0; border-bottom: 1px solid var(--line); vertical-align: top; }
+td:first-child { font-weight: 650; width: 34%; color: var(--ink); }
+td:nth-child(2) { color: var(--muted); padding-right: 4mm; }
+td:last-child { width: 12%; text-align: right; font-family: 'Fira Code', monospace; font-size: 7.4pt; color: var(--brand-d); padding-top: 1.6mm; }
+.bottom { display: grid; grid-template-columns: 1.55fr 1fr; gap: 7mm; }
+.trust { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0 6mm; }
+.trust li { list-style: none; font-size: 8pt; padding: 1.05mm 0 1.05mm 4mm; border-bottom: 1px solid var(--line); position: relative; }
+.trust li::before { content: ''; position: absolute; left: 0; top: 2.5mm; width: 5px; height: 5px; border-radius: 1px; background: var(--brand); }
+.trustline { margin-top: 2mm; font-size: 7.9pt; color: var(--muted); }
+.trustline .mono { margin-right: 2.4mm; }
+.price { font-size: 8pt; color: var(--muted); margin-top: 2mm; }
+
+footer { flex-shrink: 0; margin-top: auto; background: var(--night); color: #fff; padding: 4.5mm 15mm; display: flex; align-items: center; justify-content: space-between; gap: 6mm; }
+footer .l { display: flex; align-items: center; gap: 4mm; }
+footer img { height: 30px; }
+footer b { font-size: 12.5pt; display: block; letter-spacing: -.2px; }
+footer .s { font-size: 8.4pt; color: #B2B9C7; }
+footer .r { text-align: right; font-size: 8.6pt; line-height: 1.5; color: #fff; }
+footer .r .mono { color: #61A8FF; }
+</style>
+</head>
+<body>
+<div class="page">
+<div class="topbar"></div>
+<div class="wrap">
+<header>
+<div class="brand"><img src="logo.png" alt="NewtonSchool Studio logo">NewtonSchool Studio</div>
+<span class="mono">A Newton School of Technology initiative</span>
+</header>
+
+<div class="hero">
+<div class="left">
+<p class="mono">Problem-to-production engineering</p>
+<h1 style="margin-top:2mm">From a hard problem to software in production.</h1>
+<p class="lede">One accountable technical owner and a focused engineering pod take your problem through architecture, build and deployment, then hand over the code and everything needed to run it.</p>
+<p class="team">Pods pair an accountable technical owner with full-time Newton School of Technology engineers, backed by engineering leadership from Google, Goldman Sachs, Siemens, Autodesk and CRED.</p>
+</div>
+<div class="cta">
+<p class="mono">Next step</p>
+<p class="t">Start with a <span style="white-space:nowrap">20-minute</span> scoping call</p>
+<p class="s">We agree the problem, the right first engagement and what the first phase delivers. You get a written scope to review.</p>
+</div>
+</div>
+
+<section>
+<div class="sh"><h2 class="mono">What we take on</h2><span class="note">Each one already shipped</span></div>
+<div class="grid3">
+<div class="prob"><span class="n">01</span><b>New products and first releases</b><span>A validated idea or stalled prototype taken to a product people rely on. <i class="pf">Proof: Zuvees</i></span></div>
+<div class="prob"><span class="n">02</span><b>Internal tools and operations</b><span>Spreadsheets and paper replaced with one system built around real roles. <i class="pf">Proof: RishiVerse</i></span></div>
+<div class="prob"><span class="n">03</span><b>AI features with human review</b><span>Vision, document and agent workflows with confidence, overrides and cost control. <i class="pf">Proof: FieldVue</i></span></div>
+<div class="prob"><span class="n">04</span><b>Integrations and platform work</b><span>Marketplaces, warehouses, payments and identity kept in sync. <i class="pf">Proof: Zuvees</i></span></div>
+<div class="prob"><span class="n">05</span><b>Rescue and modernisation</b><span>Slow, fragile or costly systems stabilised with a plan your team can continue. <i class="pf">Proof: RishiVerse</i></span></div>
+<div class="prob"><span class="n">06</span><b>Applied technology research</b><span>Messy data or an open question turned into evidence and a decision. <i class="pf">Proof: IIT Roorkee</i></span></div>
+</div>
+</section>
+
+<section>
+<div class="sh"><h2 class="mono">How we work</h2><span class="note">You sign off at every gate</span></div>
+<div class="how">
+<div class="part"><span class="n">01</span><b>One accountable technical owner</b><span>Owns the outcome, the architecture and the trade-offs, and is your single point of contact.</span></div>
+<div class="part"><span class="n">02</span><b>A focused engineering pod</b><span>Product, backend, data, quality and deployment move in parallel, not one after another.</span></div>
+<div class="part"><span class="n">03</span><b>AI-accelerated, human-verified</b><span>AI speeds up exploration and implementation. People review every change and own release decisions.</span></div>
+<div class="part"><span class="n">04</span><b>Working software every week</b><span>Weekly demos of running software, with a written plan and change log you can follow.</span></div>
+</div>
+<div class="gates">
+<div class="gate"><span class="n">Gate 01</span><b>Problem contract</b><span>Outcome, users and constraints agreed</span></div>
+<div class="gate"><span class="n">Gate 02</span><b>System contract</b><span>Architecture and scope signed off</span></div>
+<div class="gate"><span class="n">Gate 03</span><b>Executable acceptance</b><span>Tests that prove it works</span></div>
+<div class="gate"><span class="n">Gate 04</span><b>Production evidence</b><span>Running with real users and data</span></div>
+<div class="gate"><span class="n">Gate 05</span><b>Ownership transfer</b><span>Code, docs and access handed over</span></div>
+</div>
+</section>
+
+<section>
+<div class="sh"><h2 class="mono">Work we’ve delivered</h2><span class="note">Full case studies at newtonschool-studio.newtonschool.co</span></div>
+<div class="work">
+<div class="case"><span class="mono">Quick commerce · Dubai</span><b>Zuvees</b><span>Shopify for checkout, our order and inventory system around it: 5 channels, one inventory, a 60-minute promise.</span></div>
+<div class="case"><span class="mono">Higher education</span><b>RishiVerse</b><span>University ERP with 25+ modules: 80% less manual admin work and 99.8% uptime.</span></div>
+<div class="case"><span class="mono">Public sector · with SSF</span><b>IIT Roorkee</b><span>Portal matching citizens to welfare schemes, with scrapers for 13 states. Fully handed over.</span></div>
+<div class="case"><span class="mono">AI · North America</span><b>FieldVue</b><span>AI estimates for painting contractors, with confidence scores, overrides and tiered pricing.</span></div>
+</div>
+</section>
+
+<section>
+<div class="sh"><h2 class="mono">Ways to start</h2><span class="note">Fixed scope, priced on the agreed outcome. Tighter budget? We phase delivery.</span></div>
+<table>
+<tr><td>Problem and Architecture Sprint</td><td>The right system is not yet clear</td><td>2–3 wks</td></tr>
+<tr><td>Production Pilot</td><td>Prove one critical workflow with real users</td><td>4–8 wks</td></tr>
+<tr><td>Product Build</td><td>Take a full product or platform to production</td><td>8–16 wks</td></tr>
+<tr><td>System Rescue and Acceleration</td><td>A live system is slow, fragile or stuck</td><td>4–8 wks</td></tr>
+<tr><td>Managed Product System</td><td>Keep a live system improving and supported</td><td>Monthly</td></tr>
+<tr><td>Applied Technology Research</td><td>A technical question needs evidence before a build</td><td>Scoped</td></tr>
+</table>
+</section>
+
+<p class="trustline"><span class="mono">Data and ownership</span>NDA for every pod member · We work in your repositories and cloud · No live customer data without written approval · Approved AI tools only · Access removed at handover · You own the code</p>
+</div>
+
+<footer>
+<div class="l"><img src="logo-white.png" alt=""><div><b>Book a 20-minute scoping call</b><span class="s">cal.com/newton-school-studio/scoping-call</span></div></div>
+<div class="r"><span class="mono">Contact</span><br>Hritvik Mohan · hritvik.mohan@newtonschool.co<br>newtonschool-studio@newtonschool.co</div>
+</footer>
+</div>
+</body>
+</html>
