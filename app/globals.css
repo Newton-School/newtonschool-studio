@@ -217,6 +217,13 @@ svg { display: block; }
 .addons > span { color: var(--faint); font: 600 9px/1 "JetBrains Mono", monospace; margin-right: 4px; }
 .addons i { font-style: normal; color: var(--muted); border: 1px solid var(--border); border-radius: 4px; padding: 5px 7px; font-size: 10px; }
 
+/* Trust */
+.trust-grid { display: grid; grid-template-columns: repeat(3, 1fr); }
+.trust-card { min-height: 250px; padding: 28px; margin: 0 -1px -1px 0; }
+.trust-card > span { color: var(--accent); font: 650 11px/1 "JetBrains Mono", monospace; }
+.trust-card h3 { margin: 56px 0 12px; font-size: 20px; line-height: 1.2; }
+.trust-card p { margin: 0; color: var(--muted); font-size: 14px; line-height: 1.65; }
+
 /* Stack, lab, FAQ and booking */
 .stack-section { border-top: 1px solid var(--border); }
 .stack-highlights { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
@@ -385,6 +392,7 @@ footer { background: var(--surface); border-top: 1px solid var(--border); paddin
   .service-card { margin-top: -1px; }
   .force-grid { grid-template-columns: repeat(2, 1fr); }
   .force-card { margin-bottom: -1px; }
+  .trust-grid { grid-template-columns: repeat(2, 1fr); }
   .faq-layout { grid-template-columns: 300px 1fr; gap: 60px; }
   .case-hero-layout { grid-template-columns: 1fr; }
   .case-hero-image { min-height: 460px; }
@@ -410,7 +418,7 @@ footer { background: var(--surface); border-top: 1px solid var(--border); paddin
   .section-heading { margin-bottom: 38px; }
   .section-heading h2 { font-size: 40px; }
   .section-heading p { font-size: 16px; }
-  .service-grid, .customer-grid, .case-grid, .package-grid, .force-grid, .stack-highlights { grid-template-columns: 1fr; }
+  .service-grid, .customer-grid, .case-grid, .package-grid, .force-grid, .trust-grid, .stack-highlights { grid-template-columns: 1fr; }
   .customer-card, .customer-card:last-child { min-height: 300px; grid-column: auto; }
   .service-card { min-height: 240px; margin-right: 0; }
   .service-card h3 { margin-top: 40px; }
@@ -424,6 +432,7 @@ footer { background: var(--surface); border-top: 1px solid var(--border); paddin
   .comparison-row > svg { display: none; }
   .comparison-row > strong { grid-column: 2; padding-top: 7px; border-top: 1px solid var(--border); }
   .force-card { min-height: 220px; margin-right: 0; }
+  .trust-card { min-height: 220px; margin-right: 0; }
   .model-statement { grid-template-columns: 1fr; margin: 44px 0 54px; padding: 24px; gap: 18px; }
   .model-statement p { font-size: 18px; }
   .gate-heading { align-items: flex-start; flex-direction: column; gap: 8px; }

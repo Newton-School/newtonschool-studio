@@ -16,6 +16,7 @@ import {
   problemStates,
   stack,
   stackHighlights,
+  trustItems,
 } from "@/content/site";
 
 const Cal = dynamic(() => import("@calcom/embed-react"), {
@@ -236,7 +237,12 @@ export function StudioPage({ caseStudies }: { caseStudies: CaseStudySummary[] })
         <div className="pricing-note"><p>Pricing is fixed against scope and expected evidence. Technical leadership is concentrated on high-risk decisions while the pod moves research, implementation and verification in parallel. If your budget is tighter, we reduce scope or phase delivery.</p><div className="addons"><span>CAPABILITIES</span>{["UX/UI design", "Security and compliance", "Data and analytics", "Migration and modernisation"].map(item => <i key={item}>{item}</i>)}</div></div>
       </div></section>
 
-      <section className="section stack-section alt" id="stack"><div className="container" data-reveal>
+      <section className="section alt trust-section" id="trust"><div className="container" data-reveal>
+        <SectionHeading eyebrow="TRUST" title="Your data, your environment, your code." text="The operating rules are agreed before delivery starts and carried through handover."/>
+        <div className="trust-grid">{trustItems.map((item, index) => <Card className="trust-card" key={item.title}><span>0{index + 1}</span><h3>{item.title}</h3><p>{item.body}</p></Card>)}</div>
+      </div></section>
+
+      <section className="section stack-section" id="stack"><div className="container" data-reveal>
         <SectionHeading eyebrow="07 · ENGINEERING APPROACH" title="We choose the system around the problem." text="Architecture follows the outcome, operational constraints and systems already in place. These are representative areas of work, connected to delivered examples."/>
         <div className="stack-highlights">{stackHighlights.map(item => <Card className="stack-highlight" key={item.group}><span>{item.group}</span><p>{item.body}</p><div className="tags">{item.items.map(technology => <i key={technology}>{technology}</i>)}</div><Link href={`/work/${item.proof.slug}`}>{item.proof.label} <Arrow/></Link></Card>)}</div>
         <details className="stack-details"><summary>View full technology coverage <span>PRODUCT · PLATFORM · DATA · AI</span></summary><div className="stack-grid">{Object.entries(stack).map(([group, items]) => <div className="stack-group" key={group}><h3>{group}</h3><div>{items.map(item => <span key={item}><i>{item.slice(0,2).toUpperCase()}</i>{item}</span>)}</div></div>)}</div></details>

@@ -111,6 +111,33 @@ export const packages = [
   },
 ] as const;
 
+export const trustItems = [
+  {
+    title: "NDA before access",
+    body: "Every pod member signs an NDA before they see your code or data.",
+  },
+  {
+    title: "Work in your environment",
+    body: "We work in your repositories, cloud accounts and tools.",
+  },
+  {
+    title: "No live customer data by default",
+    body: "We only use live customer data with your written approval.",
+  },
+  {
+    title: "Approved AI tools only",
+    body: "You agree which tools can touch your code, and a person reviews every change.",
+  },
+  {
+    title: "Access removed at handover",
+    body: "Every credential is revoked when the engagement closes.",
+  },
+  {
+    title: "You own what we build",
+    body: "IP, warranty and support terms are set in the statement of work.",
+  },
+] as const;
+
 export const stackHighlights = [
   {
     group: "Product interfaces",
