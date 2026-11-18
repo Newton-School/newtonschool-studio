@@ -23,6 +23,9 @@ const components: Components = {
   img({ alt = "", ...props }) {
     return <img alt={alt} loading="lazy" {...props} />;
   },
+  table({ children, ...props }) {
+    return <div className="table-scroll" role="region" aria-label="Scrollable table" tabIndex={0}><table {...props}>{children}</table></div>;
+  },
 };
 
 export function MarkdownContent({ content }: { content: string }) {
