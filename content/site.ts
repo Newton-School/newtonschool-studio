@@ -65,7 +65,6 @@ export const packages = [
     deliverables: ["Problem contract", "Architecture and risk map", "Prioritised delivery plan"],
     success: "Your team can make a confident build decision with scope, evidence and trade-offs in view.",
     clientNeeds: "Access to decision-makers, users and relevant systems.",
-    price: "From INR 1.2L",
   },
   {
     title: "Production Pilot",
@@ -74,7 +73,6 @@ export const packages = [
     deliverables: ["Working product slice", "Production deployment", "Validation evidence and next-step plan"],
     success: "The riskiest part of the product works outside a demo environment.",
     clientNeeds: "A named owner, user access and timely domain decisions.",
-    price: "From INR 4L",
   },
   {
     // TODO(hritvik): decide whether Product Build stays at 8 to 12 weeks or changes to the deck's 8 to 16 weeks.
@@ -84,7 +82,6 @@ export const packages = [
     deliverables: ["Core product workflows", "Quality and operational controls", "Deployment, documentation and handover"],
     success: "Users can complete the target workflow and your team can operate the system.",
     clientNeeds: "Product decisions, domain access and a launch owner.",
-    price: "From INR 9L",
   },
   {
     title: "System Rescue and Acceleration",
@@ -93,7 +90,6 @@ export const packages = [
     deliverables: ["Constraint and failure analysis", "Prioritised remediation", "Measured implementation changes"],
     success: "The limiting constraint is removed and the team has a safer path forward.",
     clientNeeds: "Repository, infrastructure and operational access.",
-    price: "Scope set after diagnosis",
   },
   {
     title: "Managed Product System",
@@ -102,7 +98,6 @@ export const packages = [
     deliverables: ["Planned feature delivery", "Operational and defect response", "Release evidence and decision records"],
     success: "The product improves on a predictable cadence without losing system ownership.",
     clientNeeds: "A shared roadmap, product owner and access to users and metrics.",
-    price: "From INR 5L per month",
   },
   {
     title: "Applied Technology Research Sprint",
@@ -111,7 +106,6 @@ export const packages = [
     deliverables: ["Research brief and falsifiable question", "Reproducible experiment or prototype", "Evidence, limitations and recommendation"],
     success: "Your team can make a go, change or stop decision with evidence.",
     clientNeeds: "A named domain expert, relevant data or environment access, and a decision the research must inform.",
-    price: "From INR 1.25L",
   },
 ] as const;
 

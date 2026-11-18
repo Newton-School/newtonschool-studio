@@ -165,7 +165,6 @@ export function PackageCard({ item }: { item: typeof packages[number] }) {
     <div className="package-field"><span>WHAT YOU GET</span><ul>{item.deliverables.map(deliverable => <li key={deliverable}>{deliverable}</li>)}</ul></div>
     <div className="package-field"><span>SUCCESS LOOKS LIKE</span><p>{item.success}</p></div>
     <div className="package-field compact"><span>WE NEED</span><p>{item.clientNeeds}</p></div>
-    <strong className="price">{item.price}</strong>
     <a className={`button ${"featured" in item && item.featured ? "primary" : "secondary"}`} href="#booking">Discuss this package <Arrow/></a>
   </Card>;
 }
@@ -234,7 +233,7 @@ export function StudioPage({ caseStudies }: { caseStudies: CaseStudySummary[] })
       <section className="section" id="packages"><div className="container" data-reveal>
         <SectionHeading eyebrow="06 · ENGAGEMENTS" title="Choose the next proof point." text="Each engagement is shaped around a decision or production outcome, with the evidence expected at the end made explicit."/>
         <div className="package-grid">{packages.map(item => <PackageCard item={item} key={item.title}/>)}</div>
-        <div className="pricing-note"><p>Pricing is fixed against scope and expected evidence. Technical leadership is concentrated on high-risk decisions while the pod moves research, implementation and verification in parallel. If your budget is tighter, we reduce scope or phase delivery.</p><div className="addons"><span>CAPABILITIES</span>{["UX/UI design", "Security and compliance", "Data and analytics", "Migration and modernisation"].map(item => <i key={item}>{item}</i>)}</div></div>
+        <div className="capabilities-note"><div className="addons"><span>CAPABILITIES</span>{["UX/UI design", "Security and compliance", "Data and analytics", "Migration and modernisation"].map(item => <i key={item}>{item}</i>)}</div></div>
       </div></section>
 
       <section className="section alt trust-section" id="trust"><div className="container" data-reveal>
