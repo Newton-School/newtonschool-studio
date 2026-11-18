@@ -1,9 +1,17 @@
-import { Children, isValidElement, type ReactElement } from "react";
+import { Children, isValidElement, type ReactElement, type ReactNode } from "react";
 import ReactMarkdown, { type Components } from "react-markdown";
 import rehypeHighlight from "rehype-highlight";
 import rehypeRaw from "rehype-raw";
 import remarkGfm from "remark-gfm";
 import { MermaidDiagram } from "@/components/mermaid-diagram";
+import { slugifyHeading } from "@/lib/markdown-headings";
+
+function textFromNode(node: ReactNode): string {
+  if (typeof node === "string" || typeof node === "number") return String(node);
+  if (Array.isArray(node)) return node.map(textFromNode).join("");
+  if (isValidElement<{ children?: ReactNode }>(node)) return textFromNode(node.props.children);
+  return "";
+}
 
 const components: Components = {
   pre({ children }) {
@@ -25,6 +33,10 @@ const components: Components = {
   },
   table({ children, ...props }) {
     return <div className="table-scroll" role="region" aria-label="Scrollable table" tabIndex={0}><table {...props}>{children}</table></div>;
+  },
+  h2({ children }) {
+    const id = slugifyHeading(textFromNode(children));
+    return <h2 id={id}>{children}</h2>;
   },
 };
 
