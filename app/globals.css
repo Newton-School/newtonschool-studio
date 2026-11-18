@@ -268,10 +268,11 @@ svg { display: block; }
 
 /* Footer and reveal */
 footer { background: var(--surface); border-top: 1px solid var(--border); padding: 64px 0 80px; }
-.footer-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 80px; }
+.footer-grid { display: grid; grid-template-columns: 1.35fr .8fr 1.2fr 1fr; gap: 54px; }
 .footer-grid p { color: var(--muted); font-size: 13px; max-width: 340px; }
 .footer-grid > div > span { display: block; color: var(--faint); margin-bottom: 14px; }
 .footer-grid > div > a:not(.logo), .placeholder-link { display: block; margin-top: 8px; font-size: 13px; }
+.footer-grid > div > a:not(.logo) { overflow-wrap: anywhere; }
 .placeholder-link { color: var(--faint); }
 .footer-grid small { display: block; margin-top: 28px; color: var(--faint); }
 [data-reveal] { opacity: 0; transform: translateY(12px); transition: opacity .55s ease, transform .55s ease; }
@@ -385,6 +386,7 @@ footer { background: var(--surface); border-top: 1px solid var(--border); paddin
   .force-card { margin-bottom: -1px; }
   .trust-grid { grid-template-columns: repeat(2, 1fr); }
   .faq-layout { grid-template-columns: 300px 1fr; gap: 60px; }
+  .footer-grid { grid-template-columns: repeat(2, 1fr); }
   .case-hero-layout { grid-template-columns: 1fr; }
   .case-hero-image { min-height: 460px; }
   .booking-panel { grid-template-columns: 1fr; gap: 60px; }

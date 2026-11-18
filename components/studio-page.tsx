@@ -12,6 +12,7 @@ import {
   deliveryGates,
   faqs,
   idealCustomers,
+  linkedInUrl,
   packages,
   problemStates,
   stackHighlights,
@@ -257,7 +258,7 @@ export function StudioPage({ caseStudies }: { caseStudies: CaseStudySummary[] })
         <BookingScheduler />
       </div></section>
     </main>
-    <footer><div className="container footer-grid"><div><Logo/><p>From a hard problem to software in production.</p></div><div><span>START</span><a href="#booking">Book a scoping call</a><a href="/newtonschool-studio-one-pager.pdf" download>Download the one-pager</a></div><div><span>INITIATIVE</span><p>A Newton School of Technology initiative</p><small>© 2026 NewtonSchool Studio</small></div></div></footer>
+    <footer><div className="container footer-grid"><div><Logo/><p>From a hard problem to software in production.</p></div><div><span>START</span><a href="#booking">Book a scoping call</a><a href="/newtonschool-studio-one-pager.pdf" download>Download the one-pager</a></div><div><span>CONTACT</span><a href="mailto:newtonschool-studio@newtonschool.co">newtonschool-studio@newtonschool.co</a>{linkedInUrl && <a href={linkedInUrl} target="_blank" rel="noreferrer">LinkedIn</a>}</div><div><span>INITIATIVE</span><p>A Newton School of Technology initiative</p><small>© 2026 NewtonSchool Studio</small></div></div></footer>
     <div className="mobile-book"><a className="button primary" href="#booking"><CalendarIcon/>Book a 20-minute scoping call</a></div>
   </>;
 }
