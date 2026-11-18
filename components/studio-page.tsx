@@ -4,7 +4,18 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import type { CaseStudySummary } from "@/content/case-study-types";
-import { faqs, mentors, packages, process, services, stack } from "@/content/site";
+import {
+  aiComparison,
+  deliveryForces,
+  deliveryGates,
+  faqs,
+  idealCustomers,
+  labWork,
+  packages,
+  problemStates,
+  stack,
+  stackHighlights,
+} from "@/content/site";
 
 const Arrow = () => <svg aria-hidden="true" viewBox="0 0 20 20"><path d="M4 10h11M11 6l4 4-4 4" /></svg>;
 const CalendarIcon = () => <svg aria-hidden="true" viewBox="0 0 20 20"><rect x="3" y="4.5" width="14" height="12" rx="2"/><path d="M6.5 2.5v4M13.5 2.5v4M3 8h14"/></svg>;
@@ -18,6 +29,8 @@ function Icon({ name }: { name: string }) {
   if (name === "window") return <svg {...common} aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 8h18M7 6h.01"/></svg>;
   if (name === "workflow") return <svg {...common} aria-hidden="true"><rect x="3" y="4" width="7" height="6" rx="1"/><rect x="14" y="14" width="7" height="6" rx="1"/><path d="M10 7h3a4 4 0 0 1 4 4v3"/></svg>;
   if (name === "spark") return <svg {...common} aria-hidden="true"><path d="m12 3 1.7 5.3L19 10l-5.3 1.7L12 17l-1.7-5.3L5 10l5.3-1.7L12 3Z"/><path d="m18 3 .5 1.5L20 5l-1.5.5L18 7l-.5-1.5L16 5l1.5-.5L18 3Z"/></svg>;
+  if (name === "rescue") return <svg {...common} aria-hidden="true"><path d="M4 7h10a5 5 0 0 1 0 10H9"/><path d="m8 3-4 4 4 4M9 14l-3 3 3 3"/></svg>;
+  if (name === "integration") return <svg {...common} aria-hidden="true"><rect x="3" y="4" width="6" height="6" rx="1"/><rect x="15" y="14" width="6" height="6" rx="1"/><path d="M9 7h3a5 5 0 0 1 5 5v2M15 17h-3a5 5 0 0 1-5-5v-2"/></svg>;
   if (name === "research") return <svg {...common} aria-hidden="true"><path d="M9 3h6M10 3v5l-5 9a2 2 0 0 0 1.8 3h10.4a2 2 0 0 0 1.8-3l-5-9V3"/><path d="M7.5 14h9M9.5 11.5h5"/></svg>;
   if (name === "problem") return <svg {...common} aria-hidden="true"><circle cx="12" cy="12" r="8"/><circle cx="12" cy="12" r="3"/><path d="M12 4V2M20 12h2M12 20v2M4 12H2"/></svg>;
   return <svg {...common} aria-hidden="true"><path d="M7 18h11a4 4 0 0 0 .5-8A6.5 6.5 0 0 0 6 8.5 4.8 4.8 0 0 0 7 18Z"/><path d="M9 14h6M12 11v6"/></svg>;
@@ -106,15 +119,20 @@ function ProductFrame({ label }: { label: string }) {
 }
 
 export function CaseStudyCard({ item }: { item: CaseStudySummary }) {
-  return <Link className="case-card-link" href={`/work/${item.slug}`} scroll={false} aria-label={`View ${item.name} case study`}><Card className="case-card"><ProductFrame label={item.screen}/><div className="case-content"><div className="case-head"><h3>{item.name}</h3><span>{item.industry}</span></div><p className="problem">{item.problem}</p><p>{item.build}</p><div className="tags">{item.tags.map(tag => <span key={tag}>{tag}</span>)}</div><div className="result"><span>KEY RESULT</span><strong>{item.result}</strong></div><span className="case-link">View case study <Arrow/></span></div></Card></Link>;
-}
-
-export function MentorCard({ item, index }: { item: typeof mentors[number]; index: number }) {
-  return <Card className="mentor-card"><div className="mentor-photo" role="img" aria-label={`Photo placeholder for ${item.name}`}><span>0{index + 1}</span><svg aria-hidden="true" viewBox="0 0 100 100"><circle cx="50" cy="38" r="17"/><path d="M20 91c2-22 14-34 30-34s28 12 30 34"/></svg><em>PHOTO PLACEHOLDER</em></div><div><h3>{item.name}</h3><span className="mentor-role">{item.role}</span><p>{item.experience}</p><div className="mentor-meta"><span>{item.years}</span><span className="linkedin" aria-label="LinkedIn link placeholder">in</span></div></div></Card>;
+  return <Link className="case-card-link" href={`/work/${item.slug}`} aria-label={`View ${item.name} case study`}><Card className="case-card"><ProductFrame label={item.screen}/><div className="case-content"><div className="case-head"><h3>{item.name}</h3><span>{item.industry}</span></div><p className="problem">{item.problem}</p><p>{item.build}</p><div className="tags">{item.tags.map(tag => <span key={tag}>{tag}</span>)}</div><div className="result"><span>KEY RESULT</span><strong>{item.result}</strong></div><span className="case-link">View case study <Arrow/></span></div></Card></Link>;
 }
 
 export function PackageCard({ item }: { item: typeof packages[number] }) {
-  return <Card className={`package-card ${item.featured ? "featured" : ""}`}>{item.featured && <span className="featured-label">WHERE MOST CLIENTS START</span>}<div className="package-top"><h3>{item.title}</h3><span>{item.time}</span></div><p>{item.body}</p><strong className="price">{item.price}</strong><a className={`button ${item.featured ? "primary" : "secondary"}`} href="#booking">Discuss this package <Arrow/></a></Card>;
+  return <Card className={`package-card ${"featured" in item && item.featured ? "featured" : ""}`}>
+    {"featured" in item && item.featured && <span className="featured-label">WHERE MOST CLIENTS START</span>}
+    <div className="package-top"><h3>{item.title}</h3><span>{item.time}</span></div>
+    <div className="package-field"><span>USE WHEN</span><p>{item.useWhen}</p></div>
+    <div className="package-field"><span>WHAT YOU GET</span><ul>{item.deliverables.map(deliverable => <li key={deliverable}>{deliverable}</li>)}</ul></div>
+    <div className="package-field"><span>SUCCESS LOOKS LIKE</span><p>{item.success}</p></div>
+    <div className="package-field compact"><span>WE NEED</span><p>{item.clientNeeds}</p></div>
+    <strong className="price">{item.price}</strong>
+    <a className={`button ${"featured" in item && item.featured ? "primary" : "secondary"}`} href="#booking">Discuss this package <Arrow/></a>
+  </Card>;
 }
 
 export function FAQItem({ item, open, onClick }: { item: typeof faqs[number]; open: boolean; onClick: () => void }) {
@@ -131,25 +149,82 @@ export function StudioPage({ caseStudies }: { caseStudies: CaseStudySummary[] })
   return <>
     <Navigation />
     <main id="top">
-      <section className="hero"><div className="hero-grid"/><div className="container hero-layout"><div className="hero-copy" data-reveal><span className="eyebrow"><i/>Mentor-led software engineering</span><h1>We build MVPs, internal tools and AI features that <em>ship to production.</em></h1><p>Senior engineers lead the architecture and review every line. Our engineering pod builds it. You get production-grade software with a clean handover, on a fixed scope and timeline.</p><div className="hero-actions"><a className="button primary large" href="#booking"><CalendarIcon/>Book a 20-min scoping call</a><a className="text-link" href="/newtonschool-studio-one-pager.pdf" download>Download the one-pager <Arrow/></a></div></div><div data-reveal><DeliverySystemDiagram/></div></div></section>
+      <section className="hero">
+        <div className="hero-grid"/>
+        <div className="container hero-layout">
+          <div className="hero-copy" data-reveal>
+            <span className="eyebrow"><i/>Problem-to-production engineering</span>
+            <h1>From a hard problem to <em>software in production.</em></h1>
+            <p>NewtonSchool Studio takes important product and operational problems through architecture, build, verification, deployment and handover.</p>
+            <div className="hero-actions">
+              <a className="button primary large" href="#booking"><CalendarIcon/>Book a 20-minute scoping call</a>
+              <a className="text-link" href="/newtonschool-studio-one-pager.pdf" download>Download the one-pager <Arrow/></a>
+            </div>
+          </div>
+          <div data-reveal><DeliverySystemDiagram/></div>
+        </div>
+      </section>
 
-      <section className="section" id="services"><div className="container" data-reveal><SectionHeading eyebrow="01 · CAPABILITIES" title="Problems we take on" text="From early technical questions to production systems for complex operations."/><div className="service-grid">{services.map((item, index) => <Card className="service-card" key={item.title}><div className="service-icon"><Icon name={item.icon}/></div><span className="card-number">0{index + 1}</span><h3>{item.title}</h3><p>{item.body}</p></Card>)}</div></div></section>
+      <section className="section alt fit-section" id="fit"><div className="container" data-reveal>
+        <SectionHeading eyebrow="01 · BEST FIT" title="For teams with a real problem and a production deadline." text="The strongest fit is a validated need, one person who owns the outcome, and access to the users, systems and decisions needed to ship."/>
+        <div className="customer-grid">{idealCustomers.map(item => <Card className="customer-card" key={item.title}><span>{item.label}</span><h3>{item.title}</h3><p>{item.body}</p><ul>{item.signals.map(signal => <li key={signal}>{signal}</li>)}</ul></Card>)}</div>
+      </div></section>
 
-      <section className="section alt" id="work"><div className="container" data-reveal><SectionHeading eyebrow="02 · SELECTED WORK" title="Work in production" text="Systems built for daily use, not demo day."/><div className="case-grid">{caseStudies.map(item => <CaseStudyCard item={item} key={item.name}/>)}</div><p className="confirmation-note"><span/>Client names, metrics and project details shown here are pending final publication approval.</p></div></section>
+      <section className="section" id="services"><div className="container" data-reveal>
+        <SectionHeading eyebrow="02 · PROBLEMS" title="Bring us the problem that is not getting over the line." text="We work from the obstacle and the outcome, then assemble the product and engineering work needed to solve it."/>
+        <div className="service-grid">{problemStates.map((item, index) => <Card className="service-card" key={item.title}><div className="service-icon"><Icon name={item.icon}/></div><span className="card-number">0{index + 1}</span><h3>{item.title}</h3><p>{item.body}</p></Card>)}</div>
+      </div></section>
 
-      <section className="section" id="how"><div className="container" data-reveal><SectionHeading eyebrow="03 · THE DELIVERY MODEL" title="Senior oversight. Focused execution."/><div className="model-grid"><div className="model-card"><span>01</span><div className="model-icon">M</div><h3>Mentors</h3><p>Tech leads and architects own architecture, review every PR and are accountable for quality.</p></div><div className="model-arrow"><Arrow/></div><div className="model-card"><span>02</span><div className="model-icon">E</div><h3>Engineering pod</h3><p>Builds features in daily sprints under mentor direction.</p></div><div className="model-arrow"><Arrow/></div><div className="model-card"><span>03</span><div className="model-icon">D</div><h3>Delivery coordination</h3><p>Timelines, weekly updates and one point of contact.</p></div></div><div className="model-statement"><span className="quote-mark">“</span><p>Our engineers are students at Newton School of Technology, working full-time on client projects under senior mentors. Mentors sign off the architecture before any code is written and review every change before it ships. You get the execution speed of a focused team with the oversight of senior engineers.</p></div><div className="process"><div className="process-line"/>{process.map((step, index) => <div className="process-step" key={step.title}><span>{index + 1}</span><h3>{step.title}</h3><p>{step.body}</p></div>)}</div></div></section>
+      <section className="section alt ai-section"><div className="container" data-reveal>
+        <SectionHeading eyebrow="03 · AI AND DELIVERY" title="AI increases output. We turn it into a production outcome." text="The gap is no longer access to generated code. It is deciding what matters, coordinating the system and proving that it works in the real environment."/>
+        <div className="comparison-grid">
+          <div className="comparison-head"><span>AI CAN</span><span>THE STUDIO OWNS</span></div>
+          {aiComparison.map(([ai, studio], index) => <div className="comparison-row" key={ai}><i>0{index + 1}</i><p>{ai}</p><Arrow/><strong>{studio}</strong></div>)}
+        </div>
+      </div></section>
 
-      <section className="section alt" id="mentors"><div className="container" data-reveal><SectionHeading eyebrow="04 · TECHNICAL LEADERSHIP" title="The engineers accountable for your project" text="Every project has a named senior mentor. Profiles will be published after confirmation."/><div className="mentor-grid">{mentors.map((item, index) => <MentorCard item={item} index={index} key={index}/>)}</div></div></section>
+      <section className="section proof-section" id="work"><div className="container" data-reveal>
+        <SectionHeading eyebrow="04 · DELIVERY EVIDENCE" title="Work you can inspect" text="Each case study opens the problem, constraints, system decisions and available delivery evidence."/>
+        <div className="case-grid">{caseStudies.map(item => <CaseStudyCard item={item} key={item.name}/>)}</div>
+        <p className="confirmation-note"><span/>Publication details and claims are included only after client approval. Pending evidence is labelled inside each case study.</p>
+      </div></section>
 
-      <section className="section" id="packages"><div className="container" data-reveal><SectionHeading eyebrow="05 · ENGAGEMENTS" title="Fixed scope. Clear outcomes." text="Start with a defined result, timeline and price."/><div className="package-grid">{packages.map(item => <PackageCard item={item} key={item.title}/>)}</div><div className="pricing-note"><p>Pricing is fixed against scope. If your budget is tighter, we reduce scope or phase delivery.</p><div className="addons"><span>ADD-ONS</span>{["UX/UI design", "Security and compliance", "Data and analytics", "Migration and modernization"].map(item => <i key={item}>{item}</i>)}</div></div></div></section>
+      <section className="section alt" id="how"><div className="container" data-reveal>
+        <SectionHeading eyebrow="05 · DELIVERY SYSTEM" title="One team owns the path from ambiguity to operation." text="The pod combines judgment, parallel execution and AI-accelerated capacity. Five evidence gates keep speed connected to the outcome."/>
+        <div className="force-grid">{deliveryForces.map((item, index) => <Card className="force-card" key={item.title}><span>0{index + 1}</span><h3>{item.title}</h3><p>{item.body}</p></Card>)}</div>
+        <div className="model-statement"><span>DELIVERY ACCOUNTABILITY</span><p>Student engineers from Newton School of Technology work full-time inside focused engineering pods. Every engagement has a named technical owner responsible for architecture, technical risk, the quality standard and release acceptance through handover.</p></div>
+        <div className="gate-heading"><span>FIVE EVIDENCE GATES</span><p>Progress is marked by evidence, not task count.</p></div>
+        <div className="process gate-process"><div className="process-line"/>{deliveryGates.map((gate, index) => <div className="process-step" key={gate.title}><span>{index + 1}</span><h3>{gate.title}</h3><p>{gate.body}</p></div>)}</div>
+      </div></section>
 
-      <section className="section stack-section" id="stack"><div className="container" data-reveal><SectionHeading eyebrow="06 · ENGINEERING APPROACH" title="The problem comes first." text="We select the architecture, languages and platforms that best fit the outcome, constraints and systems already in place. Our teams work across modern product, cloud, data and AI ecosystems."/><div className="stack-grid"><div className="stack-list-head"><span>TECHNOLOGY COVERAGE</span><span>PRODUCT · PLATFORM · DATA · AI</span></div>{Object.entries(stack).map(([group, items]) => <div className="stack-group" key={group}><h3>{group}</h3><div>{items.map(item => <span key={item}><i>{item.slice(0,2).toUpperCase()}</i>{item}</span>)}</div></div>)}</div></div></section>
+      <section className="section" id="packages"><div className="container" data-reveal>
+        <SectionHeading eyebrow="06 · ENGAGEMENTS" title="Choose the next proof point." text="Each engagement is shaped around a decision or production outcome, with the evidence expected at the end made explicit."/>
+        <div className="package-grid">{packages.map(item => <PackageCard item={item} key={item.title}/>)}</div>
+        <div className="pricing-note"><p>Pricing is fixed against scope and expected evidence. Technical leadership is concentrated on high-risk decisions while the pod moves research, implementation and verification in parallel. If your budget is tighter, we reduce scope or phase delivery.</p><div className="addons"><span>CAPABILITIES</span>{["UX/UI design", "Security and compliance", "Data and analytics", "Migration and modernisation"].map(item => <i key={item}>{item}</i>)}</div></div>
+      </div></section>
 
-      <section className="section alt" id="faq"><div className="container faq-layout" data-reveal><SectionHeading eyebrow="07 · FAQ" title="Questions we expect" text="Straight answers before you spend time on a call."/><div className="faq-list">{faqs.map((item, index) => <FAQItem key={item.q} item={item} open={faqOpen === index} onClick={() => setFaqOpen(faqOpen === index ? -1 : index)}/>)}</div></div></section>
+      <section className="section stack-section alt" id="stack"><div className="container" data-reveal>
+        <SectionHeading eyebrow="07 · ENGINEERING APPROACH" title="We choose the system around the problem." text="Architecture follows the outcome, operational constraints and systems already in place. These are representative areas of work, connected to delivered examples."/>
+        <div className="stack-highlights">{stackHighlights.map(item => <Card className="stack-highlight" key={item.group}><span>{item.group}</span><p>{item.body}</p><div className="tags">{item.items.map(technology => <i key={technology}>{technology}</i>)}</div><Link href={`/work/${item.proof.slug}`}>{item.proof.label} <Arrow/></Link></Card>)}</div>
+        <details className="stack-details"><summary>View full technology coverage <span>PRODUCT · PLATFORM · DATA · AI</span></summary><div className="stack-grid">{Object.entries(stack).map(([group, items]) => <div className="stack-group" key={group}><h3>{group}</h3><div>{items.map(item => <span key={item}><i>{item.slice(0,2).toUpperCase()}</i>{item}</span>)}</div></div>)}</div></details>
+      </div></section>
 
-      <section className="section booking" id="booking"><div className="container booking-panel" data-reveal><div className="booking-copy"><span className="eyebrow">08 · START HERE</span><h2>Tell us what you’re building.</h2><p>A 20-minute call to scope your project. You’ll leave with a clear recommendation, even if we’re not the right fit.</p><div className="call-points"><div><span>01</span><p>Describe the problem, users and deadline.</p></div><div><span>02</span><p>We identify the smallest useful scope.</p></div><div><span>03</span><p>You get a recommended next step.</p></div></div></div><div className="booking-widget" role="img" aria-label="Placeholder for Cal.com or Calendly booking widget"><div className="widget-top"><div className="widget-logo"><Image src="/newtonschool-studio-logo.png" width={32} height={32} alt=""/></div><div><strong>NewtonSchool Studio</strong><span>20-minute scoping call</span></div></div><div className="widget-body"><span>OCTOBER 2026</span><div className="calendar-row">{["M","T","W","T","F"].map((d,i)=><b key={i}>{d}</b>)}</div><div className="calendar-row dates">{[5,6,7,8,9].map(d=><i key={d}>{d}</i>)}</div><div className="slot-placeholder"><span/><span/><span/></div><em>CAL.COM OR CALENDLY EMBED PLACEHOLDER</em></div></div></div></section>
+      <section className="section lab-section"><div className="container" data-reveal>
+        <SectionHeading eyebrow="08 · STUDIO LAB" title="Engineering notes from the work" text="Technical systems worth examining beyond a project summary."/>
+        <div className="lab-grid">{labWork.map((item, index) => <Link href={`/work/${item.slug}`} className="lab-card" key={item.title}><span>{item.label}</span><i>0{index + 1}</i><h3>{item.title}</h3><p>{item.body}</p><strong>Open engineering note <Arrow/></strong></Link>)}</div>
+      </div></section>
+
+      <section className="section alt" id="faq"><div className="container faq-layout" data-reveal>
+        <SectionHeading eyebrow="09 · FAQ" title="Questions we expect" text="Straight answers before you spend time on a call."/>
+        <div className="faq-list">{faqs.map((item, index) => <FAQItem key={item.q} item={item} open={faqOpen === index} onClick={() => setFaqOpen(faqOpen === index ? -1 : index)}/>)}</div>
+      </div></section>
+
+      <section className="section booking" id="booking"><div className="container booking-panel" data-reveal>
+        <div className="booking-copy"><span className="eyebrow">10 · START HERE</span><h2>Bring us the problem that is not getting over the line.</h2><p>A 20-minute call to identify the obstacle, the next useful proof point and whether we are the right team to own it.</p><div className="call-points"><div><span>01</span><p>Describe the outcome, users and current obstacle.</p></div><div><span>02</span><p>We separate the knowns, risks and decisions.</p></div><div><span>03</span><p>You leave with a recommended next step.</p></div></div></div>
+        <div className="booking-widget" role="img" aria-label="Placeholder for Cal.com or Calendly booking widget"><div className="widget-top"><div className="widget-logo"><Image src="/newtonschool-studio-logo.png" width={32} height={32} alt=""/></div><div><strong>NewtonSchool Studio</strong><span>20-minute scoping call</span></div></div><div className="widget-body"><span>BOOKING WIDGET</span><div className="calendar-row">{["M","T","W","T","F"].map((d,i)=><b key={i}>{d}</b>)}</div><div className="calendar-row dates">{[5,6,7,8,9].map(d=><i key={d}>{d}</i>)}</div><div className="slot-placeholder"><span/><span/><span/></div><em>CAL.COM OR CALENDLY EMBED PLACEHOLDER</em></div></div>
+      </div></section>
     </main>
-    <footer><div className="container footer-grid"><div><Logo/><p>Mentor-led software engineering for teams with a real problem and a deadline.</p></div><div><span>CONTACT</span><span className="placeholder-link">Email · PLACEHOLDER</span><span className="placeholder-link">LinkedIn · PLACEHOLDER</span></div><div><span>INITIATIVE</span><p>A Newton School of Technology initiative</p><small>© 2026 NewtonSchool Studio</small></div></div></footer>
-    <div className="mobile-book"><a className="button primary" href="#booking"><CalendarIcon/>Book a 20-min scoping call</a></div>
+    <footer><div className="container footer-grid"><div><Logo/><p>From a hard problem to software in production.</p></div><div><span>START</span><a href="#booking">Book a scoping call</a><a href="/newtonschool-studio-one-pager.pdf" download>Download the one-pager</a></div><div><span>INITIATIVE</span><p>A Newton School of Technology initiative</p><small>© 2026 NewtonSchool Studio</small></div></div></footer>
+    <div className="mobile-book"><a className="button primary" href="#booking"><CalendarIcon/>Book a 20-minute scoping call</a></div>
   </>;
 }

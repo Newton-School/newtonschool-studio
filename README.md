@@ -1,8 +1,8 @@
 # NewtonSchool Studio
 
-Single-page marketing website for NewtonSchool Studio, a mentor-led software engineering studio based in Bengaluru, India.
+Single-page marketing website for NewtonSchool Studio, an engineering studio based in Bengaluru, India that takes hard product and technical problems through to production software.
 
-The site presents NewtonSchool Studio's delivery model, capabilities, production work, packages, technical stack, mentors, FAQs, and booking flow. Its primary conversion goal is a 20-minute scoping call. The secondary action is downloading the one-page PDF.
+The site presents NewtonSchool Studio's problem-led positioning, delivery system, production work, engagements, engineering coverage, technical notes, FAQs, and booking flow. Its primary conversion goal is a 20-minute scoping call. The secondary action is downloading the one-page PDF.
 
 ## Features
 
@@ -10,7 +10,7 @@ The site presents NewtonSchool Studio's delivery model, capabilities, production
 - Light and dark themes with saved browser preference
 - Newton School's Grauity brand colors and semantic surface tokens
 - Sticky desktop navigation and mobile booking bar
-- Reusable cards for services, case studies, mentors, packages, and FAQs
+- Reusable cards for problem states, delivery forces, case studies, packages, technical notes, and FAQs
 - Accessible headings, controls, focus states, and image descriptions
 - Reduced-motion support
 - Line-based architecture illustration and labelled screenshot placeholders
@@ -92,11 +92,11 @@ scripts/
 
 Most general marketing copy and structured content lives in [`content/site.ts`](content/site.ts). Update this file to change:
 
-- Services
-- Delivery steps
-- Mentor profiles
-- Packages and pricing
-- Technology stack
+- Problem states and AI-era positioning
+- Delivery forces and evidence gates
+- Packages, outcomes, and pricing
+- Representative and full technology coverage
+- Studio Lab notes
 - FAQs
 
 Layout and interactive behavior live in [`components/studio-page.tsx`](components/studio-page.tsx). Theme variables and responsive styles live in [`app/globals.css`](app/globals.css).
@@ -170,14 +170,11 @@ public/newtonschool-studio-one-pager.pdf
 
 The following items require confirmed production information before launch:
 
-- Mentor names, photos, experience, and LinkedIn profiles
 - Cal.com or Calendly booking embed
-- Contact email and LinkedIn URL
-- Case-study destination pages
 - Code and IP ownership policy
 - Support and warranty terms
 - Client approval for names, project details, and published metrics
-- Final NewtonSchool Studio logo asset
+- Approved product screenshots for case-study cards
 
 Placeholders are labelled in the interface so they cannot be mistaken for confirmed content.
 

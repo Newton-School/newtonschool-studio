@@ -13,7 +13,7 @@ screen: AI estimator · audit trail
 order: 3
 ---
 
-## A quote is only as dependable as the measurement behind it
+## What was stuck
 
 For a painting contractor, estimating begins long before a price reaches the customer. Someone has to inspect the site, measure the relevant surfaces and translate those observations into a quote.
 
@@ -21,7 +21,15 @@ When that work is done manually, the process can be slow and the result can vary
 
 Maverick / FieldVue set out to make that process faster and more consistent without removing professional judgment from the field.
 
-## AI proposes; the contractor decides
+## Constraints
+
+Field images are imperfect, site conditions vary and a contractor must remain able to correct the system. Any estimate also needed a traceable history so a later reviewer could understand the machine output and the human decision.
+
+## What we decided
+
+The product would treat AI as a proposal inside a controlled workflow. A contractor would remain the final decision-maker, and the system would retain the original estimate, any override and the final quote.
+
+## The system
 
 NewtonSchool Studio built a mobile estimation workflow supported by computer vision.
 
@@ -41,9 +49,9 @@ sequenceDiagram
   M->>Q: Save final decision and history
 ```
 
-The important design choice was to treat AI as part of a controlled workflow—not as an unquestionable answer.
+The important design choice was to treat AI as part of a controlled workflow, not as an unquestionable answer.
 
-## Why human review is part of the product
+### Why human review is part of the product
 
 Real sites are messy. Surfaces can be obstructed, photographs can be imperfect and local conditions can change what the job requires.
 
@@ -56,7 +64,7 @@ This gives the product four useful properties:
 3. The original estimate and subsequent override remain visible.
 4. The quote can be replayed when it needs to be reviewed.
 
-## An event-driven system behind the mobile workflow
+### An event-driven system behind the mobile workflow
 
 The experience appears as a simple sequence on the contractor's device, but several services have to cooperate behind it.
 
@@ -64,9 +72,21 @@ Vertex AI supports the computer-vision step. Microservices separate the main are
 
 That separation matters because AI processing, user review and quote generation do not all happen in the same way or at the same speed. The architecture allows those stages to evolve while preserving a traceable end-to-end workflow.
 
+## How we validated it
+
+The product makes each estimate reviewable through contractor approval, override history and replayable quote records. The model evaluation method, baseline comparison, accuracy figures and field-test results have not yet been approved for publication.
+
+## What went into production
+
+The delivered workflow covers mobile capture, computer-vision processing, draft quote generation, contractor review, overrides and an auditable decision history. Vertex AI, EventBridge and separated services support the workflow behind the interface.
+
 ## What changed
 
 The platform turns a manual measuring process into a repeatable digital workflow. Contractors receive AI-assisted estimates without losing control over the final number, and the business retains the history needed to understand how a quote was produced.
+
+## Handover and limitations
+
+AI output remains subject to site conditions and contractor review. Current model monitoring, support ownership and handover details are awaiting publication approval.
 
 <aside class="callout">
   <strong>The outcome</strong>

@@ -13,7 +13,7 @@ screen: Order management · fulfilment view
 order: 2
 ---
 
-## Sixty-minute delivery leaves little room for disconnected systems
+## What was stuck
 
 Zuvees delivers gifts in Dubai with a promise measured in minutes, not days. Fulfilling that promise depends on much more than a fast courier.
 
@@ -21,7 +21,15 @@ An order may begin on Shopify, Talabat or Instashop. Inventory may be distribute
 
 Zuvees needed a reliable centre for that moving network.
 
-## Building the operational layer between every channel
+## Constraints
+
+Orders could begin in several channels, inventory lived across hubs and warehouse tooling, and the customer promise left little time for manual reconciliation. Each connected platform also had its own interface and operating behaviour.
+
+## What we decided
+
+The order management system would become the shared operational layer. Sales channels could remain independent, while orders, inventory and fulfilment moved through one coordinated workflow.
+
+## The system
 
 NewtonSchool Studio built a custom order management system that connects the storefront, marketplaces, warehouse tooling and fulfilment hubs.
 
@@ -47,25 +55,37 @@ Each integration has a different role, but the order management system holds the
 | Warehouse management system | Inventory and warehouse operations |
 | Fulfilment hubs | Local order preparation and dispatch |
 
-## One order, wherever it begins
+### One order, wherever it begins
 
 Customers do not think in terms of sales channels. They expect the same availability and delivery experience wherever they place an order.
 
 The custom OMS creates that continuity. It receives orders from different sources, coordinates with warehouse operations and routes the work towards fulfilment. The operational team gets one system around which the fulfilment process can be organised.
 
-## Product discovery was part of the same journey
+### Product discovery was part of the same journey
 
 Choosing a gift is a different problem from delivering one. Customers may know the occasion and the recipient, but not the right product.
 
 The platform therefore also includes an AI gift advisor. It helps turn a broad intent into product discovery, while the connected commerce system handles the operational path that follows.
 
-This keeps the customer journey—from deciding what to buy to getting it delivered—inside one product experience.
+This keeps the customer journey, from deciding what to buy to getting it delivered, inside one product experience.
+
+## How we validated it
+
+The connected-system boundaries and operational workflow are documented here. Order-volume tests, synchronisation checks, delivery performance and operator feedback are still pending client approval for publication.
+
+## What went into production
+
+The published delivery scope includes the custom order management system, Shopify integration, warehouse-system integration, Talabat and Instashop connections, fulfilment-hub workflows and the AI gift advisor.
 
 ## What changed
 
 Zuvees gained a common operational layer across its storefront, marketplaces, warehouse tooling and fulfilment network.
 
 The main result is alignment: orders can enter through different channels without requiring an entirely separate operational process for each one, while inventory and fulfilment remain connected to the same system.
+
+## Handover and limitations
+
+Current support ownership, runbooks and operational service levels are not yet published. Performance and time-saved claims will be added only after approval.
 
 <aside class="callout">
   <strong>The outcome</strong>
