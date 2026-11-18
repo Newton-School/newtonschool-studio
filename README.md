@@ -26,7 +26,7 @@ The site presents NewtonSchool Studio's problem-led positioning, delivery system
 - TypeScript
 - Tailwind CSS and PostCSS
 - Plain CSS for the project-specific visual system and responsive layouts
-- ReportLab for generating the downloadable PDF
+- Headless Chrome for generating the downloadable PDF from HTML
 
 ## Getting started
 
@@ -85,7 +85,7 @@ content/
 public/
   newtonschool-studio-one-pager.pdf
 scripts/
-  build_one_pager.py   PDF source and generation script
+  one-pager/           HTML source, assets and build script for the one-page PDF
 ```
 
 ## Editing content
@@ -154,10 +154,10 @@ The interface follows Newton School's [Grauity design system](https://grauity.ne
 
 ## Regenerating the one-page PDF
 
-The PDF generator requires Python and ReportLab:
+The one-pager is authored as HTML in [`scripts/one-pager/`](scripts/one-pager/) (`onepager.html` plus its logos and fonts) and rendered to A4 PDF with headless Chrome. It requires Google Chrome or Chromium (set `CHROME_BIN` to use a non-standard install):
 
 ```bash
-python3 scripts/build_one_pager.py
+npm run one-pager
 ```
 
 The generated file is written to:
