@@ -147,12 +147,6 @@ export const stack = {
   "Quality, security and identity": ["Playwright", "Cypress", "Vitest", "Jest", "Pytest", "k6", "SonarQube", "Snyk", "Auth0", "Keycloak"],
 } as const;
 
-export const labWork = [
-  { label: "DETERMINISTIC SIMULATION", title: "System Design Simulator", body: "A simulator that turns architecture topologies, workloads and failure events into repeatable system behaviour.", slug: "system-design-simulator" },
-  { label: "HUMAN-IN-THE-LOOP AI", title: "FieldVue estimation controls", body: "A computer-vision workflow where contractors can inspect, override and replay the decisions behind a quote.", slug: "maverick-fieldvue" },
-  { label: "VALIDATED DATA PIPELINE", title: "IITR public information system", body: "A collection and review pipeline that turns scattered source material into structured, searchable information.", slug: "iitr-collaboration" },
-] as const;
-
 export const faqs = [
   { q: "Who is accountable for the outcome?", a: "Every engagement has a named technical owner. They own the architecture, technical risk, quality standard and release acceptance through handover." },
   { q: "Who writes the code?", a: "Student engineers from Newton School of Technology work full-time as members of the engineering pod. Experienced technical owners direct the work, and the studio remains accountable for the delivered system." },

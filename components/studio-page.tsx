@@ -10,7 +10,6 @@ import {
   deliveryGates,
   faqs,
   idealCustomers,
-  labWork,
   packages,
   problemStates,
   stack,
@@ -209,18 +208,13 @@ export function StudioPage({ caseStudies }: { caseStudies: CaseStudySummary[] })
         <details className="stack-details"><summary>View full technology coverage <span>PRODUCT · PLATFORM · DATA · AI</span></summary><div className="stack-grid">{Object.entries(stack).map(([group, items]) => <div className="stack-group" key={group}><h3>{group}</h3><div>{items.map(item => <span key={item}><i>{item.slice(0,2).toUpperCase()}</i>{item}</span>)}</div></div>)}</div></details>
       </div></section>
 
-      <section className="section lab-section"><div className="container" data-reveal>
-        <SectionHeading eyebrow="08 · STUDIO LAB" title="Engineering notes from the work" text="Technical systems worth examining beyond a project summary."/>
-        <div className="lab-grid">{labWork.map((item, index) => <Link href={`/work/${item.slug}`} className="lab-card" key={item.title}><span>{item.label}</span><i>0{index + 1}</i><h3>{item.title}</h3><p>{item.body}</p><strong>Open engineering note <Arrow/></strong></Link>)}</div>
-      </div></section>
-
       <section className="section alt" id="faq"><div className="container faq-layout" data-reveal>
-        <SectionHeading eyebrow="09 · FAQ" title="Questions we expect" text="Straight answers before you spend time on a call."/>
+        <SectionHeading eyebrow="08 · FAQ" title="Questions we expect" text="Straight answers before you spend time on a call."/>
         <div className="faq-list">{faqs.map((item, index) => <FAQItem key={item.q} item={item} open={faqOpen === index} onClick={() => setFaqOpen(faqOpen === index ? -1 : index)}/>)}</div>
       </div></section>
 
       <section className="section booking" id="booking"><div className="container booking-panel" data-reveal>
-        <div className="booking-copy"><span className="eyebrow">10 · START HERE</span><h2>Bring us the problem that is not getting over the line.</h2><p>A 20-minute call to identify the obstacle, the next useful proof point and whether we are the right team to own it.</p><div className="call-points"><div><span>01</span><p>Describe the outcome, users and current obstacle.</p></div><div><span>02</span><p>We separate the knowns, risks and decisions.</p></div><div><span>03</span><p>You leave with a recommended next step.</p></div></div></div>
+        <div className="booking-copy"><span className="eyebrow">09 · START HERE</span><h2>Bring us the problem that is not getting over the line.</h2><p>A 20-minute call to identify the obstacle, the next useful proof point and whether we are the right team to own it.</p><div className="call-points"><div><span>01</span><p>Describe the outcome, users and current obstacle.</p></div><div><span>02</span><p>We separate the knowns, risks and decisions.</p></div><div><span>03</span><p>You leave with a recommended next step.</p></div></div></div>
         <div className="booking-widget" role="img" aria-label="Placeholder for Cal.com or Calendly booking widget"><div className="widget-top"><div className="widget-logo"><Image src="/newtonschool-studio-logo.png" width={32} height={32} alt=""/></div><div><strong>NewtonSchool Studio</strong><span>20-minute scoping call</span></div></div><div className="widget-body"><span>BOOKING WIDGET</span><div className="calendar-row">{["M","T","W","T","F"].map((d,i)=><b key={i}>{d}</b>)}</div><div className="calendar-row dates">{[5,6,7,8,9].map(d=><i key={d}>{d}</i>)}</div><div className="slot-placeholder"><span/><span/><span/></div><em>CAL.COM OR CALENDLY EMBED PLACEHOLDER</em></div></div>
       </div></section>
     </main>
