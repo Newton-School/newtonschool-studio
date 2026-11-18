@@ -152,6 +152,7 @@ svg { display: block; }
 .case-content > h3 { margin: 20px 0 0; font-size: 25px; letter-spacing: -.03em; }
 .case-content p { color: var(--muted); font-size: 14px; line-height: 1.62; }
 .case-content .problem { color: var(--text); font-weight: 550; font-size: 15px; margin-top: 22px; }
+.case-content .problem, .case-content .build { display: -webkit-box; overflow: hidden; -webkit-box-orient: vertical; -webkit-line-clamp: 3; }
 .case-metrics { display: grid; grid-template-columns: repeat(auto-fit, minmax(92px, 1fr)); margin-top: 24px; border-block: 1px solid var(--border); }
 .case-metrics > div { padding: 14px 10px 14px 0; }
 .case-metrics > div + div { padding-left: 10px; border-left: 1px solid var(--border); }
