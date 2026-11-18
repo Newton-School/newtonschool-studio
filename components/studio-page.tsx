@@ -226,7 +226,7 @@ export function StudioPage({ caseStudies }: { caseStudies: CaseStudySummary[] })
       <section className="section alt" id="how"><div className="container" data-reveal>
         <SectionHeading eyebrow="05 · DELIVERY SYSTEM" title="One team owns the path from ambiguity to operation." text="The pod combines judgment, parallel execution and AI-accelerated capacity. Five evidence gates keep speed connected to the outcome."/>
         <div className="force-grid">{deliveryForces.map((item, index) => <Card className="force-card" key={item.title}><span>0{index + 1}</span><h3>{item.title}</h3><p>{item.body}</p></Card>)}</div>
-        <div className="model-statement"><span>DELIVERY ACCOUNTABILITY</span><p>Student engineers from Newton School of Technology work full-time inside focused engineering pods. Every engagement has a named technical owner responsible for architecture, technical risk, the quality standard and release acceptance through handover.</p></div>
+        <div className="model-statement"><span>DELIVERY ACCOUNTABILITY</span><p>Every engagement has a named technical owner who is accountable for architecture, technical risk, quality and release acceptance through handover. The engineering pod includes full-time student engineers from Newton School of Technology, working under that owner, with every change reviewed before it ships.</p></div>
         <div className="gate-heading"><span>FIVE EVIDENCE GATES</span><p>Progress is marked by evidence, not task count.</p></div>
         <div className="process gate-process"><div className="process-line"/>{deliveryGates.map((gate, index) => <div className="process-step" key={gate.title}><span>{index + 1}</span><h3>{gate.title}</h3><p>{gate.body}</p></div>)}</div>
       </div></section>
