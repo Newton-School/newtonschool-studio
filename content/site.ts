@@ -141,40 +141,29 @@ export const trustItems = [
 export const stackHighlights = [
   {
     group: "Product interfaces",
-    body: "Web, mobile and operational interfaces built around real user workflows.",
-    items: ["TypeScript", "React", "Next.js", "React Native", "Flutter"],
-    proof: { label: "See RishiVerse", slug: "rishiverse" },
-  },
-  {
-    group: "Services and integration",
-    body: "APIs, event flows and system boundaries that keep operations connected.",
-    items: ["Node.js", "Python", "Java", "REST", "GraphQL", "Kafka"],
-    proof: { label: "See Zuvees", slug: "zuvees" },
-  },
-  {
-    group: "Data and intelligence",
-    body: "Transactional data, search, analytics and AI workflows with explicit review paths.",
-    items: ["PostgreSQL", "OpenSearch", "Vertex AI", "OpenAI", "PyTorch"],
+    body: "Web and mobile interfaces built around real workflows.",
+    items: ["TypeScript", "React", "Next.js", "Remix", "React Native", "Expo"],
     proof: { label: "See FieldVue", slug: "maverick-fieldvue" },
   },
   {
+    group: "Services and integration",
+    body: "APIs, events and integrations that keep operations in sync.",
+    items: ["Node.js", "Express", "Django REST", "GraphQL", "Shopify", "Celery"],
+    proof: { label: "See Zuvees", slug: "zuvees" },
+  },
+  {
+    group: "Data and AI",
+    body: "Transactional data, scraping pipelines and AI with human review.",
+    items: ["PostgreSQL", "MongoDB", "DynamoDB", "Redis", "Vertex AI Gemini", "Roboflow"],
+    proof: { label: "See IIT Roorkee", slug: "iitr-collaboration" },
+  },
+  {
     group: "Cloud and operations",
-    body: "Infrastructure, delivery pipelines and observability designed with the product.",
-    items: ["AWS", "GCP", "Azure", "Docker", "Terraform", "Kubernetes"],
-    proof: { label: "See IITR collaboration", slug: "iitr-collaboration" },
+    body: "Infrastructure and delivery pipelines built with the product.",
+    items: ["AWS", "Docker", "Nginx", "GitHub Actions", "EventBridge", "Step Functions"],
+    proof: { label: "See RishiVerse", slug: "rishiverse" },
   },
 ] as const;
-
-export const stack = {
-  "Web and mobile": ["TypeScript", "React", "Next.js", "Vue", "Nuxt", "Angular", "React Native", "Flutter", "Swift", "Kotlin"],
-  "Backend and APIs": ["Node.js", "NestJS", "Python", "FastAPI", "Django", "Java", "Spring Boot", "Go", ".NET", "Ruby on Rails", "PHP", "Laravel"],
-  "Data, search and analytics": ["PostgreSQL", "MySQL", "MongoDB", "Redis", "DynamoDB", "OpenSearch", "Elasticsearch", "ClickHouse", "BigQuery", "Snowflake"],
-  "Cloud and edge": ["AWS", "GCP", "Azure", "Cloudflare", "Vercel", "Firebase", "Supabase"],
-  "Platform and observability": ["Docker", "Kubernetes", "Terraform", "Helm", "GitHub Actions", "GitLab CI", "Argo CD", "Prometheus", "Grafana", "Datadog", "Sentry"],
-  "AI and machine learning": ["OpenAI", "Anthropic", "Gemini", "Vertex AI", "Amazon Bedrock", "Azure AI", "Hugging Face", "PyTorch", "TensorFlow", "LangChain", "LlamaIndex", "pgvector", "Pinecone", "Weaviate"],
-  "Messaging and workflows": ["REST", "GraphQL", "gRPC", "WebSockets", "Kafka", "RabbitMQ", "SQS", "Pub/Sub", "Temporal"],
-  "Quality, security and identity": ["Playwright", "Cypress", "Vitest", "Jest", "Pytest", "k6", "SonarQube", "Snyk", "Auth0", "Keycloak"],
-} as const;
 
 export const faqs = [
   { q: "Who is accountable for the outcome?", a: "Every engagement has a named technical owner. They own the architecture, technical risk, quality standard and release acceptance through handover." },

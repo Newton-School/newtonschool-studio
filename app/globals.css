@@ -49,7 +49,7 @@ svg { display: block; }
 .container { width: min(1180px, calc(100% - 40px)); margin-inline: auto; }
 .section { padding: 120px 0; }
 .section.alt { background: var(--surface-2); border-block: 1px solid var(--border); }
-.eyebrow, .card-number, .tags, .featured-label, .result span, .stack-group h3, .footer-grid > div > span, .widget-body > span, .package-field > span, .gate-heading > span, .model-statement > span, .customer-card > span { font-family: "JetBrains Mono", "SFMono-Regular", Consolas, monospace; font-size: 11px; line-height: 1.3; letter-spacing: .11em; text-transform: uppercase; font-weight: 650; }
+.eyebrow, .card-number, .tags, .featured-label, .result span, .footer-grid > div > span, .widget-body > span, .package-field > span, .gate-heading > span, .model-statement > span, .customer-card > span { font-family: "JetBrains Mono", "SFMono-Regular", Consolas, monospace; font-size: 11px; line-height: 1.3; letter-spacing: .11em; text-transform: uppercase; font-weight: 650; }
 .eyebrow { display: inline-flex; align-items: center; gap: 10px; color: var(--accent); }
 .eyebrow i { width: 22px; height: 1px; background: currentColor; }
 .section-heading { max-width: 660px; margin-bottom: 54px; }
@@ -235,16 +235,7 @@ svg { display: block; }
 .stack-highlight > a { display: inline-flex; align-items: center; gap: 7px; margin-top: auto; padding-top: 24px; color: var(--text); font-size: 13px; font-weight: 650; }
 .stack-highlight > a:hover { color: var(--accent); }
 .stack-highlight > a svg { width: 16px; fill: none; stroke: currentColor; }
-.stack-details { margin-top: 24px; border: 1px solid var(--border); background: var(--surface); }
-.stack-details > summary { min-height: 64px; padding: 20px 24px; display: flex; align-items: center; justify-content: space-between; gap: 20px; cursor: pointer; font-weight: 650; }
-.stack-details > summary span { color: var(--faint); font: 600 9px/1.3 "JetBrains Mono", monospace; letter-spacing: .08em; }
-.stack-details[open] > summary { border-bottom: 1px solid var(--border-strong); }
-.stack-grid { padding: 0 24px 24px; }
-.stack-group { display: grid; grid-template-columns: 190px 1fr; border-bottom: 1px solid var(--border); min-height: 92px; align-items: center; }
-.stack-group h3 { color: var(--faint); margin: 0; }
-.stack-group > div { display: flex; flex-wrap: wrap; gap: 10px; padding-block: 16px; }
-.stack-group span { min-width: 146px; height: 42px; display: inline-flex; align-items: center; gap: 10px; border: 1px solid var(--border); padding: 0 11px; color: var(--muted); font-size: 12px; white-space: nowrap; }
-.stack-group span i { width: 22px; height: 22px; display: grid; place-items: center; background: var(--surface-2); color: var(--text); font: normal 600 8px/1 "JetBrains Mono", monospace; border-radius: 3px; }
+.stack-note { margin: 24px 0 0; padding: 22px 24px; border: 1px solid var(--border); background: var(--surface); color: var(--muted); font-size: 14px; line-height: 1.6; }
 .faq-layout { display: grid; grid-template-columns: 360px 1fr; gap: 100px; align-items: start; }
 .faq-layout .section-heading { position: sticky; top: 120px; }
 .faq-list { border-top: 1px solid var(--border-strong); }
@@ -447,11 +438,6 @@ footer { background: var(--surface); border-top: 1px solid var(--border); paddin
   .featured-label { right: 14px; }
   .pricing-note { padding: 22px; }
   .stack-highlight { min-height: 280px; }
-  .stack-details > summary { align-items: flex-start; flex-direction: column; }
-  .stack-grid { padding-inline: 18px; }
-  .stack-group { grid-template-columns: 1fr; padding-top: 24px; }
-  .stack-group > div { padding-top: 10px; }
-  .stack-group span { min-width: calc(50% - 5px); flex: 1; }
   .faq-layout { display: block; }
   .faq-layout .section-heading { position: static; }
   .booking { padding-block: 82px 110px; }

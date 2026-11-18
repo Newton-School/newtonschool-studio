@@ -14,7 +14,6 @@ import {
   idealCustomers,
   packages,
   problemStates,
-  stack,
   stackHighlights,
   trustItems,
 } from "@/content/site";
@@ -245,7 +244,7 @@ export function StudioPage({ caseStudies }: { caseStudies: CaseStudySummary[] })
       <section className="section stack-section" id="stack"><div className="container" data-reveal>
         <SectionHeading eyebrow="07 · ENGINEERING APPROACH" title="We choose the system around the problem." text="Architecture follows the outcome, operational constraints and systems already in place. These are representative areas of work, connected to delivered examples."/>
         <div className="stack-highlights">{stackHighlights.map(item => <Card className="stack-highlight" key={item.group}><span>{item.group}</span><p>{item.body}</p><div className="tags">{item.items.map(technology => <i key={technology}>{technology}</i>)}</div><Link href={`/work/${item.proof.slug}`}>{item.proof.label} <Arrow/></Link></Card>)}</div>
-        <details className="stack-details"><summary>View full technology coverage <span>PRODUCT · PLATFORM · DATA · AI</span></summary><div className="stack-grid">{Object.entries(stack).map(([group, items]) => <div className="stack-group" key={group}><h3>{group}</h3><div>{items.map(item => <span key={item}><i>{item.slice(0,2).toUpperCase()}</i>{item}</span>)}</div></div>)}</div></details>
+        <p className="stack-note">We work inside your existing stack when it fits the outcome, and recommend a focused change when it does not.</p>
       </div></section>
 
       <section className="section alt" id="faq"><div className="container faq-layout" data-reveal>
