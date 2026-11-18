@@ -77,6 +77,7 @@ export const packages = [
     price: "From INR 4L",
   },
   {
+    // TODO(hritvik): decide whether Product Build stays at 8 to 12 weeks or changes to the deck's 8 to 16 weeks.
     title: "Product Build",
     time: "8 to 12 weeks",
     useWhen: "The outcome is clear and a complete product or operational system needs to reach production.",
