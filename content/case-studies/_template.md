@@ -65,6 +65,26 @@ Explain what the client received, what remains outside the system and any known 
 
 Store local media under `public/case-studies/` and reference it from `/case-studies/filename.ext`.
 
+### Automatic layouts
+
+`lib/rehype-case-format.ts` turns these patterns into designed layouts. Write plain Markdown and keep to the patterns.
+
+| Write this | Shown as |
+| --- | --- |
+| Any `##` heading | A numbered section |
+| The first paragraph under `## Summary` | A larger lead paragraph |
+| `### Decision 1: short title` under `## Key decisions` | A numbered decision card holding everything until the next `###` |
+| A table whose first column is `Option`, with ` (chosen)` after one option | Side-by-side option cards, the chosen one highlighted |
+| A table whose first column is `Problem`, `Challenge` or `Issue` | Incident cards, with the last column marked as the outcome |
+| A table whose first column is `When` or `Weeks` | A vertical timeline |
+| A two-column table whose first column is `Difficulty` | A grid of difficulty cards |
+| A bullet list under `## Results` | Result cards. Start an item with a bold phrase to make it the card's headline |
+| Bullets or paragraphs that start with a bold sentence under `## Lessons…` | Numbered lesson cards |
+| Paragraphs that start with a bold sentence under `## What went wrong…` | Numbered incident cards |
+| A `Layer | Technology` table, or a comma-separated paragraph, under `## Stack` | Technology chips |
+
+Any other table stays a table. Keep data and proof, such as measurements, in tables.
+
 ```mermaid
 flowchart LR
   Input --> Service --> Result
