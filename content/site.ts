@@ -16,22 +16,73 @@ export const idealCustomers = [
   {
     label: "PRIMARY ICP",
     title: "Seed to Series A startups",
+    icon: "sprout" as const,
     body: "A validated product need, an urgent launch or enterprise commitment, and a small team that cannot move every workstream at once.",
     signals: ["Validated need", "4 to 16 week milestone", "Founder or product owner"],
   },
   {
     label: "SECONDARY ICP",
     title: "Product and operations teams",
+    icon: "kanban" as const,
     body: "An important workflow or product backlog with measurable impact, but no dedicated team available to take it through production.",
     signals: ["Measurable baseline", "Named problem owner", "System and user access"],
   },
   {
     label: "SELECTIVE ICP",
     title: "Universities and institutions",
+    icon: "mortarboard" as const,
     body: "A cross-department process that needs phased modernisation, with a senior sponsor and an internal owner for adoption.",
     signals: ["Approved sponsor", "Phased scope", "Handover owner"],
   },
 ] as const;
+
+export const ecosystemProof = [
+  { value: "80%", label: "less manual administrative work", project: "RishiVerse", href: "/work/rishiverse" },
+  { value: "5", label: "sales channels using one shared inventory", project: "Zuvees", href: "/work/zuvees" },
+  { value: "13", label: "states of scheme data standardised", project: "IIT Roorkee", href: "/work/iitr-collaboration" },
+  { value: "6–7s", label: "to analyse 10 site photos", project: "FieldVue", href: "/work/maverick-fieldvue" },
+] as const;
+
+export const ecosystemPrinciples = [
+  { number: "01", title: "A named technical owner", body: "One owner remains accountable for architecture, technical risk, quality and release acceptance through handover." },
+  { number: "02", title: "A focused engineering pod", body: "Full-time student engineers from Newton School of Technology work inside the pod under that technical owner." },
+  { number: "03", title: "Review before release", body: "Every change is reviewed against explicit acceptance criteria before it ships." },
+  { number: "04", title: "Ownership moves to you", body: "Code, decisions, documentation, runbooks and access transfer cleanly to your team." },
+] as const;
+
+export const studentProjects = [
+  {
+    number: "01",
+    title: "An AI product in 24 hours",
+    label: "Blinkit hackathon",
+    body: "NST students moved from an open problem to a working AI product during a 24-hour build.",
+    image: "/nst-ecosystem/blinkit-hackathon.avif",
+    alt: "NST students coding during the Blinkit 24-hour hackathon",
+  },
+  {
+    number: "02",
+    title: "A 15 kg combat robot",
+    label: "Physical systems",
+    body: "First-year builders designed and assembled a combat robot as a working mechanical and control system.",
+    image: "/nst-ecosystem/combat-robot.avif",
+    alt: "NST students presenting the 15 kg combat robot they built",
+  },
+  {
+    number: "03",
+    title: "A neo-satellite in seven days",
+    label: "First-semester build",
+    body: "A student team built a neo-satellite during its first semester, compressing a complex system into a seven-day sprint.",
+    image: "/nst-ecosystem/satellite.avif",
+    alt: "Illustration for the neo-satellite built by NST students in seven days",
+  },
+] as const;
+
+export const iitrTestimonial = {
+  quote: "Not every innovation has to end in a patent or product; some should become public infrastructure.",
+  name: "Ram Manohar Singh",
+  role: "Associate Professor, IIT Roorkee",
+  source: "https://www.indiatoday.in/education-today/featurephilia/story/ai-tool-built-by-8-students-helping-iits-map-and-fix-indias-welfare-gap-2835539-2025-12-13",
+} as const;
 
 export const deliveryForces = [
   { title: "Problem ownership", body: "We define the outcome, users, constraints and decisions before work is divided into tasks." },
@@ -60,6 +111,7 @@ export const packages = [
   {
     featured: true,
     title: "Problem and Architecture Sprint",
+    icon: "blueprint" as const,
     time: "2 to 3 weeks",
     useWhen: "The problem is important, but the right product or technical path is still unclear.",
     deliverables: ["Problem contract", "Architecture and risk map", "Prioritised delivery plan"],
@@ -68,6 +120,7 @@ export const packages = [
   },
   {
     title: "Production Pilot",
+    icon: "rocket" as const,
     time: "4 to 8 weeks",
     useWhen: "One critical workflow or technical assumption needs to be proven with real users and data.",
     deliverables: ["Working product slice", "Production deployment", "Validation evidence and next-step plan"],
@@ -76,6 +129,7 @@ export const packages = [
   },
   {
     title: "Product Build",
+    icon: "blocks" as const,
     time: "8 to 16 weeks",
     useWhen: "The outcome is clear and a complete product or operational system needs to reach production.",
     deliverables: ["Core product workflows", "Quality and operational controls", "Deployment, documentation and handover"],
@@ -84,6 +138,7 @@ export const packages = [
   },
   {
     title: "System Rescue and Acceleration",
+    icon: "bolt" as const,
     time: "Scoped after assessment",
     useWhen: "A product is slow, unstable, blocked by architecture or accumulating delivery risk.",
     deliverables: ["Constraint and failure analysis", "Prioritised remediation", "Measured implementation changes"],
@@ -92,6 +147,7 @@ export const packages = [
   },
   {
     title: "Managed Product System",
+    icon: "gear" as const,
     time: "Ongoing · monthly",
     useWhen: "A live product needs continuous improvement, reliable releases and retained technical context.",
     deliverables: ["Planned feature delivery", "Operational and defect response", "Release evidence and decision records"],
@@ -100,6 +156,7 @@ export const packages = [
   },
   {
     title: "Applied Technology Research Sprint",
+    icon: "lens" as const,
     time: "Scoped in stages",
     useWhen: "A technical unknown must be tested before a larger product, AI or infrastructure decision.",
     deliverables: ["Research brief and falsifiable question", "Reproducible experiment or prototype", "Evidence, limitations and recommendation"],
@@ -111,26 +168,32 @@ export const packages = [
 export const trustItems = [
   {
     title: "NDA before access",
+    icon: "lock" as const,
     body: "Every pod member signs an NDA before they see your code or data.",
   },
   {
     title: "Work in your environment",
+    icon: "server" as const,
     body: "We work in your repositories, cloud accounts and tools.",
   },
   {
     title: "No live customer data by default",
+    icon: "database" as const,
     body: "We only use live customer data with your written approval.",
   },
   {
     title: "Approved AI tools only",
+    icon: "chip" as const,
     body: "You agree which tools can touch your code, and a person reviews every change.",
   },
   {
     title: "Access removed at handover",
+    icon: "key" as const,
     body: "Every credential is revoked when the engagement closes.",
   },
   {
     title: "You own what we build",
+    icon: "flag" as const,
     body: "IP, warranty and support terms are set in the statement of work.",
   },
 ] as const;
@@ -138,24 +201,28 @@ export const trustItems = [
 export const stackHighlights = [
   {
     group: "Product interfaces",
+    icon: "devices" as const,
     body: "Web and mobile interfaces built around real workflows.",
     items: ["TypeScript", "React", "Next.js", "Remix", "React Native", "Expo"],
     proof: { label: "See FieldVue", slug: "maverick-fieldvue" },
   },
   {
     group: "Services and integration",
+    icon: "plug" as const,
     body: "APIs, events and integrations that keep operations in sync.",
     items: ["Node.js", "Express", "Django REST", "GraphQL", "Shopify", "Celery"],
     proof: { label: "See Zuvees", slug: "zuvees" },
   },
   {
     group: "Data and AI",
+    icon: "brain" as const,
     body: "Transactional data, scraping pipelines and AI with human review.",
     items: ["PostgreSQL", "MongoDB", "DynamoDB", "Redis", "Vertex AI Gemini", "Roboflow"],
     proof: { label: "See IIT Roorkee", slug: "iitr-collaboration" },
   },
   {
     group: "Cloud and operations",
+    icon: "cloud" as const,
     body: "Infrastructure and delivery pipelines built with the product.",
     items: ["AWS", "Docker", "Nginx", "GitHub Actions", "EventBridge", "Step Functions"],
     proof: { label: "See RishiVerse", slug: "rishiverse" },
